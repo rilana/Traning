@@ -69,11 +69,34 @@ namespace task2
             }
             else
             {
-                Item itt = arrayL_class[Convert.ToInt32(tBNelement.Text)-1] as Item;
-                tBname.Text = itt.Name;
-                tBcount.Text = itt.Count.ToString();
-                tBCost.Text = itt.Cost.ToString();
-                tBtotalCost.Text = itt.TotalCost + " руб.";
+                int nelement;
+                if (Int32.TryParse(tBNelement.Text, out nelement))
+                {
+                    nelement--;
+                    if ((nelement >= 0) && ((nelement) < arrayL_class.Count))
+                    {
+
+                        Item itt = arrayL_class[nelement] as Item;
+                        tBname.Text = itt.Name;
+                        tBcount.Text = itt.Count.ToString();
+                        tBCost.Text = itt.Cost.ToString();
+                        tBtotalCost.Text = itt.TotalCost + " руб.";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Нет товара для данного номера");
+                    }
+                }
+                else
+                {
+
+                    MessageBox.Show(" Неверно введены числовые данные");
+                    tBNelement.Text = "0";
+                     tBname.Text ="";
+                    tBcount.Text = "";
+                    tBCost.Text = "";
+                    tBtotalCost.Text = "";
+                }
             }
         }
         // сохраняем изменения в элементе
@@ -101,6 +124,19 @@ namespace task2
                 {
                     e.Handled = true;
                 }
+            }
+        }
+         private void tBcount_Leave(object sender, EventArgs e)
+        {
+            int work;
+            if (!Int32.TryParse((sender as TextBox).Text, out work))
+            {
+                 MessageBox.Show(" Неверно введены числовые данные");
+                    tBNelement.Text = "0";
+                     tBname.Text ="";
+                    tBcount.Text = "";
+                    tBCost.Text = "";
+                    tBtotalCost.Text = "";
             }
         }
      //-------------------------------------------------------------------------------------
@@ -152,11 +188,35 @@ namespace task2
             }
             else
             {
-                Item_Struct itt =(Item_Struct)(arrayL_struct[Convert.ToInt32(tBNelementS.Text) - 1]);
-                tBnameS.Text = itt.Name;
-                tBcountS.Text = itt.Count.ToString();
-                tBCostS.Text = itt.Cost.ToString();
-                tBtotalCostS.Text = itt.TotalCost + " руб.";
+                int nelement;
+                if (Int32.TryParse(tBNelementS.Text, out nelement))
+                {
+
+                    nelement--;
+                    if ((nelement >= 0) && ((nelement) < arrayL_struct.Count))
+                    {
+                        Item_Struct itt = (Item_Struct)(arrayL_struct[nelement]);
+                        tBnameS.Text = itt.Name;
+                        tBcountS.Text = itt.Count.ToString();
+                        tBCostS.Text = itt.Cost.ToString();
+                        tBtotalCostS.Text = itt.TotalCost + " руб.";
+                     }
+                    else
+                    {
+                        MessageBox.Show("Нет товара для данного номера");
+                    }
+                }
+                else
+                {
+
+                    MessageBox.Show(" Неверно введены числовые данные");
+                    tBNelementS.Text = "0";
+                     tBnameS.Text ="";
+                    tBcountS.Text = "";
+                    tBCostS.Text = "";
+                    tBtotalCostS.Text = "";
+                
+                }
             }
         }
 
@@ -170,6 +230,22 @@ namespace task2
                 tBtotalCostS.Text = itemcl.TotalCost + " руб.";
             }
         }
+
+        private void tBcountS_Leave(object sender, EventArgs e)
+        {
+            int work;
+            if (!Int32.TryParse((sender as TextBox).Text, out work))
+            {
+                MessageBox.Show(" Неверно введены числовые данные");
+                tBNelementS.Text = "0";
+                tBnameS.Text = "";
+                tBcountS.Text = "";
+                tBCostS.Text = "";
+                tBtotalCostS.Text = "";
+            }
+        }
+
+       
     }
     struct Item_Struct
     {

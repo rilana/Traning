@@ -21,11 +21,22 @@ namespace task1
 
         private void bYotX_Click(object sender, EventArgs e)
         {
-            LinerFunction func;
-            func = new LinerFunction();
-            func.A = Convert.ToInt32(a_value.Text);
-            func.B = Convert.ToInt32(b_value.Text);
-            AnswerY.Text = "Ответ: y=" + func.YotX(Convert.ToInt32(x_value.Text));
+            
+                LinerFunction func;
+                func = new LinerFunction();
+                int a,b,x;
+                if (Int32.TryParse(a_value.Text, out a)&&(Int32.TryParse(b_value.Text, out b))&&(Int32.TryParse(x_value.Text,out x)))
+                {
+                    func.A = a;
+                    func.B = b;
+                    AnswerY.Text = "Ответ: y=" + func.YotX(x);
+                }
+                else
+                {
+                    MessageBox.Show("Не верно введены данные");
+                }
+           
+           
         }
 
         private void a_value_KeyPress(object sender, KeyPressEventArgs e)

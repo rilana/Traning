@@ -31,17 +31,17 @@
             this.bFill_arrayList = new System.Windows.Forms.Button();
             this.bsum_class = new System.Windows.Forms.Button();
             this.grClass = new System.Windows.Forms.GroupBox();
+            this.bSaveClass = new System.Windows.Forms.Button();
+            this.tBtotalCost = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tBCost = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tBcount = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tBname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tBNelement = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tBcount = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tBCost = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tBtotalCost = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.bSaveClass = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bSaveStruct = new System.Windows.Forms.Button();
             this.tBtotalCostS = new System.Windows.Forms.TextBox();
@@ -102,6 +102,69 @@
             this.grClass.TabStop = false;
             this.grClass.Text = "Класс";
             // 
+            // bSaveClass
+            // 
+            this.bSaveClass.Location = new System.Drawing.Point(143, 151);
+            this.bSaveClass.Name = "bSaveClass";
+            this.bSaveClass.Size = new System.Drawing.Size(75, 23);
+            this.bSaveClass.TabIndex = 13;
+            this.bSaveClass.Text = "Cохранить";
+            this.bSaveClass.UseVisualStyleBackColor = true;
+            this.bSaveClass.Click += new System.EventHandler(this.bSaveClass_Click);
+            // 
+            // tBtotalCost
+            // 
+            this.tBtotalCost.Enabled = false;
+            this.tBtotalCost.Location = new System.Drawing.Point(177, 118);
+            this.tBtotalCost.Name = "tBtotalCost";
+            this.tBtotalCost.Size = new System.Drawing.Size(110, 20);
+            this.tBtotalCost.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(115, 122);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Сумма";
+            // 
+            // tBCost
+            // 
+            this.tBCost.Location = new System.Drawing.Point(177, 92);
+            this.tBCost.Name = "tBCost";
+            this.tBCost.Size = new System.Drawing.Size(67, 20);
+            this.tBCost.TabIndex = 10;
+            this.tBCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBNelement_KeyPress);
+            this.tBCost.Leave += new System.EventHandler(this.tBcount_Leave);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(115, 96);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Стоимость";
+            // 
+            // tBcount
+            // 
+            this.tBcount.Location = new System.Drawing.Point(177, 69);
+            this.tBcount.Name = "tBcount";
+            this.tBcount.Size = new System.Drawing.Size(41, 20);
+            this.tBcount.TabIndex = 8;
+            this.tBcount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBNelement_KeyPress);
+            this.tBcount.Leave += new System.EventHandler(this.tBcount_Leave);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(105, 72);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Количество";
+            // 
             // tBname
             // 
             this.tBname.Location = new System.Drawing.Point(177, 43);
@@ -136,67 +199,6 @@
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "№ товара";
-            // 
-            // tBcount
-            // 
-            this.tBcount.Location = new System.Drawing.Point(177, 69);
-            this.tBcount.Name = "tBcount";
-            this.tBcount.Size = new System.Drawing.Size(41, 20);
-            this.tBcount.TabIndex = 8;
-            this.tBcount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBNelement_KeyPress);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(105, 72);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Количество";
-            // 
-            // tBCost
-            // 
-            this.tBCost.Location = new System.Drawing.Point(177, 92);
-            this.tBCost.Name = "tBCost";
-            this.tBCost.Size = new System.Drawing.Size(67, 20);
-            this.tBCost.TabIndex = 10;
-            this.tBCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBNelement_KeyPress);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(115, 96);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Стоимость";
-            // 
-            // tBtotalCost
-            // 
-            this.tBtotalCost.Enabled = false;
-            this.tBtotalCost.Location = new System.Drawing.Point(177, 118);
-            this.tBtotalCost.Name = "tBtotalCost";
-            this.tBtotalCost.Size = new System.Drawing.Size(110, 20);
-            this.tBtotalCost.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(115, 122);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Сумма";
-            // 
-            // bSaveClass
-            // 
-            this.bSaveClass.Location = new System.Drawing.Point(143, 151);
-            this.bSaveClass.Name = "bSaveClass";
-            this.bSaveClass.Size = new System.Drawing.Size(75, 23);
-            this.bSaveClass.TabIndex = 13;
-            this.bSaveClass.Text = "Cохранить";
-            this.bSaveClass.UseVisualStyleBackColor = true;
-            this.bSaveClass.Click += new System.EventHandler(this.bSaveClass_Click);
             // 
             // groupBox1
             // 
@@ -271,6 +273,7 @@
             this.tBcountS.Size = new System.Drawing.Size(41, 20);
             this.tBcountS.TabIndex = 8;
             this.tBcountS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBNelement_KeyPress);
+            this.tBcountS.Leave += new System.EventHandler(this.tBcountS_Leave);
             // 
             // label8
             // 
