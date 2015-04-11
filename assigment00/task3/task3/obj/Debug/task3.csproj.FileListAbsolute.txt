@@ -1,0 +1,9 @@
+C:\Наташа\c# express\Traning\assigment00\task3\task3\bin\Debug\task3.exe.config
+C:\Наташа\c# express\Traning\assigment00\task3\task3\bin\Debug\task3.exe
+C:\Наташа\c# express\Traning\assigment00\task3\task3\bin\Debug\task3.pdb
+C:\Наташа\c# express\Traning\assigment00\task3\task3\obj\Debug\task3.Form1.resources
+C:\Наташа\c# express\Traning\assigment00\task3\task3\obj\Debug\task3.Properties.Resources.resources
+C:\Наташа\c# express\Traning\assigment00\task3\task3\obj\Debug\task3.csproj.GenerateResource.Cache
+C:\Наташа\c# express\Traning\assigment00\task3\task3\obj\Debug\task3.exe
+C:\Наташа\c# express\Traning\assigment00\task3\task3\obj\Debug\task3.pdb
+C:\Наташа\c# express\Traning\assigment00\task3\task3\obj\Debug\task3.csprojResolveAssemblyReference.cache
