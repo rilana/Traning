@@ -1,0 +1,9 @@
+C:\Наташа\c# express\epam\task2\task2\bin\Debug\task2.exe.config
+C:\Наташа\c# express\epam\task2\task2\bin\Debug\task2.exe
+C:\Наташа\c# express\epam\task2\task2\bin\Debug\task2.pdb
+C:\Наташа\c# express\epam\task2\task2\obj\Debug\task2.Properties.Resources.resources
+C:\Наташа\c# express\epam\task2\task2\obj\Debug\task2.csproj.GenerateResource.Cache
+C:\Наташа\c# express\epam\task2\task2\obj\Debug\task2.exe
+C:\Наташа\c# express\epam\task2\task2\obj\Debug\task2.pdb
+C:\Наташа\c# express\epam\task2\task2\obj\Debug\task2.Form1.resources
+C:\Наташа\c# express\epam\task2\task2\obj\Debug\task2.csprojResolveAssemblyReference.cache
