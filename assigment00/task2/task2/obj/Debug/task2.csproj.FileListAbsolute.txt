@@ -15,3 +15,4 @@ C:\Наташа\c# express\Traning\Traning\assigment00\task2\task2\bin\Debug\tas
 C:\Наташа\c# express\Traning\Traning\assigment00\task2\task2\obj\Debug\task2.Form1.resources
 C:\Наташа\c# express\Traning\Traning\assigment00\task2\task2\obj\Debug\task2.Properties.Resources.resources
 C:\Наташа\c# express\Traning\Traning\assigment00\task2\task2\obj\Debug\task2.csproj.GenerateResource.Cache
+C:\Наташа\c# express\Traning\Traning\assigment00\task2\task2\obj\Debug\task2.csprojResolveAssemblyReference.cache

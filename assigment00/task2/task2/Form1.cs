@@ -25,7 +25,7 @@ namespace task2
             arrayL_class.Clear();
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
-            for (int i = 0; i < 100000; i++)
+            for (int i = 0; i < 1000000; i++)
             {
                 Random rr = new Random();
                 Item itemcl = new Item() { Name = "item"+(i+1).ToString(), Count = rr.Next(100), Cost = rr.Next(10000,100000) };
@@ -33,7 +33,7 @@ namespace task2
                
             }
             stopWatch.Stop();
-            MessageBox.Show("Заполнено! Время заполнения - " +stopWatch.Elapsed.Milliseconds+" миллисекунд");
+            MessageBox.Show("Заполнено! Время заполнения - " +stopWatch.Elapsed.TotalSeconds+" секунд");
             
         }
         // вычиляем сумму
@@ -54,7 +54,8 @@ namespace task2
                 }
                 stopWatch.Stop();
 
-                MessageBox.Show("Общая стоимость всех товаров - " + sum + " руб. \n Время подсчета общей суммы - " + stopWatch.Elapsed.Milliseconds + " миллисекунд");
+                MessageBox.Show("Общая стоимость всех товаров - " + sum + " руб. \n Время подсчета общей суммы - "
+                    + stopWatch.Elapsed.TotalMilliseconds + " миллисекунд");
             }
         }
        
@@ -147,7 +148,7 @@ namespace task2
             arrayL_struct.Clear();
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
-            for (int i = 0; i < 100000; i++)
+            for (int i = 0; i < 1000000; i++)
             {
                 Random rr = new Random();
                 Item_Struct itemcl = new Item_Struct("item" + (i + 1).ToString(),rr.Next(100),rr.Next(10000, 100000));
@@ -155,7 +156,7 @@ namespace task2
 
             }
             stopWatch.Stop();
-            MessageBox.Show("Заполнено! Время заполнения - " + stopWatch.Elapsed.Milliseconds + " милисекунд");
+            MessageBox.Show("Заполнено! Время заполнения - " + stopWatch.Elapsed.TotalSeconds + " секунд");
         }
 
         private void bSum_struct_Click(object sender, EventArgs e)
@@ -175,7 +176,8 @@ namespace task2
                 }
                 stopWatch.Stop();
 
-                MessageBox.Show("Общая стоимость всех товаров - " + sum + " руб. \n Время подсчета общей суммы - " + stopWatch.Elapsed.Milliseconds + " миллисекунд");
+                MessageBox.Show("Общая стоимость всех товаров - " + sum + " руб. \n Время подсчета общей суммы - " 
+                    + stopWatch.Elapsed.TotalMilliseconds + " миллисекунд");
             }
         }
 
