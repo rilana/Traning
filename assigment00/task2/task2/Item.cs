@@ -8,10 +8,15 @@ namespace task2
 {
     class Item
     {
-        public string Name;
+        private string name;
         private int count;
         private int cost;
         private int totalCost;
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
         public int Count
         {
             get { return count; }
@@ -41,6 +46,7 @@ namespace task2
         {
             totalCost=count * cost;
         }
+
        
     }
 }

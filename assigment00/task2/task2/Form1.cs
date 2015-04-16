@@ -251,10 +251,15 @@ namespace task2
     }
     struct Item_Struct
     {
-        public string Name;
+        public string name;
         private int count;
         private int cost;
         private int totalCost;
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
         public int Count
         {
             get { return count; }
@@ -284,9 +289,9 @@ namespace task2
         {
             totalCost = count * cost;
         }
-        public Item_Struct(string Name, int ccount, int ccost)
+        public Item_Struct(string nname, int ccount, int ccost)
         {
-            this.Name = Name;
+            name = nname;
             count = ccount;
             cost = ccost;
             totalCost = count * cost; ;
