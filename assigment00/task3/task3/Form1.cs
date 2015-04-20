@@ -17,36 +17,22 @@ namespace task3
             InitializeComponent();
             triangl = new Triangle(Convert.ToInt32(_a.Text), Convert.ToInt32(_b.Text), Convert.ToInt32(_c.Text));
         }
-        Triangle triangl;
+       private Dictionary<TypeTr, string> RussianType = new Dictionary<TypeTr, string>()
+        {
+           {TypeTr.AcuteAngled,"-остроугольный"},
+           {TypeTr.Obtuse,"-тупоугольный"},
+           {TypeTr.Orthogonal,"-прямоугольный"},
+           {TypeTr.None,"не существует с такими сторонами!"},
+        };
+        private Triangle triangl;
         private void button1_Click(object sender, EventArgs e)
         {
             int aa,bb,cc;
             if ((Int32.TryParse(_a.Text, out aa)) && (Int32.TryParse(_b.Text, out bb)) && (Int32.TryParse(_c.Text, out cc)))
             {
-                if (triangl.change_side(aa, bb, cc))
-                {
-                    switch (triangl.Typetringle)
-                    {
-                        case TypeTr.AcuteAngled:
-                            MessageBox.Show("Треугольник - остроугольный");
-                            break;
-                        case TypeTr.Obtuse:
-                            MessageBox.Show("Треугольник - тупоугольный");
-                            break;
-                        case TypeTr.Orthogonal:
-                            MessageBox.Show("Треугольник - прямоугольный");
-                            break;
-                    }
-                   
-                }
-                else
-                {
-                    MessageBox.Show("треугольник с такими длинами сторон не может быть создан!");
-                    _a.Text = triangl.A.ToString();
-                    _b.Text = triangl.B.ToString();
-                    _c.Text = triangl.C.ToString();
-
-                }
+                triangl.change_side(aa, bb, cc);
+                MessageBox.Show("Треугольник "+RussianType[triangl.Typetringle]);
+               
             }
             else
             {

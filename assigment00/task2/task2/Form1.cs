@@ -19,7 +19,7 @@ namespace task2
             InitializeComponent();
         }
        // для класса---------------------------------------------------------
-        ArrayList arrayL_class = new ArrayList();
+        private ArrayList arrayL_class = new ArrayList();
         private void bFill_arrayList_Click(object sender, EventArgs e) // заполняем коллекцию arrayL_class
         {
             arrayL_class.Clear();

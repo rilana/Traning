@@ -11,6 +11,7 @@ namespace task3
         AcuteAngled,
         Obtuse,
         Orthogonal,
+        None
     }
     class Triangle
     {
@@ -55,23 +56,25 @@ namespace task3
 
             change_side(a, b, c);
         }
-        public bool change_side(int a,int b,int c)
+        public void change_side(int a,int b,int c)
         {
-            if (Correct(a, b, c))
-            {
+               
+             
                 this.a = a;
                 this.b = b;
                 this.c = c;
-                _GetTypeTr();
-                return true;
-
-            }
-            else
-            {
-                return false;
-            }
+                if (Correct(a, b, c))
+                {
+                    _GetTypeTr();
+                }
+                else
+                {
+                    typeTringle = TypeTr.None;
+                }
+              
+                                  
         }
-        private bool Correct(int a, int b, int c)
+        static bool Correct(int a, int b, int c)
         {
           
             if ((a*b*c!=0 )&&(a + b > c) && (a + c > b) && (b + c > a))
@@ -79,6 +82,7 @@ namespace task3
                
                 return true;
             }
+           
             return false;
         }
        
