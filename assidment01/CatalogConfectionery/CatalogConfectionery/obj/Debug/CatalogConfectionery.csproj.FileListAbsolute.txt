@@ -1,0 +1,6 @@
+C:\Наташа\c# express\Traning\Traning\assidment01\CatalogConfectionery\CatalogConfectionery\bin\Debug\CatalogConfectionery.exe.config
+C:\Наташа\c# express\Traning\Traning\assidment01\CatalogConfectionery\CatalogConfectionery\bin\Debug\CatalogConfectionery.exe
+C:\Наташа\c# express\Traning\Traning\assidment01\CatalogConfectionery\CatalogConfectionery\bin\Debug\CatalogConfectionery.pdb
+C:\Наташа\c# express\Traning\Traning\assidment01\CatalogConfectionery\CatalogConfectionery\obj\Debug\CatalogConfectionery.csprojResolveAssemblyReference.cache
+C:\Наташа\c# express\Traning\Traning\assidment01\CatalogConfectionery\CatalogConfectionery\obj\Debug\CatalogConfectionery.exe
+C:\Наташа\c# express\Traning\Traning\assidment01\CatalogConfectionery\CatalogConfectionery\obj\Debug\CatalogConfectionery.pdb
