@@ -8,8 +8,9 @@ namespace CatalogConfectionery
     public interface IProduct
     {
         string Name { get; }
-        int ShelfLife { get; }
+        ShelfLife ShelfLife { get; }
         DateTime CreationDate { get; }
         int EnergyValue { get; }
+        Rating Rating { get; }
     }
 }

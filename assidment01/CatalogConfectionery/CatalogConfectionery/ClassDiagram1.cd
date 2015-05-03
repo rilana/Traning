@@ -3,7 +3,7 @@
   <Class Name="CatalogConfectionery.Product">
     <Position X="8" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAAIAAAAAAAAAAAQAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAAAAAAAAAIAAAAAAAAAAAQAEAAAAAEAAAAAAAAAAAA=</HashCode>
       <FileName>Product.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -34,7 +34,7 @@
   <Class Name="CatalogConfectionery.BoxOfCandy">
     <Position X="11.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ACIEAAAAAAAAABAQAAAABAQAAAAAgAAAAAAAAABQIAA=</HashCode>
       <FileName>BoxOfCandy.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -42,22 +42,29 @@
   <Class Name="CatalogConfectionery.CatalogProduct">
     <Position X="7.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACIAAAAAAAAAABAQAAAABAQAAAAAAAAAAAAAAABQIAA=</HashCode>
+      <HashCode>ACIAAAAAAAAAABAQAAAABAQAAAAAEAAAAAAABABQMAA=</HashCode>
       <FileName>CatalogProduct.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Struct Name="CatalogConfectionery.Stuffing" Collapsed="true">
-    <Position X="14" Y="1.25" Width="1.5" />
+    <Position X="13.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAIAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Stuffing.cs</FileName>
     </TypeIdentifier>
   </Struct>
+  <Struct Name="CatalogConfectionery.ShelfLife">
+    <Position X="13.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAIAAAAAAEAAAAAAAAAAQAAAIEAAACAAgAAAA=</HashCode>
+      <FileName>ShelfLife.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
   <Interface Name="CatalogConfectionery.IProduct">
     <Position X="5.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAAIAAAAAAAAAAAQAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAAAAAAAAAIAAAAAAAAAAAQAEAAAAAEAAAAAAAAAAAA=</HashCode>
       <FileName>IProduct.cs</FileName>
       <NewMemberFileName>Iproduct.cs</NewMemberFileName>
     </TypeIdentifier>
@@ -76,5 +83,12 @@
       <FileName>IStuffing.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Enum Name="CatalogConfectionery.Rating">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rating.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
