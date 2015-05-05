@@ -7,20 +7,19 @@ namespace CatalogConfectionery
 {
     public struct Stuffing
     {
-        private string name;
-        private string description;
+       
         public string Name {
-            get { return name; }
-            set { name=value;}
+            get;
+            set;
         }
         public string Description {
-            get { return description; }
-            set { description = value; } 
+            get;
+            set;
         }
-        public Stuffing(string nname, string ddescription)
+        public Stuffing(string name, string description):this()
         {
-            name = nname;
-            description = ddescription;
+            Name = name;
+            Description =description;
         }
 
 
