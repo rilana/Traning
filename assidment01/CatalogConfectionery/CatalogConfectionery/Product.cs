@@ -13,7 +13,7 @@ namespace CatalogConfectionery
             set;
         }
 
-        public ShelfLife ShelfLife
+        public TimeSpan ShelfLife
         {
             get;
             set;
@@ -36,7 +36,7 @@ namespace CatalogConfectionery
         }
         public override string ToString()
         {
-            return "название -"+Name+"; срок годности -"+ShelfLife.ToString()+", энергетическая ценность -"+EnergyValue;
+            return "название -"+Name+"; срок годности -"+ShelfLife.ToStringMounth()+", энергетическая ценность -"+EnergyValue;
         }
     }
 }

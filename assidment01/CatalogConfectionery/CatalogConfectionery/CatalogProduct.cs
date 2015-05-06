@@ -65,7 +65,7 @@ namespace CatalogConfectionery
         public void SortShelfLife()
         {
 
-            var newList = catalogProduct.OrderBy(x => x.ShelfLife.GetHour).ToList<IProduct>();
+            var newList = catalogProduct.OrderBy(x => x.ShelfLife.TotalHours).ToList<IProduct>();
             catalogProduct = newList;
         }
         public void SortRating()
