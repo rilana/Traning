@@ -1,0 +1,6 @@
+C:\Наташа\c# express\Traning\Traning\CheckPoint 1\NewYearsGift\NewYearsGift\bin\Debug\NewYearsGift.exe.config
+C:\Наташа\c# express\Traning\Traning\CheckPoint 1\NewYearsGift\NewYearsGift\obj\Debug\NewYearsGift.csprojResolveAssemblyReference.cache
+C:\Наташа\c# express\Traning\Traning\CheckPoint 1\NewYearsGift\NewYearsGift\bin\Debug\NewYearsGift.exe
+C:\Наташа\c# express\Traning\Traning\CheckPoint 1\NewYearsGift\NewYearsGift\bin\Debug\NewYearsGift.pdb
+C:\Наташа\c# express\Traning\Traning\CheckPoint 1\NewYearsGift\NewYearsGift\obj\Debug\NewYearsGift.exe
+C:\Наташа\c# express\Traning\Traning\CheckPoint 1\NewYearsGift\NewYearsGift\obj\Debug\NewYearsGift.pdb

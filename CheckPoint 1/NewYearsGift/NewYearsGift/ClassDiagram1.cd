@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NewYearsGift.GiftItems">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GiftItems.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NewYearsGift.Confection">
+    <Position X="3.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIIAAAAAAAAAAAAAAAAAgAAACAAAAAAAAAA=</HashCode>
+      <FileName>Confection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NewYearsGift.Lollipop">
+    <Position X="3.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Lollipop.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NewYearsGift.CaramelwithFillings">
+    <Position X="5.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>CaramelwithFillings.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NewYearsGift.Bonbon">
+    <Position X="1" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Bonbon.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NewYearsGift.BoxOfGift">
+    <Position X="8.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACIAAAAAAAAAABAQAAAABAQAAAAAAAAAAAAAAABQKAA=</HashCode>
+      <FileName>BoxOfGift.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Struct Name="NewYearsGift.NutritionalValue" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAABAAAAAAAAAEAAA=</HashCode>
+      <FileName>NutritionalValue.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="NewYearsGift.Stuffing" Collapsed="true">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stuffing.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="NewYearsGift.IGiftItems">
+    <Position X="5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IGiftItems.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NewYearsGift.IConfection">
+    <Position X="5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIIAAAAAAAAAAAAAAAAAgAAACAAAAAAAAAA=</HashCode>
+      <FileName>IConfection.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NewYearsGift.ICaramel" Collapsed="true">
+    <Position X="3.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICaramel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NewYearsGift.IBonbon" Collapsed="true">
+    <Position X="6" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>IBonbon.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NewYearsGift.IStuffing" Collapsed="true">
+    <Position X="3.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>IStuffing.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="NewYearsGift.Manufacturer" Collapsed="true">
+    <Position X="10.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAQAAAAACAAAAAA=</HashCode>
+      <FileName>Manufacturer.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="NewYearsGift.CandyMasses" Collapsed="true">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAgAAgAAgAEAAgRAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>CandyMasses.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
