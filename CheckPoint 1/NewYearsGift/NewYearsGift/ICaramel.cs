@@ -7,6 +7,6 @@ namespace NewYearsGift
 {
     public interface ICaramel:IConfection
     {
-
+        BasedSugar BasedSugar { get; }
     }
 }

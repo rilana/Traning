@@ -7,5 +7,7 @@ namespace NewYearsGift
 {
     public class Lollipop:Confection,ICaramel
     {
+        public BasedSugar BasedSugar { get; set; }
+        
     }
 }

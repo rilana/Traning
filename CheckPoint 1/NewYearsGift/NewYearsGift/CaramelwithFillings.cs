@@ -8,6 +8,6 @@ namespace NewYearsGift
     public class CaramelwithFillings:Confection,ICaramel,IStuffing
     {
         public Stuffing Stuffing{get;set;}
-       
+        public BasedSugar BasedSugar { get; set; }
     }
 }

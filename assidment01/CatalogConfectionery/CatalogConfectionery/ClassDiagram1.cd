@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="CatalogConfectionery.Product">
-    <Position X="8" Y="1.25" Width="1.5" />
+    <Position X="8" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAAIAAAAAAAAAAAQAEAAAAAEAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAAAAAAAAAIAAAAEAAAAAAQAEAAAAAEAAAAAAAAAAAA=</HashCode>
       <FileName>Product.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="CatalogConfectionery.Chocolate">
-    <Position X="4.75" Y="3.75" Width="1.5" />
+    <Position X="4.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>Chocolate.cs</FileName>
@@ -17,14 +17,14 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="CatalogConfectionery.Cake">
-    <Position X="7" Y="3.75" Width="1.5" />
+    <Position X="7" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Cake.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CatalogConfectionery.Candy">
-    <Position X="9.25" Y="3.75" Width="1.5" />
+    <Position X="9.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Candy.cs</FileName>
@@ -32,37 +32,30 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="CatalogConfectionery.BoxOfCandy">
-    <Position X="11.5" Y="3.75" Width="1.5" />
+    <Position X="11.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACIEAAAAAAAAABAQAAAABAQAAAAAgAAAAAAAAABQIAA=</HashCode>
       <FileName>BoxOfCandy.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="CatalogConfectionery.CatalogProduct">
-    <Position X="7.75" Y="5.25" Width="1.5" />
+  <Class Name="CatalogConfectionery.CatalogProduct" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACIAAAAAAAAAABAQAAAABAQAAAAAEAAAAAAABABQMAA=</HashCode>
+      <HashCode>ACIAAAAAAAAAABAQAAAABAQAAABAEAAAAAAABABQMAA=</HashCode>
       <FileName>CatalogProduct.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Struct Name="CatalogConfectionery.Stuffing" Collapsed="true">
-    <Position X="13.25" Y="1" Width="1.5" />
+    <Position X="14" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAIAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Stuffing.cs</FileName>
     </TypeIdentifier>
   </Struct>
-  <Struct Name="CatalogConfectionery.ShelfLife">
-    <Position X="13.75" Y="2.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAgAAAAIAAAAAAEAAAAAAAAAAQAAAIEAAACAAgAAAA=</HashCode>
-      <FileName>ShelfLife.cs</FileName>
-    </TypeIdentifier>
-  </Struct>
   <Interface Name="CatalogConfectionery.IProduct">
-    <Position X="5.75" Y="6.25" Width="1.5" />
+    <Position X="5.75" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAIAAAAAAAAAAAQAEAAAAAEAAAAAAAAAAAA=</HashCode>
       <FileName>IProduct.cs</FileName>
@@ -70,21 +63,21 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="CatalogConfectionery.IGramm">
-    <Position X="4.5" Y="8.75" Width="1.5" />
+    <Position X="4.5" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>IGramm.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="CatalogConfectionery.IStuffing">
-    <Position X="6.75" Y="8.75" Width="1.5" />
+    <Position X="6.75" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IStuffing.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Enum Name="CatalogConfectionery.Rating">
-    <Position X="11.75" Y="1.75" Width="1.5" />
+  <Enum Name="CatalogConfectionery.Rating" Collapsed="true">
+    <Position X="14" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Rating.cs</FileName>

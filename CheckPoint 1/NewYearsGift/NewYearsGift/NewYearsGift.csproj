@@ -41,14 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasedSugar.cs" />
     <Compile Include="Bonbon.cs" />
     <Compile Include="BoxOfGift.cs" />
     <Compile Include="CandyMasses.cs" />
     <Compile Include="CaramelwithFillings.cs" />
+    <Compile Include="Chocolate.cs" />
     <Compile Include="Confection.cs" />
     <Compile Include="GiftItems.cs" />
     <Compile Include="IBonbon.cs" />
     <Compile Include="ICaramel.cs" />
+    <Compile Include="IChocolate.cs" />
     <Compile Include="IConfection.cs" />
     <Compile Include="IGiftItems.cs" />
     <Compile Include="IStuffing.cs" />

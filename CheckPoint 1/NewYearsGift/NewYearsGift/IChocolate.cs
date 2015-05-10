@@ -5,8 +5,8 @@ using System.Text;
 
 namespace NewYearsGift
 {
-    public interface IStuffing:IConfection
+    public interface IChocolate:IConfection
     {
-        Stuffing Stuffing { get; }
+        int cocao { get; }
     }
 }

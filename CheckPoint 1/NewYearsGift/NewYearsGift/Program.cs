@@ -11,29 +11,20 @@ namespace NewYearsGift
         static void Main(string[] args)
         {
             BoxOfGift boxofgit = new BoxOfGift("Сундучок Малышок");
-
-            boxofgit.Add(new Bonbon() 
-            {
-                Name="Красная шапочка",
-                Manufacturer=Manufacturer.Kammunarka,
-                Gramm=15,
-                glazed=true,
-                EnergyValue=45,
-                CandyMasses=CandyMasses.Cream,
-                Sugar=4,
-                NutritionalValue=new NutritionalValue(12,45,95)
-             });
-            boxofgit.Add(new Bonbon()
+            Bonbon bonbon = new Bonbon()
             {
                 Name = "Красная шапочка",
                 Manufacturer = Manufacturer.Kammunarka,
                 Gramm = 15,
                 glazed = true,
-                EnergyValue = 450,
+                EnergyValue = 45,
                 CandyMasses = CandyMasses.Cream,
                 Sugar = 4,
                 NutritionalValue = new NutritionalValue(12, 45, 95)
-            });
+            };
+            boxofgit.Add(bonbon);
+            boxofgit.Add(bonbon);
+
             boxofgit.Add(new Lollipop()
             {
                 Name = "LOLLIPOPS",
@@ -41,8 +32,10 @@ namespace NewYearsGift
                 Gramm = 14,
                 EnergyValue = 305,
                 Sugar =2,
-                NutritionalValue = new NutritionalValue(0, 0, 74)
+                NutritionalValue = new NutritionalValue(0, 0, 74),
+                BasedSugar=BasedSugar.Sucrose
             });
+
             boxofgit.Add(new CaramelwithFillings()
             {
                 Name = "Фрутомелька",
@@ -51,7 +44,20 @@ namespace NewYearsGift
                 EnergyValue = 356,
                 Sugar = 7,
                 NutritionalValue = new NutritionalValue(0.1, 0.1, 95.6),
-                Stuffing = new Stuffing("вкус клубника-сливки")
+                Stuffing = new Stuffing("вкус клубника-сливки"),
+                BasedSugar=BasedSugar.Glucose
+            });
+
+            boxofgit.Add(new Chocolate() 
+            {
+                Name = "Горький-элитный пористый",
+                Manufacturer=Manufacturer.Spartak,
+                Sugar=3,
+                NutritionalValue=new NutritionalValue(10,39,38),
+                EnergyValue=550,
+                Gramm=100,
+                cocao=72
+
             });
             Console.WriteLine(boxofgit.ToString());
 

@@ -5,8 +5,10 @@ using System.Text;
 
 namespace NewYearsGift
 {
-    public interface IStuffing:IConfection
+    public enum BasedSugar
     {
-        Stuffing Stuffing { get; }
+        Glucose,
+        Sucrose,
+        Maltose
     }
 }
