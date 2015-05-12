@@ -10,6 +10,7 @@ namespace NewYearsGift
     {
         static void Main(string[] args)
         {
+            
             BoxOfGift boxofgit = new BoxOfGift("Сундучок Малышок");
             Bonbon bonbon = new Bonbon()
             {
@@ -64,7 +65,8 @@ namespace NewYearsGift
             boxofgit.PrintList();
 
             Console.WriteLine("содержания сахара ");
-            foreach (var item in boxofgit.GetConfectionSugar(3,9))
+            
+            foreach (var item in boxofgit.FindAllSugar(3,9))
             {
                 Console.WriteLine("Название - {0}, содержание сахара - {1}", item.Name,item.Sugar);
             }

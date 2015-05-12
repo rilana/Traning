@@ -106,7 +106,7 @@ namespace NewYearsGift
                 Console.WriteLine("Название - {0}, производитель - {1}, количество - {2}", item.Name, item.manafucter, item.Count);
             }
         }
-        public IEnumerable<IConfection> GetConfectionSugar(int min, int max)
+        public IEnumerable<IConfection> FindAllSugar(int min, int max)
         {
             foreach (var i in GetConfection())
             {
@@ -115,6 +115,17 @@ namespace NewYearsGift
                     yield return i;
                 }
             }
+        }
+        public IConfection FindSugar(int min, int max)
+        {
+            foreach (var i in GetConfection())
+            {
+                if (i.Sugar >= min && i.Sugar <= max)
+                {
+                    return i;
+                }
+            }
+            return null;
         }
         public IEnumerable<IConfection> SortCarbohydrates()
         {

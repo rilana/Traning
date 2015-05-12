@@ -11,6 +11,8 @@ namespace NewYearsGift
         public NutritionalValue NutritionalValue { get; set; }
         public int EnergyValue{ get;set;}
         public int Gramm{ get;set;}
+
+       
         
     }
 }
