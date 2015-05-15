@@ -5,17 +5,17 @@ using System.Text;
 
 namespace NewYearsGift
 {
-    public class BoxOfGift : ICollection<IGiftItems>
+    public class BoxOfGift : ICollection<IConfection>
     {
         public string Name { get; set; }
         public BoxOfGift(string Name)
         {
             this.Name = Name;
         }
-        private ICollection<IGiftItems> boxOfGift= new List<IGiftItems>();
+        private ICollection<IConfection> boxOfGift = new List<IConfection>();
 
 
-        public void Add(IGiftItems item)
+        public void Add(IConfection item)
         {
             boxOfGift.Add(item);
         }
@@ -25,12 +25,12 @@ namespace NewYearsGift
             boxOfGift.Clear();
         }
 
-        public bool Contains(IGiftItems item)
+        public bool Contains(IConfection item)
         {
             return boxOfGift.Contains(item);
         }
 
-        public void CopyTo(IGiftItems[] array, int arrayIndex)
+        public void CopyTo(IConfection[] array, int arrayIndex)
         {
             boxOfGift.CopyTo(array, arrayIndex);
         }
@@ -45,12 +45,12 @@ namespace NewYearsGift
             get { return boxOfGift.IsReadOnly; }
         }
 
-        public bool Remove(IGiftItems item)
+        public bool Remove(IConfection item)
         {
             return boxOfGift.Remove(item);
         }
 
-        public IEnumerator<IGiftItems> GetEnumerator()
+        public IEnumerator<IConfection> GetEnumerator()
         {
             return boxOfGift.GetEnumerator();
         }
@@ -59,17 +59,7 @@ namespace NewYearsGift
         {
             return this.GetEnumerator();
         }
-        private  IEnumerable<IConfection> GetConfection()
-        {
-            foreach (var item in boxOfGift)
-            {
-                var sweety = (item as IConfection);
-                if (sweety != null)
-                {
-                    yield return sweety;
-                }
-            }
-        }
+        
         private IEnumerable<ICaramel> GetCaramel()
         {
             foreach (var item in boxOfGift)
@@ -84,7 +74,7 @@ namespace NewYearsGift
         public override string ToString()
         {
             return  "Набор конфет - " + this.Name + "\n" + "Количество конфет - " + boxOfGift.Count() +
-                "\n" + "Вес - " + GetConfection().Sum(x => x.Gramm) + " гр. (вес карамели - " + 
+                "\n" + "Вес - " +boxOfGift.Sum(x => x.Gramm) + " гр. (вес карамели - " + 
                 GetCaramel().Sum(x=>x.Gramm)+" гр.)";
        
         }
@@ -108,7 +98,7 @@ namespace NewYearsGift
         }
         public IEnumerable<IConfection> FindAllSugar(int min, int max)
         {
-            foreach (var i in GetConfection())
+            foreach (var i in boxOfGift)
             {
                 if (i.Sugar >= min && i.Sugar <= max)
                 {
@@ -118,7 +108,7 @@ namespace NewYearsGift
         }
         public IConfection FindSugar(int min, int max)
         {
-            foreach (var i in GetConfection())
+            foreach (var i in boxOfGift)
             {
                 if (i.Sugar >= min && i.Sugar <= max)
                 {
@@ -129,7 +119,7 @@ namespace NewYearsGift
         }
         public IEnumerable<IConfection> SortCarbohydrates()
         {
-            var newList = GetConfection().OrderBy(x => x.NutritionalValue.Carbohydrates);
+            var newList = boxOfGift.OrderBy(x => x.NutritionalValue.Carbohydrates);
             return newList;
         }
     }

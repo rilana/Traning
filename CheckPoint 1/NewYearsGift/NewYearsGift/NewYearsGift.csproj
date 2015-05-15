@@ -48,12 +48,10 @@
     <Compile Include="CaramelwithFillings.cs" />
     <Compile Include="Chocolate.cs" />
     <Compile Include="Confection.cs" />
-    <Compile Include="GiftItems.cs" />
     <Compile Include="IBonbon.cs" />
     <Compile Include="ICaramel.cs" />
     <Compile Include="IChocolate.cs" />
     <Compile Include="IConfection.cs" />
-    <Compile Include="IGiftItems.cs" />
     <Compile Include="IStuffing.cs" />
     <Compile Include="Lollipop.cs" />
     <Compile Include="Manufacturer.cs" />

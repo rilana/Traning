@@ -1,17 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="NewYearsGift.GiftItems">
-    <Position X="7.25" Y="6.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAgAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GiftItems.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="NewYearsGift.Confection">
     <Position X="7.25" Y="8.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIIAAAAAAAAAAAAAAAAAgAAACAAAAAAAAAA=</HashCode>
+      <HashCode>AAgAAAAAAIIAAAAAAAAAAAQAAAAAgAAACAAAAAAAAAA=</HashCode>
       <FileName>Confection.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -27,7 +19,7 @@
   <Class Name="NewYearsGift.CaramelwithFillings">
     <Position X="10.75" Y="11" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAE=</HashCode>
       <FileName>CaramelwithFillings.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -43,7 +35,7 @@
   <Class Name="NewYearsGift.BoxOfGift" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="13.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACIAAAAAAAAAABAUAAEABAQAAAAAgAAABAACAABQKAA=</HashCode>
+      <HashCode>ACIAAAAAAAAABBAWAAEABAQAAAAAAAAABAACAABQKAA=</HashCode>
       <FileName>BoxOfGift.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -51,7 +43,7 @@
   <Class Name="NewYearsGift.Chocolate">
     <Position X="6.25" Y="11" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
       <FileName>Chocolate.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -70,17 +62,10 @@
       <FileName>Stuffing.cs</FileName>
     </TypeIdentifier>
   </Struct>
-  <Interface Name="NewYearsGift.IGiftItems">
-    <Position X="4.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAgAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IGiftItems.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Interface Name="NewYearsGift.IConfection">
     <Position X="4.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIIAAAAAAAAAAAAAAAAAgAAACAAAAAAAAAA=</HashCode>
+      <HashCode>AAgAAAAAAIIAAAAAAAAAAAQAAAAAgAAACAAAAAAAAAA=</HashCode>
       <FileName>IConfection.cs</FileName>
     </TypeIdentifier>
   </Interface>

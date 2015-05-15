@@ -5,8 +5,10 @@ using System.Text;
 
 namespace NewYearsGift
 {
-    public interface IConfection:IGiftItems
+    public interface IConfection
     {
+        string Name { get; }
+        Manufacturer Manufacturer { get; }
         int Sugar { get; }
         NutritionalValue NutritionalValue { get; }
         int EnergyValue { get; }
