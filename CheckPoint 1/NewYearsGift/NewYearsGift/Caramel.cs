@@ -5,9 +5,9 @@ using System.Text;
 
 namespace NewYearsGift
 {
-    public class CaramelwithFillings:Confection,ICaramel,IStuffing
+    public class Caramel:Confection,ICaramel,IStuffing
     {
-        public Stuffing Stuffing{get;set;}
+        public Stuffing? Stuffing{get;set;}
         public BasedSugar BasedSugar { get; set; }
     }
 }

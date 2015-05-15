@@ -8,19 +8,11 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="NewYearsGift.Lollipop">
-    <Position X="8.5" Y="11" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
-      <FileName>Lollipop.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="NewYearsGift.CaramelwithFillings">
+  <Class Name="NewYearsGift.Caramel">
     <Position X="10.75" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAE=</HashCode>
-      <FileName>CaramelwithFillings.cs</FileName>
+      <FileName>Caramel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>

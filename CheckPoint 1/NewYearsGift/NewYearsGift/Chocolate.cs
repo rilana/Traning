@@ -8,7 +8,7 @@ namespace NewYearsGift
     public class Chocolate:Confection,IChocolate,IStuffing
     {
         public int cocao { get; set; }
-        public Stuffing Stuffing { get; set; }
+        public Stuffing? Stuffing { get; set; }
         
     }
 }

@@ -26,7 +26,7 @@ namespace NewYearsGift
             boxofgit.Add(bonbon);
             boxofgit.Add(bonbon);
 
-            boxofgit.Add(new Lollipop()
+            boxofgit.Add(new Caramel()
             {
                 Name = "LOLLIPOPS",
                 Manufacturer = Manufacturer.Spartak,
@@ -37,7 +37,7 @@ namespace NewYearsGift
                 BasedSugar=BasedSugar.Sucrose
             });
 
-            boxofgit.Add(new CaramelwithFillings()
+            boxofgit.Add(new Caramel()
             {
                 Name = "Фрутомелька",
                 Manufacturer = Manufacturer.Kammunarka,

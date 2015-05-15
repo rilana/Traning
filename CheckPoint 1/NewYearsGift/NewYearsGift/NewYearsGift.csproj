@@ -45,7 +45,7 @@
     <Compile Include="Bonbon.cs" />
     <Compile Include="BoxOfGift.cs" />
     <Compile Include="CandyMasses.cs" />
-    <Compile Include="CaramelwithFillings.cs" />
+    <Compile Include="Caramel.cs" />
     <Compile Include="Chocolate.cs" />
     <Compile Include="Confection.cs" />
     <Compile Include="IBonbon.cs" />
@@ -53,7 +53,6 @@
     <Compile Include="IChocolate.cs" />
     <Compile Include="IConfection.cs" />
     <Compile Include="IStuffing.cs" />
-    <Compile Include="Lollipop.cs" />
     <Compile Include="Manufacturer.cs" />
     <Compile Include="NutritionalValue.cs" />
     <Compile Include="Program.cs" />

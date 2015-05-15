@@ -7,6 +7,6 @@ namespace NewYearsGift
 {
     public interface IStuffing:IConfection
     {
-        Stuffing Stuffing { get; }
+        Stuffing? Stuffing { get; }
     }
 }
