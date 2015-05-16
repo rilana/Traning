@@ -8,6 +8,8 @@ namespace NewYearsGift
     public class BoxOfGift : ICollection<IConfection>
     {
         public string Name { get; set; }
+
+        #region ICollection<IConfection>
         public BoxOfGift(string Name)
         {
             this.Name = Name;
@@ -71,10 +73,12 @@ namespace NewYearsGift
                 }
             }
         }
+        #endregion
+
         public override string ToString()
         {
             return  "Набор конфет - " + this.Name + "\n" + "Количество конфет - " + boxOfGift.Count() +
-                "\n" + "Вес - " +boxOfGift.Sum(x => x.Gramm) + " гр. (вес карамели - " + 
+                "\n" + "Вес - " + Weight + " гр. (вес карамели - " + 
                 GetCaramel().Sum(x=>x.Gramm)+" гр.)";
        
         }
@@ -98,29 +102,25 @@ namespace NewYearsGift
         }
         public IEnumerable<IConfection> FindAllSugar(int min, int max)
         {
-            foreach (var i in boxOfGift)
-            {
-                if (i.Sugar >= min && i.Sugar <= max)
-                {
-                    yield return i;
-                }
-            }
+            return boxOfGift.Where(x => x.Sugar >= min && x.Sugar <= max);
+            
         }
-        public IConfection FindSugar(int min, int max)
+        public IConfection FirstSugar(int min, int max)
         {
-            foreach (var i in boxOfGift)
-            {
-                if (i.Sugar >= min && i.Sugar <= max)
-                {
-                    return i;
-                }
-            }
-            return null;
+            return boxOfGift.First(x => x.Sugar >= min && x.Sugar <= max);
+       
         }
         public IEnumerable<IConfection> SortCarbohydrates()
         {
             var newList = boxOfGift.OrderBy(x => x.NutritionalValue.Carbohydrates);
             return newList;
+        }
+        public int Weight
+        {
+            get
+            {
+                return boxOfGift.Sum(x => x.Gramm);
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="NewYearsGift.Confection">
-    <Position X="7.25" Y="8.5" Width="1.5" />
+    <Position X="6.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAIIAAAAAAAAAAAQAAAAAgAAACAAAAAAAAAA=</HashCode>
       <FileName>Confection.cs</FileName>
@@ -9,7 +9,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="NewYearsGift.Caramel">
-    <Position X="10.75" Y="11" Width="1.5" />
+    <Position X="8.5" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAE=</HashCode>
       <FileName>Caramel.cs</FileName>
@@ -17,7 +17,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="NewYearsGift.Bonbon">
-    <Position X="4" Y="11" Width="1.5" />
+    <Position X="4" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
       <FileName>Bonbon.cs</FileName>
@@ -25,15 +25,15 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="NewYearsGift.BoxOfGift" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="13.25" Y="0.5" Width="1.5" />
+    <Position X="11" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACIAAAAAAAAABBAWAAEABAQAAAAAAAAABAACAABQKAA=</HashCode>
       <FileName>BoxOfGift.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="NewYearsGift.Chocolate">
-    <Position X="6.25" Y="11" Width="1.5" />
+    <Position X="6.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
       <FileName>Chocolate.cs</FileName>
@@ -41,70 +41,70 @@
     <Lollipop Position="0.2" />
   </Class>
   <Struct Name="NewYearsGift.NutritionalValue" Collapsed="true">
-    <Position X="13.25" Y="1.75" Width="1.5" />
+    <Position X="11" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAABAAAAAAAAAEAAA=</HashCode>
       <FileName>NutritionalValue.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="NewYearsGift.Stuffing" Collapsed="true">
-    <Position X="15" Y="1.75" Width="1.5" />
+    <Position X="12.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Stuffing.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Interface Name="NewYearsGift.IConfection">
-    <Position X="4.25" Y="2.5" Width="1.5" />
+    <Position X="4.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAIIAAAAAAAAAAAQAAAAAgAAACAAAAAAAAAA=</HashCode>
       <FileName>IConfection.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="NewYearsGift.ICaramel" Collapsed="true">
-    <Position X="3.25" Y="5" Width="1.5" />
+    <Position X="3.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>ICaramel.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="NewYearsGift.IBonbon" Collapsed="true">
-    <Position X="7.75" Y="5" Width="1.5" />
+    <Position X="7.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
       <FileName>IBonbon.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="NewYearsGift.IStuffing" Collapsed="true">
-    <Position X="5.5" Y="5" Width="1.5" />
+    <Position X="5.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
       <FileName>IStuffing.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="NewYearsGift.IChocolate">
-    <Position X="1" Y="5" Width="1.5" />
+    <Position X="1" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IChocolate.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="NewYearsGift.Manufacturer" Collapsed="true">
-    <Position X="15" Y="3" Width="1.5" />
+    <Position X="11" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAQAAAAACAAAAAA=</HashCode>
       <FileName>Manufacturer.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="NewYearsGift.CandyMasses" Collapsed="true">
-    <Position X="13.25" Y="3" Width="1.5" />
+    <Position X="12.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEAgAAgAAgAEAAgRAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
       <FileName>CandyMasses.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="NewYearsGift.BasedSugar">
-    <Position X="10.25" Y="9.5" Width="1.5" />
+  <Enum Name="NewYearsGift.BasedSugar" Collapsed="true">
+    <Position X="11" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABABAAAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>BasedSugar.cs</FileName>
