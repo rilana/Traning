@@ -41,10 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasedSugar.cs" />
+    <Compile Include="Type\BasedSugar.cs" />
     <Compile Include="Bonbon.cs" />
     <Compile Include="BoxOfGift.cs" />
-    <Compile Include="CandyMasses.cs" />
+    <Compile Include="Type\CandyMasses.cs" />
     <Compile Include="Caramel.cs" />
     <Compile Include="Chocolate.cs" />
     <Compile Include="Confection.cs" />
@@ -53,11 +53,11 @@
     <Compile Include="IChocolate.cs" />
     <Compile Include="IConfection.cs" />
     <Compile Include="IStuffing.cs" />
-    <Compile Include="Manufacturer.cs" />
+    <Compile Include="Type\Manufacturer.cs" />
     <Compile Include="NutritionalValue.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stuffing.cs" />
+    <Compile Include="Type\Stuffing.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

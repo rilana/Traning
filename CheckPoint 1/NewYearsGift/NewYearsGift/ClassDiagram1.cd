@@ -27,7 +27,7 @@
   <Class Name="NewYearsGift.BoxOfGift" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="11" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACIAAAAAAAAABBAWAAEABAQAAAAAAAAABAACAABQKAA=</HashCode>
+      <HashCode>ACIAAAAAAAAAABAWAAEABAQAACAAAAAABAACAABQKAA=</HashCode>
       <FileName>BoxOfGift.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -51,7 +51,7 @@
     <Position X="12.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Stuffing.cs</FileName>
+      <FileName>Type\Stuffing.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Interface Name="NewYearsGift.IConfection">
@@ -93,21 +93,21 @@
     <Position X="11" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAQAAAAACAAAAAA=</HashCode>
-      <FileName>Manufacturer.cs</FileName>
+      <FileName>Type\Manufacturer.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="NewYearsGift.CandyMasses" Collapsed="true">
     <Position X="12.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEAgAAgAAgAEAAgRAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
-      <FileName>CandyMasses.cs</FileName>
+      <FileName>Type\CandyMasses.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="NewYearsGift.BasedSugar" Collapsed="true">
     <Position X="11" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABABAAAAAAAAAAAAAAAAQAAAA=</HashCode>
-      <FileName>BasedSugar.cs</FileName>
+      <FileName>Type\BasedSugar.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />
