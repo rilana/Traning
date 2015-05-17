@@ -45,7 +45,7 @@
     <Compile Include="InterfaceConfection\IWafer.cs" />
     <Compile Include="Type\BasedSugar.cs" />
     <Compile Include="ClassesConfection\Bonbon.cs" />
-    <Compile Include="BoxOfGift.cs" />
+    <Compile Include="ClassesConfection\BoxOfGift.cs" />
     <Compile Include="Type\CandyMasses.cs" />
     <Compile Include="ClassesConfection\Caramel.cs" />
     <Compile Include="ClassesConfection\Chocolate.cs" />

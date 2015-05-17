@@ -52,7 +52,7 @@ namespace NewYearsGift
         }
         public Confection()
         { }
-        public Confection(string name, Manufacturer Manufacturer, NutritionalValue NutritionalValue,int Sugar,
+        public Confection(string Name, Manufacturer Manufacturer, NutritionalValue NutritionalValue,int Sugar,
             int EnergyValue,int Gramm)
         {
             this.Name = Name;
@@ -64,6 +64,12 @@ namespace NewYearsGift
 
         }
 
+        public override string ToString()
+        {
+            return "Название - " + Name + ", производитель - " + Manufacturer + ", количество калл. - " + EnergyValue +
+                " вес - " + Gramm + " гр., кол. сахара - " + Sugar + " белки - " + NutritionalValue.Fats + " гр. жиры - " + NutritionalValue.Proteins +
+                " гр. углеводы - " + NutritionalValue.Carbohydrates + " гр.";
+        }
        
         
     }
