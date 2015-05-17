@@ -12,17 +12,16 @@ namespace NewYearsGift
         {
             
             BoxOfGift boxofgit = new BoxOfGift("Сундучок Малышок");
-            Bonbon bonbon = new Bonbon()
-            {
-                Name = "Красная шапочка",
-                Manufacturer = Manufacturer.Kammunarka,
-                Gramm = 15,
-                glazed = true,
-                EnergyValue = 45,
-                CandyMasses = CandyMasses.Cream,
-                Sugar = 4,
-                NutritionalValue = new NutritionalValue(12, 45, 95)
-            };
+
+            Bonbon bonbon = new Bonbon
+                ("Красная шапочка",
+                Manufacturer.Kammunarka,
+                new NutritionalValue(12, 45, 95),
+                4,45,15,true,
+                 CandyMasses.Cream
+                );
+            
+                           
             boxofgit.Add(bonbon);
             boxofgit.Add(bonbon);
 
@@ -57,7 +56,7 @@ namespace NewYearsGift
                 NutritionalValue=new NutritionalValue(10,39,38),
                 EnergyValue=550,
                 Gramm=100,
-                cocao=72
+                Cocao=72
 
             });
             boxofgit.Add(new Wafer()

@@ -5,9 +5,8 @@ using System.Text;
 
 namespace NewYearsGift
 {
-    public interface IBonbon:IConfection
+    public interface IChocolate:IConfection
     {
-        bool glazed {get;}
-        CandyMasses CandyMasses { get; }
+        int Cocao { get; }
     }
 }
