@@ -8,8 +8,8 @@ namespace NewYearsGift
     public abstract class Confection:IConfection
     {
         private int sugar;
-        public int energyvalue;
-        public int gramm;
+        private int energyvalue;
+        private int gramm;
 
         public string Name { get; set; }
         public Manufacturer Manufacturer { get; set; }
