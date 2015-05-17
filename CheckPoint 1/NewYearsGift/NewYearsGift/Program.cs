@@ -60,6 +60,17 @@ namespace NewYearsGift
                 cocao=72
 
             });
+            boxofgit.Add(new Wafer()
+            {
+                Name = "СЛАДКАЯ ПАРОЧКА",
+                Manufacturer = Manufacturer.Spartak,
+                Sugar = 19,
+                NutritionalValue = new NutritionalValue(5.9, 31.8, 57.6),
+                EnergyValue = 536,
+                Gramm = 40,
+                Stuffing = new Stuffing("КОФЕЙНО-ЛИМОННЫМ АРОМАТОМ")
+            });
+
             Console.WriteLine(boxofgit.ToString());
             //вывод на экран содержание подарка
             boxofgit.PrintList();
