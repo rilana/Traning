@@ -5,7 +5,7 @@ using System.Text;
 
 namespace NewYearsGift
 {
-    public interface IStuffing:IConfection
+    public interface IStuffing
     {
         Stuffing? Stuffing { get; }
     }
