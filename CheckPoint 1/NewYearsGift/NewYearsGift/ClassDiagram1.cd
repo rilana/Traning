@@ -69,14 +69,14 @@
       <FileName>InterfaceConfection\IConfection.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="NewYearsGift.ICaramel" Collapsed="true">
+  <Interface Name="NewYearsGift.ICaramel">
     <Position X="3.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>InterfaceConfection\ICaramel.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="NewYearsGift.IBonbon" Collapsed="true">
+  <Interface Name="NewYearsGift.IBonbon">
     <Position X="7.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
