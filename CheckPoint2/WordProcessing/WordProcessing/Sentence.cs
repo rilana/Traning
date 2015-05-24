@@ -21,8 +21,6 @@ namespace WordProcessing
         private string Print()
         {
             string str = "";
-            bool PrintSpace =false;
-            string textspace="";
             foreach (var item in itemSentences)
             {
                 var workItem = item as PunctuationMark;
@@ -35,24 +33,27 @@ namespace WordProcessing
                 {
                     str = str.Trim();
                 }
-                //if ((workItem != null) && (workItem.BeforeWord))
-                //{
- 
-                //}
-
-                //textspace = item.Value;
-                //if (PrintSpace) textspace = " " + textspace;
-                //str = str + textspace;
-
-                //var workItem = item as PunctuationMark;
-                //PrintSpace = true;
-                //if ((workItem != null)&&( workItem.BeforeWord))
-                //{
-                //    PrintSpace = false;
-                //}
                 
             }
             return str;
+        }
+        private IEnumerable<Word> GetWord()
+        {
+            foreach (var item in itemSentences)
+            {
+                var word = item as Word;
+                if (word != null)
+                {
+                    yield return word;
+                }
+            }
+        }
+        public int CountWord
+        {
+            get
+            {
+              return GetWord().Count();
+            }
         }
         public void Add(ItemSentences item)
         {

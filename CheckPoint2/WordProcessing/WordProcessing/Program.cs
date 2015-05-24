@@ -18,10 +18,16 @@ namespace WordProcessing
             }
 
             ICollection<Sentence> listSentences = new List<Sentence>(Worker.ConstructSentencesList(text));
-            foreach (var item in listSentences)
+
+           //1.все предложения в порядке возрастания количества слов в каждом из них
+            foreach (var item in listSentences.OrderBy(x => x.CountWord))
             {
-                string str = item.Value;
+                Console.WriteLine(item.CountWord + " " + item.Value);
+               
             }
+            Console.WriteLine("--------------------------------------------");
+            //-----------------------------------------------------------
+            Console.ReadLine();
         }
     }
 }
