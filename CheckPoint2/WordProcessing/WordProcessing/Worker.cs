@@ -28,14 +28,33 @@ namespace WordProcessing
 
                 Word word = new Word();
                 PunctuationMark punctuation = new PunctuationMark();
-                foreach (char ch in item)
+                // если перед словом стоит знак припенания(без пробела) например (
+                int i = 0;
+                if (PunctuationMark.IsPunctuation(item[i]))
                 {
-                    if (PunctuationMark.IsPunctuation(ch))
+                    
+                    PunctuationMark punct = new PunctuationMark() { BeforeWord=true};
+                    punct.Add(
+                        new Character() 
+                         {
+                             Value=item[i]
+                         }
+                        );
+                    sentences.Add(punct);
+                    i++;
+                }
+                // проходим все символы и записываем в объект слово либо зн.пунктуации
+                //-------------------------------------------------------------------------------------------------
+                for (int  j = i; j <item.Length-1 ; j++)
+                {
+                    if ((PunctuationMark.IsPunctuation(item[j]))
+                        &&(PunctuationMark.IsPunctuation(item[j+1])))// проверка что это не деффис или аппостраф,т.е.п знак препинание не мб в середине слова
                     {
+                        
                         punctuation.Add(
                             new Character()
                             {
-                                Value = ch
+                                Value = item[j]
                             }
                            );
                     }
@@ -45,12 +64,31 @@ namespace WordProcessing
                         word.Add(
                             new Character()
                             {
-                                Value = ch
+                                Value = item[j]
                             }
                             );
                     }
 
                 }
+                if (PunctuationMark.IsPunctuation(item[item.Length - 1]))
+                {
+                    punctuation.Add(
+                         new Character()
+                         {
+                             Value = item[item.Length - 1]
+                         }
+                        );
+                }
+                else
+                {
+                    word.Add(
+                            new Character()
+                            {
+                                Value = item[item.Length - 1]
+                            }
+                            );
+                }
+                //-----------------------------------------------------------------------------------------
                 sentences.Add(word);
                 if (punctuation.Value != "")
                 {
@@ -63,5 +101,10 @@ namespace WordProcessing
             }
             return listSentences;
         }
+
+        //private void FilCharacterWordOrPunctuation(char ch,Word word, PunctuationMark punctuation)
+        //{
+ 
+        //}
     }
 }

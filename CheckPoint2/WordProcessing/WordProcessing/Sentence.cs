@@ -10,7 +10,50 @@ namespace WordProcessing
         private ICollection<ItemSentences> itemSentences = new List<ItemSentences>();
 
 
+        public string Value
+        {
+            get
+            {
+                return Print();
+            }
 
+        }
+        private string Print()
+        {
+            string str = "";
+            bool PrintSpace =false;
+            string textspace="";
+            foreach (var item in itemSentences)
+            {
+                var workItem = item as PunctuationMark;
+                if ((workItem != null) && (workItem.BeforeWord==false))
+                {
+                    str = str.Trim();
+                }
+                str = str + item.Value+" ";
+                if ((workItem != null) && (workItem.BeforeWord))
+                {
+                    str = str.Trim();
+                }
+                //if ((workItem != null) && (workItem.BeforeWord))
+                //{
+ 
+                //}
+
+                //textspace = item.Value;
+                //if (PrintSpace) textspace = " " + textspace;
+                //str = str + textspace;
+
+                //var workItem = item as PunctuationMark;
+                //PrintSpace = true;
+                //if ((workItem != null)&&( workItem.BeforeWord))
+                //{
+                //    PrintSpace = false;
+                //}
+                
+            }
+            return str;
+        }
         public void Add(ItemSentences item)
         {
             itemSentences.Add(item);

@@ -18,6 +18,10 @@ namespace WordProcessing
             }
 
             ICollection<Sentence> listSentences = new List<Sentence>(Worker.ConstructSentencesList(text));
+            foreach (var item in listSentences)
+            {
+                string str = item.Value;
+            }
         }
     }
 }

@@ -7,15 +7,12 @@ namespace WordProcessing
 {
     public class PunctuationMark : ItemSentences
     {
-
-        
-        public PunctuationMark()
+        private bool beforeWord = false;
+        // если знак препинания стоит перед словом и их не разделяет пробел,например (
+        public bool BeforeWord
         {
-
-        }
-        public PunctuationMark(char[] value)
-        {
-
+            get { return beforeWord; }
+            set { beforeWord = value; }
         }
         public static bool IsPunctuation(char ch)
         {
@@ -41,5 +38,7 @@ namespace WordProcessing
                 return false;
             }
         }
+     
+       
     }
 }
