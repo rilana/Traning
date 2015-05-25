@@ -5,9 +5,9 @@ using System.Text;
 
 namespace WordProcessing
 {
-    public abstract class ItemSentences : ICollection<Character>
+    public abstract class ItemSentences : IList<Character>
     {
-        ICollection<Character> listChart = new List<Character>();
+        private List<Character> listChart = new List<Character>();
         public string Value
         {
             get
@@ -20,6 +20,7 @@ namespace WordProcessing
                 return str;
             }
         }
+        //---------------------
         public void Add(Character item)
         {
             listChart.Add(item);
@@ -47,7 +48,7 @@ namespace WordProcessing
 
         public bool IsReadOnly
         {
-            get { return listChart.IsReadOnly; }
+            get { return false; }
         }
 
         public bool Remove(Character item)
@@ -63,6 +64,33 @@ namespace WordProcessing
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
             return this.GetEnumerator();
+        }
+
+        public int IndexOf(Character item)
+        {
+            return listChart.IndexOf(item);
+        }
+
+        public void Insert(int index, Character item)
+        {
+           listChart.Insert(index,item);
+        }
+
+        public void RemoveAt(int index)
+        {
+           listChart.RemoveAt(index);
+        }
+
+        public Character this[int index]
+        {
+            get
+            {
+               return listChart[index];
+            }
+            set
+            {
+               listChart[index]=value;
+            }
         }
     }
 }

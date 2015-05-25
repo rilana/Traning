@@ -5,9 +5,9 @@ using System.Text;
 
 namespace WordProcessing
 {
-    public class Sentence : ICollection<ItemSentences>
+    public class Sentence : IList<ItemSentences>
     {
-        private ICollection<ItemSentences> itemSentences = new List<ItemSentences>();
+        public List<ItemSentences> itemSentences = new List<ItemSentences>();
 
 
         public string Value
@@ -48,6 +48,7 @@ namespace WordProcessing
                 }
             }
         }
+    
         public int CountWord
         {
             get
@@ -55,6 +56,11 @@ namespace WordProcessing
               return GetWord().Count();
             }
         }
+        public int RemoveAll(Predicate<ItemSentences> match)
+        {
+            return itemSentences.RemoveAll(match);
+        }
+        //----------------
         public void Add(ItemSentences item)
         {
             itemSentences.Add(item);
@@ -83,7 +89,7 @@ namespace WordProcessing
 
         public bool IsReadOnly
         {
-            get { return itemSentences.IsReadOnly; }
+            get { return false; }
         }
 
         public bool Remove(ItemSentences item)
@@ -99,6 +105,33 @@ namespace WordProcessing
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
             return this.GetEnumerator();
+        }
+
+        public int IndexOf(ItemSentences item)
+        {
+            return itemSentences.IndexOf(item);
+        }
+
+        public void Insert(int index, ItemSentences item)
+        {
+           itemSentences.Insert(index,item);
+        }
+
+        public void RemoveAt(int index)
+        {
+            itemSentences.RemoveAt(index);
+        }
+
+        public ItemSentences this[int index]
+        {
+            get
+            {
+               return itemSentences[index];
+            }
+            set
+            {
+                itemSentences[index]=value;
+            }
         }
     }
 }
