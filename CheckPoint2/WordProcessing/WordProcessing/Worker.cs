@@ -15,15 +15,16 @@ namespace WordProcessing
 
             ICollection<Sentence> listSentences = new List<Sentence>();
             string[] val = text.Split(' ');
-            string strWork = "";
+            bool EndSentence= false;
             Sentence sentences = new Sentence(); ;
             foreach (string item in val)
             {
-                if (PunctuationMark.EndSentence(strWork))
+                //if (PunctuationMark.EndSentence(strWork))
+                if (EndSentence)
                 {
                     listSentences.Add(sentences);
                     sentences = new Sentence();
-                    strWork = "";
+                    EndSentence=false;
                 }
 
                 Word word = new Word();
@@ -93,15 +94,25 @@ namespace WordProcessing
                 if (punctuation.Value != "")
                 {
                     sentences.Add(punctuation);
-                    strWork = punctuation.Value;
+                    EndSentence = punctuation.EndSentence;
                 }
 
-
-
+            }
+            // если только слова,нет признака конца предложения
+            if ((listSentences.Count==0)&&(sentences.Count>0))
+            {
+                listSentences.Add(sentences);
             }
             return listSentences;
         }
+        public static void PrintText(ICollection<Sentence> listSentences)
+        {
+            foreach (var item in listSentences)
+            {
+                Console.WriteLine(item.Value);
 
+            }
+        }
         //private void FilCharacterWordOrPunctuation(char ch,Word word, PunctuationMark punctuation)
         //{
  

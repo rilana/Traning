@@ -10,7 +10,7 @@
   <Class Name="WordProcessing.ItemSentences">
     <Position X="2.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACIAAAAAAAAAABAQAAAABAQAAAAAAAgAAAAgAABQIAA=</HashCode>
+      <HashCode>AGIAAEAAAAAAABAQCAAABAQAAAAAAAgACAAgAABQIAA=</HashCode>
       <FileName>ItemSentences.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -32,7 +32,7 @@
   <Class Name="WordProcessing.Sentence" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="8" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACIAACAAAAAAABAQAAAABAQAAAAAAAAAAAAgAABUIAA=</HashCode>
+      <HashCode>AGIAAGAAAIAAABAQCAAAFAQAAAAIAAAAKAAgAABUIAA=</HashCode>
       <FileName>Sentence.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -44,5 +44,12 @@
       <FileName>Worker.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Enum Name="WordProcessing.TypeSentences">
+    <Position X="6" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAEAAA=</HashCode>
+      <FileName>TypeSentences.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

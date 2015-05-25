@@ -16,7 +16,7 @@ namespace WordProcessing
         }
         public static bool IsPunctuation(char ch)
         {
-            char[] masPunctuation = { '.', '.', '?', '!', ';', ':','(',')' };
+            char[] masPunctuation = { '.', ',', '?', '!', ';', ':','(',')' };
             if (Array.IndexOf(masPunctuation, ch) == -1)
             {
                 return false;
@@ -26,19 +26,35 @@ namespace WordProcessing
                 return true;
             }
         }
-        public static bool EndSentence(string str)
+        //public static bool EndSentence(string str)
+        //{
+        //    char[] EndPunctuation = { '.', '?', '!' };
+        //    if (str.IndexOfAny(EndPunctuation) > -1)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
+        public bool EndSentence
+
         {
-            char[] EndPunctuation = { '.', '?', '!' };
-            if (str.IndexOfAny(EndPunctuation) > -1)
+            get
             {
-                return true;
-            }
-            else
-            {
-                return false;
+                char[] EndPunctuation = { '.', '?', '!' };
+                if (this.Value.IndexOfAny(EndPunctuation) > -1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
-     
+
        
     }
 }

@@ -37,23 +37,43 @@ namespace WordProcessing
             }
             return str;
         }
-        private IEnumerable<Word> GetWord()
+        public IEnumerable<T> GetItemSentences<T>()
+            where T : ItemSentences
         {
             foreach (var item in itemSentences)
             {
-                var word = item as Word;
+                var word = item as T;
                 if (word != null)
                 {
                     yield return word;
                 }
             }
         }
-    
+            
         public int CountWord
         {
             get
             {
-              return GetWord().Count();
+                return GetItemSentences<Word>().Count();
+            }
+        }
+        public TypeSentences TypeSentences
+        {
+            get 
+            {
+               var endSentences=GetItemSentences<PunctuationMark>().First(x =>((PunctuationMark)x).EndSentence==true);
+               if (endSentences.Value.Contains('?'))
+               {
+                   return TypeSentences.Interrogative;
+               }
+               else if (endSentences.Value.Contains('!'))
+               {
+                   return TypeSentences.Exclamatory;
+               }
+               else
+               {
+                   return TypeSentences.Narrative;
+               }
             }
         }
         public int RemoveAll(Predicate<ItemSentences> match)

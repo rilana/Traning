@@ -92,5 +92,11 @@ namespace WordProcessing
                listChart[index]=value;
             }
         }
+
+        public void AddRange(IEnumerable<Character> collection)
+        {
+            listChart.AddRange(collection);
+        }
+
     }
 }
