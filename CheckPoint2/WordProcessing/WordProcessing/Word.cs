@@ -7,12 +7,5 @@ namespace WordProcessing
 {
     public class Word : ItemSentences
     {
-        public void ToLower()
-        {
-            foreach (var item in this)
-            {
-                item.Value = Char.ToLower(item.Value);
-            }
-        }
     }
 }

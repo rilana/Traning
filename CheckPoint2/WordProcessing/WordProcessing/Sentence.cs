@@ -7,12 +7,17 @@ namespace WordProcessing
 {
     public class Sentence : IList<ItemSentences>
     {
-<<<<<<< HEAD
-        private List<ItemSentences> itemSentences = new List<ItemSentences>();
-=======
         public List<ItemSentences> itemSentences = new List<ItemSentences>();
->>>>>>> origin/master
 
+
+        public string Value
+        {
+            get
+            {
+                return Print();
+            }
+
+        }
         private string Print()
         {
             string str = "";
@@ -30,16 +35,8 @@ namespace WordProcessing
                 }
                 
             }
-             str=str.TrimEnd();
             return str;
         }
-<<<<<<< HEAD
-        public override string ToString()
-        {
-            return Print();
-        }
-=======
->>>>>>> origin/master
         public IEnumerable<T> GetItemSentences<T>()
             where T : ItemSentences
         {
@@ -58,7 +55,6 @@ namespace WordProcessing
             get
             {
                 return GetItemSentences<Word>().Count();
-<<<<<<< HEAD
             }
         }
         public TypeSentences TypeSentences
@@ -80,29 +76,6 @@ namespace WordProcessing
                }
             }
         }
-=======
-            }
-        }
-        public TypeSentences TypeSentences
-        {
-            get 
-            {
-               var endSentences=GetItemSentences<PunctuationMark>().First(x =>((PunctuationMark)x).EndSentence==true);
-               if (endSentences.Value.Contains('?'))
-               {
-                   return TypeSentences.Interrogative;
-               }
-               else if (endSentences.Value.Contains('!'))
-               {
-                   return TypeSentences.Exclamatory;
-               }
-               else
-               {
-                   return TypeSentences.Narrative;
-               }
-            }
-        }
->>>>>>> origin/master
         public int RemoveAll(Predicate<ItemSentences> match)
         {
             return itemSentences.RemoveAll(match);

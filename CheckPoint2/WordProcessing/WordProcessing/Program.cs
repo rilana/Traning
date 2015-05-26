@@ -11,60 +11,20 @@ namespace WordProcessing
     {
         static void Main(string[] args)
         {
-            string textFromFile = "";
+            string text = "";
             using (StreamReader sr = new StreamReader("text.txt"))
             {
-                textFromFile = sr.ReadToEnd();
+                text = sr.ReadToEnd();
             }
 
-            Text text = new Text(textFromFile);
-            ICollection<Sentence> listSentences = new List<Sentence>(Worker.ConstructSentencesList(textFromFile));
+            ICollection<Sentence> listSentences = new List<Sentence>(Worker.ConstructSentencesList(text));
 
-            //1.все предложения в порядке возрастания количества слов в каждом из них
-            text.OrderBy(x => x.CountWord).ForAll(x => String.Format("{0} {1}",x.CountWord, x.ToString()));
-            Console.WriteLine("--------------------------------------------");
-            //**************************************************************************************************
-
-
-            //2.Во всех вопросительных предложениях текста найти и напеча¬тать без повторений слова заданной длины
-            int razmer = 5;
-            //без повторений во всём тексте
-            text.SelectWord(razmer, TypeSentences.Interrogative,true).ForAll(x=>x.Value);
-            Console.WriteLine("--------------------------------------------");
-            //без повторений в каждом предложении
-            text.SelectWord(razmer, TypeSentences.Interrogative, false).ForAll(x => x.Value);
-            Console.WriteLine("--------------------------------------------");
-            //**************************************************************************************************
-
-
-            //3.Из текста удалить все слова заданной длины, начинающиеся на согласную букву.
-            text.RemoveWords(razmer, false);
-            text.ForAll(x => x.ToString());
-            Console.WriteLine("--------------------------------------------");
-            //**************************************************************************************************
-
-            //-----------------------------------------------------------
-            //4. В некотором предложении текста слова заданной длины заменить указанной подстрокой, длина которой 
-            //может не совпадать с длиной слова
-            //-----!!!!!
-            List<Sentence> substring =new List<Sentence>(Worker.ConstructSentencesList("bla-bla"));
-            listSentences = new List<Sentence>(Worker.ConstructSentencesList(textFromFile));
-            razmer = 5;
-            foreach (var item in listSentences)
+           //1.все предложения в порядке возрастания количества слов в каждом из них
+            foreach (var item in listSentences.OrderBy(x => x.CountWord))
             {
-                var list= item.Where(x => x.Count == razmer);
-                foreach (var word in list)
-                {
-                    Sentence sent=substring[0];
-                    word.Clear();
-                    word.AddRange(sent[0]);
-                     
-                }
-              
+                Console.WriteLine(item.CountWord + " " + item.Value);
+               
             }
-
-
-            Worker.PrintText(listSentences);
             Console.WriteLine("--------------------------------------------");
             //-----------------------------------------------------------
             //2.Во всех вопросительных предложениях текста найти и напеча¬тать без повторений слова заданной длины

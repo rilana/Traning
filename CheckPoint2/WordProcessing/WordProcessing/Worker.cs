@@ -109,11 +109,7 @@ namespace WordProcessing
         {
             foreach (var item in listSentences)
             {
-<<<<<<< HEAD
-                Console.WriteLine(item.ToString());
-=======
                 Console.WriteLine(item.Value);
->>>>>>> origin/master
 
             }
         }
