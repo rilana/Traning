@@ -10,20 +10,24 @@
   <Class Name="WordProcessing.ItemSentences">
     <Position X="2.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
+<<<<<<< HEAD
+      <HashCode>AGIAAEAAAAAAABAQCAAABAQAAAAAAAgACAAgAABUIAA=</HashCode>
+=======
       <HashCode>AGIAAEAAAAAAABAQCAAABAQAAAAAAAgACAAgAABQIAA=</HashCode>
+>>>>>>> origin/master
       <FileName>ItemSentences.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WordProcessing.PunctuationMark">
-    <Position X="3.75" Y="5" Width="1.5" />
+    <Position X="4.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAACAAAAAQAAAAAEAA=</HashCode>
       <FileName>PunctuationMark.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WordProcessing.Word">
-    <Position X="1.5" Y="5" Width="1.5" />
+    <Position X="0.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Word.cs</FileName>
@@ -32,7 +36,11 @@
   <Class Name="WordProcessing.Sentence" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="8" Y="0.75" Width="1.5" />
     <TypeIdentifier>
+<<<<<<< HEAD
+      <HashCode>AGIAAGAAAIAAABAQCAAABAQAAAAIAAAAKAAgAABUIAg=</HashCode>
+=======
       <HashCode>AGIAAGAAAIAAABAQCAAAFAQAAAAIAAAAKAAgAABUIAA=</HashCode>
+>>>>>>> origin/master
       <FileName>Sentence.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -40,14 +48,29 @@
   <Class Name="WordProcessing.Worker" Collapsed="true">
     <Position X="6.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
       <FileName>Worker.cs</FileName>
     </TypeIdentifier>
+  </Class>
+<<<<<<< HEAD
+  <Class Name="WordProcessing.Text">
+    <Position X="7.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACIAAAAAAAAAABAQAAAABAQAAAAAAEAAAAAAAABQIAA=</HashCode>
+      <FileName>Text.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Enum Name="WordProcessing.TypeSentences">
     <Position X="6" Y="3" Width="1.5" />
     <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+=======
+  <Enum Name="WordProcessing.TypeSentences">
+    <Position X="6" Y="3" Width="1.5" />
+    <TypeIdentifier>
       <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAEAAA=</HashCode>
+>>>>>>> origin/master
       <FileName>TypeSentences.cs</FileName>
     </TypeIdentifier>
   </Enum>

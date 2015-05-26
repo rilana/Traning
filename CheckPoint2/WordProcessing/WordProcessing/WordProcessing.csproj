@@ -42,11 +42,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="ItemSentences.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PunctuationMark.cs" />
     <Compile Include="Sentence.cs" />
+<<<<<<< HEAD
+    <Compile Include="Text.cs" />
+=======
+>>>>>>> origin/master
     <Compile Include="TypeSentences.cs" />
     <Compile Include="Word.cs" />
     <Compile Include="Worker.cs" />
