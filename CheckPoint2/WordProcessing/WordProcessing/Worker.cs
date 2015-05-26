@@ -109,7 +109,7 @@ namespace WordProcessing
         {
             foreach (var item in listSentences)
             {
-                Console.WriteLine(item.Value);
+                Console.WriteLine(item.ToString());
 
             }
         }

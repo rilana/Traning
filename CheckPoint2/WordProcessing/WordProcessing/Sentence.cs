@@ -7,17 +7,8 @@ namespace WordProcessing
 {
     public class Sentence : IList<ItemSentences>
     {
-        public List<ItemSentences> itemSentences = new List<ItemSentences>();
+        private List<ItemSentences> itemSentences = new List<ItemSentences>();
 
-
-        public string Value
-        {
-            get
-            {
-                return Print();
-            }
-
-        }
         private string Print()
         {
             string str = "";
@@ -35,7 +26,12 @@ namespace WordProcessing
                 }
                 
             }
+             str=str.TrimEnd();
             return str;
+        }
+        public override string ToString()
+        {
+            return Print();
         }
         public IEnumerable<T> GetItemSentences<T>()
             where T : ItemSentences

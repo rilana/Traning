@@ -10,3 +10,9 @@ D:\Наташа\c# express\example\Traning\CheckPoint2\WordProcessing\WordProces
 D:\Наташа\c# express\example\Traning\CheckPoint2\WordProcessing\WordProcessing\bin\Debug\WordProcessing.exe
 D:\Наташа\c# express\example\Traning\CheckPoint2\WordProcessing\WordProcessing\bin\Debug\WordProcessing.pdb
 D:\Наташа\c# express\example\Traning\CheckPoint2\WordProcessing\WordProcessing\obj\Debug\WordProcessing.csprojResolveAssemblyReference.cache
+C:\Наташа\c# express\tran\Traning\CheckPoint2\WordProcessing\WordProcessing\bin\Debug\WordProcessing.exe.config
+C:\Наташа\c# express\tran\Traning\CheckPoint2\WordProcessing\WordProcessing\obj\Debug\WordProcessing.exe
+C:\Наташа\c# express\tran\Traning\CheckPoint2\WordProcessing\WordProcessing\obj\Debug\WordProcessing.pdb
+C:\Наташа\c# express\tran\Traning\CheckPoint2\WordProcessing\WordProcessing\bin\Debug\WordProcessing.exe
+C:\Наташа\c# express\tran\Traning\CheckPoint2\WordProcessing\WordProcessing\bin\Debug\WordProcessing.pdb
+C:\Наташа\c# express\tran\Traning\CheckPoint2\WordProcessing\WordProcessing\obj\Debug\WordProcessing.csprojResolveAssemblyReference.cache
