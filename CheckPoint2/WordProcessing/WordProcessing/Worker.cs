@@ -11,7 +11,7 @@ namespace WordProcessing
         public static ICollection<Sentence> ConstructSentencesList(string text)
         {
             // удаляем лишние пробелы и удаляем знаки табуляции
-            text = Regex.Replace(text.Replace("\t", " "), " +", " ");
+            text = Regex.Replace(text.Replace("\t", " ").Replace("\r\n"," "), " +", " ");
 
             ICollection<Sentence> listSentences = new List<Sentence>();
             string[] val = text.Split(' ');
