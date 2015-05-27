@@ -13,6 +13,7 @@ namespace WordProcessing
         {
             listSentences = new List<Sentence>(Worker.ConstructSentencesList(textFromFile));
         }
+
         public override string ToString()
         {
             string str="";

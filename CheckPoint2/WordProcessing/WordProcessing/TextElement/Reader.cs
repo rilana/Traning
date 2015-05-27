@@ -29,7 +29,7 @@ namespace WordProcessing
 
                 Word word = new Word();
                 PunctuationMark punctuation = new PunctuationMark();
-                // если перед словом стоит знак припенания(без пробела) например (
+                // если перед словом стоит знак препинания(без пробела) например (
                 int i = 0;
                 if (PunctuationMark.IsPunctuation(item[i]))
                 {

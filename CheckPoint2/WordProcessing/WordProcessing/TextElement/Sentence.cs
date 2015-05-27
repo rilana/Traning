@@ -26,7 +26,7 @@ namespace WordProcessing
                 }
                 
             }
-             str=str.TrimEnd();
+            str=str.TrimEnd();
             return str;
         }
         public override string ToString()
@@ -66,9 +66,13 @@ namespace WordProcessing
                {
                    return TypeSentences.Exclamatory;
                }
-               else
+               else if (endSentences.Value.Contains('.'))
                {
                    return TypeSentences.Narrative;
+               }
+               else
+               {
+                   return TypeSentences.SetOfWords;
                }
             }
         }
@@ -90,7 +94,7 @@ namespace WordProcessing
             return action;
 
         }
-        //----------------
+        #region IList
         public void Add(ItemSentences item)
         {
             itemSentences.Add(item);
@@ -163,5 +167,6 @@ namespace WordProcessing
                 itemSentences[index]=value;
             }
         }
+        #endregion
     }
 }

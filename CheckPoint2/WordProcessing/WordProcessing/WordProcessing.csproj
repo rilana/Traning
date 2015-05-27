@@ -41,17 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Character.cs" />
+    <Compile Include="TextElement\Character.cs" />
     <Compile Include="Extensions.cs" />
-    <Compile Include="ItemSentences.cs" />
+    <Compile Include="TextElement\ItemSentences.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PunctuationMark.cs" />
-    <Compile Include="Sentence.cs" />
-    <Compile Include="Text.cs" />
-    <Compile Include="TypeSentences.cs" />
-    <Compile Include="Word.cs" />
-    <Compile Include="Worker.cs" />
+    <Compile Include="TextElement\PunctuationMark.cs" />
+    <Compile Include="TextElement\Sentence.cs" />
+    <Compile Include="TextElement\Text.cs" />
+    <Compile Include="TextElement\TypeSentences.cs" />
+    <Compile Include="TextElement\Word.cs" />
+    <Compile Include="TextElement\Reader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

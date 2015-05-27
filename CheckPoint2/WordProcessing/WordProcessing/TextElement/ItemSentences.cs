@@ -20,7 +20,7 @@ namespace WordProcessing
                 return str;
             }
         }
-        //---------------------
+        #region IList
         public void Add(Character item)
         {
             listChart.Add(item);
@@ -97,6 +97,7 @@ namespace WordProcessing
         {
             listChart.AddRange(collection);
         }
+        #endregion
 
     }
 }
