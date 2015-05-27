@@ -76,6 +76,20 @@ namespace WordProcessing
         {
             return itemSentences.RemoveAll(match);
         }
+        public bool ReplaceWordSubstring(Predicate<ItemSentences> match,Sentence ReplaceStr)
+        {
+            bool action = false;
+            int index=itemSentences.FindIndex(match);
+            while ( index>-1)
+            {
+                itemSentences.RemoveAt(index);
+                itemSentences.InsertRange(index, ReplaceStr);
+                index = itemSentences.FindIndex(index,match);
+                action = true;
+            }
+            return action;
+
+        }
         //----------------
         public void Add(ItemSentences item)
         {

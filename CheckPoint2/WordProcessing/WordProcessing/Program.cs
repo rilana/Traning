@@ -45,22 +45,12 @@ namespace WordProcessing
             //4. В некотором предложении текста слова заданной длины заменить указанной подстрокой, длина которой 
             //может не совпадать с длиной слова
             //-----!!!!!
-            List<Sentence> substring =new List<Sentence>(Worker.ConstructSentencesList("bla-bla"));
+            List<Sentence> substring =new List<Sentence>(Worker.ConstructSentencesList("bla bla"));
             text = new Text(textFromFile);
             razmer = 5;
-            foreach (var item in text)
-            {
-                var list= item.Where(x => x.Count == razmer);
-                foreach (var word in list)
-                {
-                    Sentence sent=substring[0];
-                    word.Clear();
-                    word.AddRange(sent[0]);
-                     
-                }
-              
-            }
-            text.ForAll(x => x.ToString());
+            text[0].ReplaceWordSubstring(x => x.Count == razmer, substring[0]);
+       
+            Console.WriteLine(text[0].ToString());
 
 
          

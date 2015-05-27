@@ -5,9 +5,9 @@ using System.Text;
 
 namespace WordProcessing
 {
-    public class Text:ICollection<Sentence>
+    public class Text:IList<Sentence>
     {
-        private ICollection<Sentence> listSentences;
+        private IList<Sentence> listSentences;
       
         public Text(string textFromFile)
         {
@@ -52,7 +52,7 @@ namespace WordProcessing
             }
             return delete;
         }
-        #region ICollection
+        #region IList
         public void Add(Sentence item)
         {
             listSentences.Add(item);
@@ -96,6 +96,33 @@ namespace WordProcessing
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
             return this.GetEnumerator();
+        }
+       
+        public Sentence this[int index]
+        {
+            get
+            {
+                return listSentences[index];
+            }
+            set
+            {
+                listSentences[index] = value;
+            }
+        }
+
+        public int IndexOf(Sentence item)
+        {
+            return listSentences.IndexOf(item);
+        }
+
+        public void Insert(int index, Sentence item)
+        {
+           listSentences.Insert(index,item);
+        }
+
+        public void RemoveAt(int index)
+        {
+            listSentences.RemoveAt(index);
         }
         #endregion
     }
