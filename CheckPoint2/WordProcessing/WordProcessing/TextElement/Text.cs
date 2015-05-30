@@ -8,10 +8,10 @@ namespace WordProcessing
     public class Text:IList<Sentence>
     {
         private IList<Sentence> listSentences;
-      
-        public Text(string textFromFile)
+
+        public Text(IEnumerable<Sentence> listSentences)
         {
-            listSentences = new List<Sentence>(Worker.ConstructSentencesList(textFromFile));
+            this.listSentences = new List<Sentence>(listSentences);
         }
 
         public override string ToString()
@@ -26,21 +26,15 @@ namespace WordProcessing
             
                 
         }
-        public IEnumerable<Word> SelectWord(int length, TypeSentences TypeSentences, bool NoRepeatWordText)
+        public IEnumerable<Word> SelectWord(int length, TypeSentences TypeSentences)
         {
-            //без повторений в каждом предложении
-            var query = listSentences.Where(x => x.TypeSentences == TypeSentences.Interrogative)
-                .SelectMany(x => x.GetItemSentences<Word>().Where(z => z.Count == length)
-                .GroupBy(z => z.Value).Select(g => g.First()));
-            //без повторений во всём тексте
-            if (NoRepeatWordText)
-            {
-                query = listSentences.Where(x => x.TypeSentences == TypeSentences)
+           
+            return listSentences.Where(x => x.TypeSentences == TypeSentences)
                 .SelectMany(x => x.GetItemSentences<Word>())
                 .Where(z => z.Count == length)
                 .GroupBy(x => x.Value).Select(g => g.First());
-            }
-            return query;
+           
+            
 
          }
         public bool RemoveWords(int length, bool IsVowel)

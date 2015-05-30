@@ -57,8 +57,13 @@ namespace WordProcessing
         {
             get 
             {
-               var endSentences=GetItemSentences<PunctuationMark>().First(x =>((PunctuationMark)x).EndSentence==true);
-               if (endSentences.Value.Contains('?'))
+               var endSentences=GetItemSentences<PunctuationMark>().FirstOrDefault(x =>((PunctuationMark)x).EndSentence==true);
+               
+               if (endSentences == null)
+               {
+                   return TypeSentences.SetOfWords;
+               }
+               else if (endSentences.Value.Contains('?'))
                {
                    return TypeSentences.Interrogative;
                }
@@ -66,20 +71,14 @@ namespace WordProcessing
                {
                    return TypeSentences.Exclamatory;
                }
-               else if (endSentences.Value.Contains('.'))
+               else
                {
                    return TypeSentences.Narrative;
                }
-               else
-               {
-                   return TypeSentences.SetOfWords;
-               }
+              
             }
         }
-        public int RemoveAll(Predicate<ItemSentences> match)
-        {
-            return itemSentences.RemoveAll(match);
-        }
+       
         public bool ReplaceWordSubstring(Predicate<ItemSentences> match,Sentence ReplaceStr)
         {
             bool action = false;
@@ -93,6 +92,15 @@ namespace WordProcessing
             }
             return action;
 
+        }
+
+        public int RemoveAll(Predicate<ItemSentences> match)
+        {
+            return itemSentences.RemoveAll(match);
+        }
+        public void AddRange(IEnumerable<ItemSentences> collection)
+        {
+            itemSentences.AddRange(collection);
         }
         #region IList
         public void Add(ItemSentences item)

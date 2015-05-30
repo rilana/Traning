@@ -51,7 +51,7 @@
     <Compile Include="TextElement\Text.cs" />
     <Compile Include="TextElement\TypeSentences.cs" />
     <Compile Include="TextElement\Word.cs" />
-    <Compile Include="TextElement\Reader.cs" />
+    <Compile Include="TextElement\Parser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -12,12 +12,9 @@ namespace WordProcessing
         static void Main(string[] args)
         {
             string textFromFile = "";
-            using (StreamReader sr = new StreamReader("text.txt"))
-            {
-                textFromFile = sr.ReadToEnd();
-            }
-
-            Text text = new Text(textFromFile);
+           
+            Text text = Parser.CreateText("text.txt", System.Text.Encoding.Default);
+            //Text text = new Text(textFromFile);
 
             Console.WriteLine("1.все предложения в порядке возрастания количества слов в каждом из них");
             text.OrderBy(x => x.CountWord).ForAll(x => String.Format("{0} {1}",x.CountWord, x.ToString()));
@@ -26,7 +23,7 @@ namespace WordProcessing
 
             Console.WriteLine("2.Во всех вопросительных предложениях текста найти и напеча¬тать без повторений слова заданной длины");
             int razmer = 5;
-            text.SelectWord(razmer, TypeSentences.Interrogative,true).ForAll(x=>x.Value);
+            text.SelectWord(razmer, TypeSentences.Interrogative).ForAll(x=>x.Value);
             Console.WriteLine("*************************************************************************");
 
             Console.WriteLine("3.Из текста удалить все слова заданной длины, начинающиеся на согласную букву.");
@@ -36,8 +33,8 @@ namespace WordProcessing
             
             Console.WriteLine("4. В некотором предложении текста слова заданной длины заменить указанной подстрокой, длина которой"+ 
             "может не совпадать с длиной слова");
-            List<Sentence> substring =new List<Sentence>(Worker.ConstructSentencesList("bla bla"));
-            text = new Text(textFromFile);
+            Text substring =Parser.CreateText("blabla");
+            text = Parser.CreateText("text.txt", System.Text.Encoding.Default);
             text[0].ReplaceWordSubstring(x => x.Count == razmer, substring[0]);
             Console.WriteLine(text[0].ToString());
            
