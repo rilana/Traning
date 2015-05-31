@@ -26,11 +26,11 @@ namespace WordProcessing
             
                 
         }
-        public IEnumerable<Word> SelectWord(int length, TypeSentences TypeSentences)
+        public IEnumerable<IWord> SelectWord(int length, TypeSentences TypeSentences)
         {
            
             return listSentences.Where(x => x.TypeSentences == TypeSentences)
-                .SelectMany(x => x.GetItemSentences<Word>())
+                .SelectMany(x => x.GetItemSentences<IWord>())
                 .Where(z => z.Count == length)
                 .GroupBy(x => x.Value).Select(g => g.First());
            

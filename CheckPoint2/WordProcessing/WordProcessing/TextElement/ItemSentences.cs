@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WordProcessing
 {
-    public abstract class ItemSentences : IList<Character>
+    public abstract class ItemSentences : IItemSentences
     {
         private List<Character> listChart = new List<Character>();
         public string Value

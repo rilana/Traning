@@ -1,14 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="WordProcessing.Character" Collapsed="true">
-    <Position X="5.25" Y="0.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAA=</HashCode>
-      <FileName>TextElement\Character.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="WordProcessing.ItemSentences">
-    <Position X="1.75" Y="0.75" Width="1.5" />
+    <Position X="1.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AGIAAEAAAAAAABAQCAAABAQAAAAAAAgACAAgAABUIAA=</HashCode>
       <FileName>TextElement\ItemSentences.cs</FileName>
@@ -16,42 +9,65 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WordProcessing.PunctuationMark">
-    <Position X="2.75" Y="6" Width="1.5" />
+    <Position X="2.75" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAACAAAAAQAAAAAEAA=</HashCode>
       <FileName>TextElement\PunctuationMark.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="WordProcessing.Word">
-    <Position X="0.5" Y="6" Width="1.5" />
+    <Position X="0.5" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TextElement\Word.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="WordProcessing.Sentence" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="7" Y="0.75" Width="1.5" />
+    <Position X="5.25" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AGIAAHAAAIAAABAUCAAABAQAAAAIAAAAKAAAAABUIAg=</HashCode>
       <FileName>TextElement\Sentence.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="WordProcessing.Worker" Collapsed="true">
-    <Position X="7" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
-      <FileName>TextElement\Reader.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="WordProcessing.Text" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="5.25" Y="1.75" Width="1.5" />
+    <Position X="7" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AGIAEEAAAAAAABAUCAAABAQAAAAAAEAACAAAIABQIAA=</HashCode>
       <FileName>TextElement\Text.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
+  <Class Name="WordProcessing.Parser" Collapsed="true">
+    <Position X="7" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>TextElement\Parser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="WordProcessing.IItemSentences">
+    <Position X="1.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>InterfaceTextElement\IItemSentences.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WordProcessing.IWord">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InterfaceTextElement\IWord.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WordProcessing.IPunctuationMark">
+    <Position X="2.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>InterfaceTextElement\IPunctuationMark.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Enum Name="WordProcessing.TypeSentences" Collapsed="true">
     <Position X="5.25" Y="3" Width="1.5" />
     <TypeIdentifier>

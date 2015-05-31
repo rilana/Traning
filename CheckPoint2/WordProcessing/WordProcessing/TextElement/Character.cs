@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WordProcessing
 {
-    public class Character
+    public struct Character
     {
         public char Value { get; set; }
         public bool? IsVowel
@@ -17,7 +17,7 @@ namespace WordProcessing
                 {
                     return null;
                 }
-                else if (Array.IndexOf(masVowel, Value) == -1)
+                else if (Array.IndexOf(masVowel, Char.ToLower(Value)) == -1)
                 {
                     return false;
                 }
@@ -26,6 +26,11 @@ namespace WordProcessing
                     return true;
                 }
             }
+        }
+        public Character(char Value)
+            :this()
+        {
+            this.Value = Value;
         }
     }
 }

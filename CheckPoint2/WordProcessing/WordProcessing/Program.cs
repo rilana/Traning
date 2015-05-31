@@ -11,10 +11,9 @@ namespace WordProcessing
     {
         static void Main(string[] args)
         {
-            string textFromFile = "";
            
             Text text = Parser.CreateText("text.txt", System.Text.Encoding.Default);
-            //Text text = new Text(textFromFile);
+           
 
             Console.WriteLine("1.все предложения в порядке возрастания количества слов в каждом из них");
             text.OrderBy(x => x.CountWord).ForAll(x => String.Format("{0} {1}",x.CountWord, x.ToString()));

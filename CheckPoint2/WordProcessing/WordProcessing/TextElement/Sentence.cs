@@ -5,9 +5,9 @@ using System.Text;
 
 namespace WordProcessing
 {
-    public class Sentence : IList<ItemSentences>
+    public class Sentence : IList<IItemSentences>
     {
-        private List<ItemSentences> itemSentences = new List<ItemSentences>();
+        private List<IItemSentences> itemSentences = new List<IItemSentences>();
 
         private string Print()
         {
@@ -34,18 +34,18 @@ namespace WordProcessing
             return Print();
         }
         public IEnumerable<T> GetItemSentences<T>()
-            where T : ItemSentences
+            where T :class, IItemSentences
         {
             foreach (var item in itemSentences)
             {
-                var word = item as T;
+                var word = (item as T);
                 if (word != null)
                 {
                     yield return word;
                 }
             }
         }
-            
+          
         public int CountWord
         {
             get
@@ -79,7 +79,7 @@ namespace WordProcessing
             }
         }
        
-        public bool ReplaceWordSubstring(Predicate<ItemSentences> match,Sentence ReplaceStr)
+        public bool ReplaceWordSubstring(Predicate<IItemSentences> match,Sentence ReplaceStr)
         {
             bool action = false;
             int index=itemSentences.FindIndex(match);
@@ -94,16 +94,16 @@ namespace WordProcessing
 
         }
 
-        public int RemoveAll(Predicate<ItemSentences> match)
+        public int RemoveAll(Predicate<IItemSentences> match)
         {
             return itemSentences.RemoveAll(match);
         }
-        public void AddRange(IEnumerable<ItemSentences> collection)
+        public void AddRange(IEnumerable<IItemSentences> collection)
         {
             itemSentences.AddRange(collection);
         }
         #region IList
-        public void Add(ItemSentences item)
+        public void Add(IItemSentences item)
         {
             itemSentences.Add(item);
 
@@ -114,12 +114,12 @@ namespace WordProcessing
             itemSentences.Clear();
         }
 
-        public bool Contains(ItemSentences item)
+        public bool Contains(IItemSentences item)
         {
             return itemSentences.Contains(item);
         }
 
-        public void CopyTo(ItemSentences[] array, int arrayIndex)
+        public void CopyTo(IItemSentences[] array, int arrayIndex)
         {
             itemSentences.CopyTo(array, arrayIndex);
         }
@@ -134,12 +134,12 @@ namespace WordProcessing
             get { return false; }
         }
 
-        public bool Remove(ItemSentences item)
+        public bool Remove(IItemSentences item)
         {
             return itemSentences.Remove(item);
         }
 
-        public IEnumerator<ItemSentences> GetEnumerator()
+        public IEnumerator<IItemSentences> GetEnumerator()
         {
             return itemSentences.GetEnumerator();
         }
@@ -149,12 +149,12 @@ namespace WordProcessing
             return this.GetEnumerator();
         }
 
-        public int IndexOf(ItemSentences item)
+        public int IndexOf(IItemSentences item)
         {
             return itemSentences.IndexOf(item);
         }
 
-        public void Insert(int index, ItemSentences item)
+        public void Insert(int index, IItemSentences item)
         {
            itemSentences.Insert(index,item);
         }
@@ -164,7 +164,7 @@ namespace WordProcessing
             itemSentences.RemoveAt(index);
         }
 
-        public ItemSentences this[int index]
+        public IItemSentences this[int index]
         {
             get
             {

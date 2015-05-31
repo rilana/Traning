@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WordProcessing
 {
-    public class PunctuationMark : ItemSentences
+    public class PunctuationMark : ItemSentences,IPunctuationMark
     {
         private bool beforeWord = false;
         // если знак препинания стоит перед словом и их не разделяет пробел,например (
@@ -26,18 +26,7 @@ namespace WordProcessing
                 return true;
             }
         }
-        //public static bool EndSentence(string str)
-        //{
-        //    char[] EndPunctuation = { '.', '?', '!' };
-        //    if (str.IndexOfAny(EndPunctuation) > -1)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
+       
         public bool EndSentence
 
         {

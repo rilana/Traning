@@ -5,14 +5,17 @@ using System.Text;
 
 namespace WordProcessing
 {
-    public class Word : ItemSentences
+    public class Word : ItemSentences,IWord
     {
         public void ToLower()
         {
-            foreach (var item in this)
+            for (int i = 0; i < this.Count; i++)
             {
-                item.Value = Char.ToLower(item.Value);
+                Character ch = this[i];
+                ch.Value=Char.ToLower(ch.Value);
+                this[i] = ch; 
             }
+             
         }
     }
 }

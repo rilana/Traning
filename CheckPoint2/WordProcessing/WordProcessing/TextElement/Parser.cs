@@ -35,40 +35,50 @@ namespace WordProcessing
         public static Text CreateText(string patch,Encoding encoding)
         {
             ICollection<Sentence> listSentences = new List<Sentence>();
-            Sentence sentences = new Sentence(); ;
-            using (StreamReader sr = new StreamReader("text.txt",encoding))
+            try
             {
-                string line;
-                while ((line = sr.ReadLine()) != null)
+               
+                Sentence sentences = new Sentence(); ;
+                using (StreamReader sr = new StreamReader(patch, encoding))
                 {
-
-                    line = Regex.Replace(line.Replace("\t", " ").Replace("\r\n", " "), " +", " ");
-
-
-                    string[] val = line.Split(' ');
-                    foreach (string item in val)
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
                     {
-                        sentences.AddRange(CreateItemSentences(item));
-                        if (sentences.TypeSentences!=TypeSentences.SetOfWords)
+
+                        line = Regex.Replace(line.Replace("\t", " ").Replace("\r\n", " "), " +", " ");
+
+
+                        string[] val = line.Split(' ');
+                        foreach (string item in val)
                         {
-                            listSentences.Add(sentences);
-                            sentences = new Sentence();
+                            sentences.AddRange(CreateItemSentences(item));
+                            if (sentences.TypeSentences != TypeSentences.SetOfWords)
+                            {
+                                listSentences.Add(sentences);
+                                sentences = new Sentence();
+                            }
                         }
+
                     }
-                    
+                    // если только слова,нет признака конца предложения
+                    if ((listSentences.Count == 0) && (sentences.Count > 0))
+                    {
+                        listSentences.Add(sentences);
+                    }
                 }
-                // если только слова,нет признака конца предложения
-                if ((listSentences.Count == 0) && (sentences.Count > 0))
-                {
-                    listSentences.Add(sentences);
-                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.ReadLine();
+                Environment.Exit(1);
             }
             return new Text(listSentences);
         }
 
-        private static IList<ItemSentences> CreateItemSentences(string str)
+        private static IList<IItemSentences> CreateItemSentences(string str)
         {
-            IList<ItemSentences> itemsSentences=new List<ItemSentences>();
+            IList<IItemSentences> itemsSentences=new List<IItemSentences>();
             // если перед словом стоит знак препинания(без пробела) например (
             int i = 0;
             Character charcter;
