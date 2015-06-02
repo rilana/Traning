@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace WordProcessing
+﻿namespace WordProcessing
 {
     public enum TypeSentences
     {

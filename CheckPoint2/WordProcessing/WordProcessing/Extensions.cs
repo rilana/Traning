@@ -10,11 +10,12 @@ namespace WordProcessing
     {
         public static IEnumerable<T> ForAll<T>(this IEnumerable<T> iterator,Func<T, string> convertToString)
         {
-            foreach (var item in iterator)
+            var forAll = iterator as IList<T> ?? iterator.ToList();
+            foreach (var item in forAll)
             {
                 Console.WriteLine(convertToString(item));
             }
-            return iterator;
+            return forAll;
         }
     }
 }

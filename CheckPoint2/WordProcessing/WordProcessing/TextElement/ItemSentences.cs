@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace WordProcessing
 {
     public abstract class ItemSentences : IItemSentences
     {
-        private List<Character> listChart = new List<Character>();
+        private readonly List<Character>  _characters = new List<Character>();
         public string Value
         {
             get
             {
                 string str = "";
-                foreach (var item in listChart)
+                foreach (var item in _characters)
                 {
                     str = str + item.Value;
                 }
@@ -23,27 +21,27 @@ namespace WordProcessing
         #region IList
         public void Add(Character item)
         {
-            listChart.Add(item);
+            _characters.Add(item);
         }
 
         public void Clear()
         {
-            listChart.Clear();
+            _characters.Clear();
         }
 
         public bool Contains(Character item)
         {
-            return listChart.Contains(item);
+            return _characters.Contains(item);
         }
 
         public void CopyTo(Character[] array, int arrayIndex)
         {
-            listChart.CopyTo(array, arrayIndex);
+            _characters.CopyTo(array, arrayIndex);
         }
 
         public int Count
         {
-            get { return listChart.Count(); }
+            get { return _characters.Count(); }
         }
 
         public bool IsReadOnly
@@ -53,49 +51,49 @@ namespace WordProcessing
 
         public bool Remove(Character item)
         {
-            return listChart.Remove(item);
+            return _characters.Remove(item);
         }
 
         public IEnumerator<Character> GetEnumerator()
         {
-            return listChart.GetEnumerator();
+            return _characters.GetEnumerator();
         }
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
-            return this.GetEnumerator();
+            return GetEnumerator();
         }
 
         public int IndexOf(Character item)
         {
-            return listChart.IndexOf(item);
+            return _characters.IndexOf(item);
         }
 
         public void Insert(int index, Character item)
         {
-           listChart.Insert(index,item);
+           _characters.Insert(index,item);
         }
 
         public void RemoveAt(int index)
         {
-           listChart.RemoveAt(index);
+           _characters.RemoveAt(index);
         }
 
         public Character this[int index]
         {
             get
             {
-               return listChart[index];
+               return _characters[index];
             }
             set
             {
-               listChart[index]=value;
+               _characters[index]=value;
             }
         }
 
         public void AddRange(IEnumerable<Character> collection)
         {
-            listChart.AddRange(collection);
+            _characters.AddRange(collection);
         }
         #endregion
 

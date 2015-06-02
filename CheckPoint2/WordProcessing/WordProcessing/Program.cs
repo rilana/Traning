@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WordProcessing
 {
@@ -12,7 +8,7 @@ namespace WordProcessing
         static void Main(string[] args)
         {
            
-            Text text = Parser.CreateText("text.txt", System.Text.Encoding.Default);
+            var text = Parser.CreateText("text.txt", System.Text.Encoding.Default);
            
 
             Console.WriteLine("1.все предложения в порядке возрастания количества слов в каждом из них");
@@ -21,7 +17,7 @@ namespace WordProcessing
 
 
             Console.WriteLine("2.Во всех вопросительных предложениях текста найти и напеча¬тать без повторений слова заданной длины");
-            int razmer = 5;
+            var razmer = 5;
             text.SelectWord(razmer, TypeSentences.Interrogative).ForAll(x=>x.Value);
             Console.WriteLine("*************************************************************************");
 

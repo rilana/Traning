@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace WordProcessing
 {
@@ -9,7 +6,7 @@ namespace WordProcessing
     {
         public void ToLower()
         {
-            for (int i = 0; i < this.Count; i++)
+            for (var i = 0; i < Count; i++)
             {
                 Character ch = this[i];
                 ch.Value=Char.ToLower(ch.Value);

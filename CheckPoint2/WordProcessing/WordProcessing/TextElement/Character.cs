@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace WordProcessing
 {
@@ -27,10 +24,10 @@ namespace WordProcessing
                 }
             }
         }
-        public Character(char Value)
+        public Character(char value)
             :this()
         {
-            this.Value = Value;
+            Value = value;
         }
     }
 }

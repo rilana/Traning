@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+
 
 namespace WordProcessing
 {
     public class Sentence : IList<IItemSentences>
     {
-        private List<IItemSentences> itemSentences = new List<IItemSentences>();
+        private readonly List<IItemSentences> _sentences = new List<IItemSentences>();
 
         private string Print()
         {
-            string str = "";
-            foreach (var item in itemSentences)
+            var str = "";
+            foreach (var item in _sentences)
             {
                 var workItem = item as PunctuationMark;
                 if ((workItem != null) && (workItem.BeforeWord==false))
@@ -36,7 +36,7 @@ namespace WordProcessing
         public IEnumerable<T> GetItemSentences<T>()
             where T :class, IItemSentences
         {
-            foreach (var item in itemSentences)
+            foreach (var item in _sentences)
             {
                 var word = (item as T);
                 if (word != null)
@@ -79,15 +79,15 @@ namespace WordProcessing
             }
         }
        
-        public bool ReplaceWordSubstring(Predicate<IItemSentences> match,Sentence ReplaceStr)
+        public bool ReplaceWordSubstring(Predicate<IItemSentences> match,Sentence replaceStr)
         {
             bool action = false;
-            int index=itemSentences.FindIndex(match);
+            int index = _sentences.FindIndex(match);
             while ( index>-1)
             {
-                itemSentences.RemoveAt(index);
-                itemSentences.InsertRange(index, ReplaceStr);
-                index = itemSentences.FindIndex(index,match);
+                _sentences.RemoveAt(index);
+                _sentences.InsertRange(index, replaceStr);
+                index = _sentences.FindIndex(index, match);
                 action = true;
             }
             return action;
@@ -96,37 +96,37 @@ namespace WordProcessing
 
         public int RemoveAll(Predicate<IItemSentences> match)
         {
-            return itemSentences.RemoveAll(match);
+            return _sentences.RemoveAll(match);
         }
         public void AddRange(IEnumerable<IItemSentences> collection)
         {
-            itemSentences.AddRange(collection);
+            _sentences.AddRange(collection);
         }
         #region IList
         public void Add(IItemSentences item)
         {
-            itemSentences.Add(item);
+            _sentences.Add(item);
 
         }
 
         public void Clear()
         {
-            itemSentences.Clear();
+            _sentences.Clear();
         }
 
         public bool Contains(IItemSentences item)
         {
-            return itemSentences.Contains(item);
+            return _sentences.Contains(item);
         }
 
         public void CopyTo(IItemSentences[] array, int arrayIndex)
         {
-            itemSentences.CopyTo(array, arrayIndex);
+            _sentences.CopyTo(array, arrayIndex);
         }
 
         public int Count
         {
-            get { return itemSentences.Count(); }
+            get { return _sentences.Count(); }
         }
 
         public bool IsReadOnly
@@ -136,43 +136,43 @@ namespace WordProcessing
 
         public bool Remove(IItemSentences item)
         {
-            return itemSentences.Remove(item);
+            return _sentences.Remove(item);
         }
 
         public IEnumerator<IItemSentences> GetEnumerator()
         {
-            return itemSentences.GetEnumerator();
+            return _sentences.GetEnumerator();
         }
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
-            return this.GetEnumerator();
+            return GetEnumerator();
         }
 
         public int IndexOf(IItemSentences item)
         {
-            return itemSentences.IndexOf(item);
+            return _sentences.IndexOf(item);
         }
 
         public void Insert(int index, IItemSentences item)
         {
-           itemSentences.Insert(index,item);
+            _sentences.Insert(index, item);
         }
 
         public void RemoveAt(int index)
         {
-            itemSentences.RemoveAt(index);
+            _sentences.RemoveAt(index);
         }
 
         public IItemSentences this[int index]
         {
             get
             {
-               return itemSentences[index];
+                return _sentences[index];
             }
             set
             {
-                itemSentences[index]=value;
+                _sentences[index] = value;
             }
         }
         #endregion

@@ -7,13 +7,14 @@ namespace WordProcessing
 {
     public class PunctuationMark : ItemSentences,IPunctuationMark
     {
-        private bool beforeWord = false;
-        // если знак препинания стоит перед словом и их не разделяет пробел,например (
-        public bool BeforeWord
+        public PunctuationMark()
         {
-            get { return beforeWord; }
-            set { beforeWord = value; }
+            BeforeWord = false;
         }
+
+        // If punctuation is before the word and do not share a space, for example, (
+        public bool BeforeWord { get; set; }
+
         public static bool IsPunctuation(char ch)
         {
             char[] masPunctuation = { '.', ',', '?', '!', ';', ':','(',')' };
@@ -32,8 +33,8 @@ namespace WordProcessing
         {
             get
             {
-                char[] EndPunctuation = { '.', '?', '!' };
-                if (this.Value.IndexOfAny(EndPunctuation) > -1)
+                char[] endPunctuation = { '.', '?', '!' };
+                if (this.Value.IndexOfAny(endPunctuation) > -1)
                 {
                     return true;
                 }
