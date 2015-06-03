@@ -57,7 +57,7 @@ namespace WordProcessing
         {
             get 
             {
-               var endSentences=GetItemSentences<PunctuationMark>().FirstOrDefault(x =>((PunctuationMark)x).EndSentence==true);
+               var endSentences=GetItemSentences<PunctuationMark>().FirstOrDefault(x =>x.EndSentence);
                
                if (endSentences == null)
                {
@@ -105,7 +105,7 @@ namespace WordProcessing
         #region IList
         public void Add(IItemSentences item)
         {
-            _sentences.Add(item);
+            if (item.Value!=String.Empty) _sentences.Add(item);
 
         }
 

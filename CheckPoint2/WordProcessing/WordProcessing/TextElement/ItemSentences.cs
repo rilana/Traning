@@ -10,17 +10,24 @@ namespace WordProcessing
         {
             get
             {
-                string str = "";
-                foreach (var item in _characters)
-                {
-                    str = str + item.Value;
-                }
-                return str;
+                return _characters.Aggregate("", (current, item) => current + item.Value);
+            }
+        }
+        public void AddRange(string str)
+        {
+            foreach (var item in str)
+            {
+                _characters.Add(
+                    new Character()
+                    {
+                      Value = item
+                     });
             }
         }
         #region IList
         public void Add(Character item)
         {
+            
             _characters.Add(item);
         }
 

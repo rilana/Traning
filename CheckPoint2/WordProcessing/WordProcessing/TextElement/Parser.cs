@@ -74,72 +74,44 @@ namespace WordProcessing
             }
             return new Text(listSentences);
         }
-
-        private static IList<IItemSentences> CreateItemSentences(string str)
+        private static Sentence CreateItemSentences(string str)
         {
-            IList<IItemSentences> itemsSentences=new List<IItemSentences>();
-            // если перед словом стоит знак препинания(без пробела) например (
-            var i = 0;
-            Character charcter;
-            var word = new Word();
-            var punctuation = new PunctuationMark();
-            while (PunctuationMark.IsPunctuation(str[i]))
+            Sentence itemsSentences = new Sentence
             {
-                charcter = new Character()
-                    {
-                        Value = str[i]
-                    };
-
-                var punct = new PunctuationMark() { BeforeWord = true };
-                punct.Add(charcter);
-                itemsSentences.Add(punct);
-                i++;
-            }
-            // We pass all the characters and write the object of the word or punctuation
-            //-------------------------------------------------------------------------------------------------
-            for (var j = i; j < str.Length - 1; j++)
-            {
-                charcter = new Character()
-                        {
-                            Value = str[j]
-                        };
-                // Check that it is not deffis or appostraf, t.e.p punctuation marks can not be in the middle of a word
-                if ((PunctuationMark.IsPunctuation(str[j]))
-                    && (PunctuationMark.IsPunctuation(str[j + 1])))
-                   
-                {
-
-                    punctuation.Add(charcter);
-                }
-                else
-                {
-
-                    word.Add(charcter);
-                }
-
-            }
-            charcter = new Character()
-            {
-                Value = str[str.Length - 1]
+                CreateItem(str, false, true),
+                CreateItem(str, true, true),
+                CreateItem(str, false, false)
             };
-            if (PunctuationMark.IsPunctuation(str[str.Length - 1]))
-            {
-                punctuation.Add(charcter);
-            }
-            else
-            {
-                word.Add(charcter);
-            }
-
-            itemsSentences.Add(word);
-            if (punctuation.Value != "")
-            {
-                itemsSentences.Add(punctuation);
-               // EndSentence = punctuation.EndSentence;
-            }
-            //-----------------------------------------------------------------------------------------
             return itemsSentences;
         }
+        //start punctuation
+        private const string PatternStartWord = @"\A[(.)]+";
+        //end punctuation
+        private const string PatternEndWord = @"[(.,?!:;)]+\Z";
+
+        private static ItemSentences CreateItem(string str, bool isWord, bool beforeWord)
+        {
+            ItemSentences item;
+            var strReturn = string.Empty;
+            var pattern=PatternEndWord;
+            if (isWord)
+            {
+                strReturn = Regex.Replace(Regex.Replace(str, PatternEndWord, ""), PatternStartWord, "");
+                item = new Word();
+            }
+            else 
+            {
+                if (beforeWord) pattern = PatternStartWord;
+                foreach (Match ch in Regex.Matches(str, pattern))
+	            {
+                    strReturn = ch.Value;
+	            }
+                item = new PunctuationMark() { BeforeWord = beforeWord };
+            }
+            item.AddRange(strReturn);
+            return item;
+        }
+
         
     }
 }
