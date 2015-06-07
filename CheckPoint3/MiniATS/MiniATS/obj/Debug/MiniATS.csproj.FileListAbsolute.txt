@@ -1,0 +1,12 @@
+D:\Наташа\c# express\example\MiniATS\MiniATS\bin\Debug\MiniATS.exe.config
+D:\Наташа\c# express\example\MiniATS\MiniATS\bin\Debug\MiniATS.exe
+D:\Наташа\c# express\example\MiniATS\MiniATS\bin\Debug\MiniATS.pdb
+D:\Наташа\c# express\example\MiniATS\MiniATS\obj\Debug\MiniATS.csprojResolveAssemblyReference.cache
+D:\Наташа\c# express\example\MiniATS\MiniATS\obj\Debug\MiniATS.exe
+D:\Наташа\c# express\example\MiniATS\MiniATS\obj\Debug\MiniATS.pdb
+C:\Наташа\c# express\MiniATS\MiniATS\bin\Debug\MiniATS.exe.config
+C:\Наташа\c# express\MiniATS\MiniATS\obj\Debug\MiniATS.exe
+C:\Наташа\c# express\MiniATS\MiniATS\obj\Debug\MiniATS.pdb
+C:\Наташа\c# express\MiniATS\MiniATS\bin\Debug\MiniATS.exe
+C:\Наташа\c# express\MiniATS\MiniATS\bin\Debug\MiniATS.pdb
+C:\Наташа\c# express\MiniATS\MiniATS\obj\Debug\MiniATS.csprojResolveAssemblyReference.cache

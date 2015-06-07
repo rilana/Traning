@@ -48,7 +48,7 @@ namespace WordProcessing
 
 
                         string[] val = line.Split(' ');
-                        foreach (string item in val)
+                        foreach (var item in val)
                         {
                             sentences.AddRange(CreateItemSentences(item));
                             if (sentences.TypeSentences != TypeSentences.SetOfWords)
@@ -70,13 +70,13 @@ namespace WordProcessing
             {
                 Console.WriteLine(e.Message);
                 Console.ReadLine();
-                Environment.Exit(1);
+              
             }
             return new Text(listSentences);
         }
         private static Sentence CreateItemSentences(string str)
         {
-            Sentence itemsSentences = new Sentence
+            var itemsSentences = new Sentence
             {
                 CreateItem(str, false, true),
                 CreateItem(str, true, true),
