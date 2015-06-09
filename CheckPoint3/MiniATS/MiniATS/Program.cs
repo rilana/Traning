@@ -52,15 +52,34 @@ namespace MiniATS
             var ats = new ATS.Ats();
             ATS.Ats.FillCallToList();
             var company=new Company(ats);
+            Company.FillCallToList();
+
             var a1=new Abonent(){NameAbonent = "Ivan"};
             var a2 = new Abonent() { NameAbonent = "Nastya" };
+            var a3 = new Abonent() { NameAbonent = "Petr" };
             company.CreateContract(a1,new DateTime(2015,01,12));
             company.CreateContract(a2, new DateTime(2015, 01, 12));
+            company.CreateContract(a3, new DateTime(2015, 01, 10));
 
             a1.Terminal.StartCall(112);
             Thread.Sleep(2000);
             a1.Terminal.FinishCall();
 
+            a2.Terminal.StartCall(111);
+            Thread.Sleep(2000);
+            a1.Terminal.FinishCall();
+
+            a3.Terminal.OnOffPort();
+            a1.Terminal.StartCall(113);
+            Thread.Sleep(2000);
+            a1.Terminal.FinishCall();
+
+            a1.Terminal.StartCall(112);
+            Thread.Sleep(2000);
+            a1.Terminal.FinishCall();
+
+
+            Company.FillCallToFile();
             ATS.Ats.FillCallToFile();
             Console.WriteLine("Finish");
             Console.ReadLine();

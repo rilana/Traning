@@ -9,17 +9,18 @@ namespace MiniATS.ATS
         public int IdPort { get; set; }
 
         public PortState PortState { get; set; }
-
+        //+/-
         public void CallFromTerminal(object sender, CallingArg e)
         {
             OnPortCall(e);
         }
+        //+/-
         public void FinishTerminal(object sender, CallingArg e)
         {
             
             OnPortFinishCall(e);
         }
-
+        //+/-
         public bool CallFromAts(CallingArg e)
         {
             return OnTerminal(e);

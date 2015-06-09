@@ -10,3 +10,9 @@ C:\Наташа\c# express\MiniATS\MiniATS\obj\Debug\MiniATS.pdb
 C:\Наташа\c# express\MiniATS\MiniATS\bin\Debug\MiniATS.exe
 C:\Наташа\c# express\MiniATS\MiniATS\bin\Debug\MiniATS.pdb
 C:\Наташа\c# express\MiniATS\MiniATS\obj\Debug\MiniATS.csprojResolveAssemblyReference.cache
+C:\Наташа\c# express\tran\Traning\CheckPoint3\MiniATS\MiniATS\bin\Debug\MiniATS.exe.config
+C:\Наташа\c# express\tran\Traning\CheckPoint3\MiniATS\MiniATS\obj\Debug\MiniATS.exe
+C:\Наташа\c# express\tran\Traning\CheckPoint3\MiniATS\MiniATS\obj\Debug\MiniATS.pdb
+C:\Наташа\c# express\tran\Traning\CheckPoint3\MiniATS\MiniATS\bin\Debug\MiniATS.exe
+C:\Наташа\c# express\tran\Traning\CheckPoint3\MiniATS\MiniATS\bin\Debug\MiniATS.pdb
+C:\Наташа\c# express\tran\Traning\CheckPoint3\MiniATS\MiniATS\obj\Debug\MiniATS.csprojResolveAssemblyReference.cache

@@ -33,11 +33,11 @@ namespace MiniATS.ATS
                     OutCalling = Port,
                     InNumberPhone = telephoneNumber
                 };
-                Calling = null;
+               
                 Calling += Port.CallFromTerminal;
                 Port.PortState = PortState.Busy;
                 OnCalling(arg);
-                //Calling -= Port.CallFromTerminal;
+                Calling -= Port.CallFromTerminal;
             }
             else
             {
@@ -59,8 +59,10 @@ namespace MiniATS.ATS
         {
             if (Port.PortState == PortState.Busy)
             {
+                //Calling -= Port.CallFromTerminal;
                 FinishCalling += Port.FinishTerminal;
                 OnFinish(null);
+                FinishCalling-=Port.FinishTerminal;
             }
 
         }

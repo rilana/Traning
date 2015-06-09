@@ -55,7 +55,7 @@ namespace MiniATS.ATS
             }
             else
             {
-                Сonnected = null;
+               // Сonnected = null;
                 Сonnected += portIn.CallFromAts;
                 var answer = OnСonnected(e);
                 Console.WriteLine(answer ? "Speaking" : "No hang");
@@ -71,6 +71,7 @@ namespace MiniATS.ATS
                     callData.DateTimeEnd = callData.DateTimeStart;
                     RegistryCall(callData);
                 }
+                Сonnected -= portIn.CallFromAts;
             }
             
 
@@ -83,7 +84,7 @@ namespace MiniATS.ATS
             var item = _activeCalls.Find(x => x.OutPhone == numberPhoneFinish || x.InPhone == numberPhoneFinish);
             Ports.FirstOrDefault(x => x.Value == item.InPhone).Key.PortState = PortState.Сonnected;
             Ports.FirstOrDefault(x => x.Value == item.OutPhone).Key.PortState = PortState.Сonnected;
-            item.DateTimeEnd = DateTime.Now;
+            item.DateTimeEnd = DateTime.Now.AddMinutes(5);
             _activeCalls.Remove(item);
 
             RegistryCall(item);

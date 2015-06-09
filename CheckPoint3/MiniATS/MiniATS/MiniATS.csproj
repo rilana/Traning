@@ -48,6 +48,7 @@
     <Compile Include="ATS\CallingArg.cs" />
     <Compile Include="ATS\Port.cs" />
     <Compile Include="ATS\PortState.cs" />
+    <Compile Include="Billing\BillingSystem.cs" />
     <Compile Include="Billing\Company.cs" />
     <Compile Include="Billing\Contract.cs" />
     <Compile Include="Program.cs" />
