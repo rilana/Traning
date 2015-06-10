@@ -7,21 +7,29 @@ namespace MiniATS.ATS
 {
     public class Ats
     {
-        public Dictionary<Port, int> Ports=new Dictionary<Port,int>();
+        public Dictionary<int,Port> Ports=new Dictionary<int,Port>();
+        public Dictionary<int, Port> disabledPorts = new Dictionary<int, Port>();
         private List<CallData> _activeCalls=new List<CallData>(); 
         static public List<CallData> AllCalls =new List<CallData>(); 
       
-        public void Add(Port port, int number)
+        public void AddNew(Port port, int number)
         {
             port.PortCall += CallGetPort;
             port.PortFinishCall += CallFinishPort;
-            Ports.Add(port, number);
+            Ports.Add(number,port);
         }
-
+        public void AddDsabledPort(int number)
+        {
+            Ports[number].PortCall-=CallGetPort;
+            Ports[number].PortFinishCall -=CallFinishPort;
+            disabledPorts.Add(number, Ports[number]);
+            Ports.Remove(number);
+        }
         public Port GeneratyPort(int numberPhone)
         {
-            var nport =new Port(){IdPort =Ports.Count==0?1:Ports.Keys.Max(x => x.IdPort) + 1};
-            Add( nport,numberPhone);
+            var concat=Ports.Values.Concat(disabledPorts.Values);
+            var nport = new Port() { IdPort = concat.Count() == 0 ? 1 : concat.Max(x => x.IdPort) + 1 };
+            AddNew( nport,numberPhone);
             return nport;
         }
 
@@ -34,44 +42,51 @@ namespace MiniATS.ATS
 
         public void CallGetPort(object sender, CallingArg e)
         {
-            var outCaling = Ports[((Port) sender)];
-            e.OutNumberPhone= outCaling;
-           var portIn = Ports.FirstOrDefault(x=>x.Value==e.InNumberPhone).Key;
-
-            var callData = new CallData()
+            var outCaling = Ports.FirstOrDefault(x => x.Value == (Port)sender).Key;
+            if (Ports.ContainsKey(e.InNumberPhone))
             {
-                OutPhone = e.OutNumberPhone,
-                InPhone = e.InNumberPhone,
-                DateTimeStart = DateTime.Now
-            };
-
-            if (portIn.PortState != PortState.Сonnected)
-            {
-                Console.WriteLine("{0} buzzy...", e.InNumberPhone);
-                callData.DateTimeEnd = callData.DateTimeStart;
-                ((Port)sender).PortState = PortState.Сonnected;
-                RegistryCall(callData);
-
-            }
-            else
-            {
-               // Сonnected = null;
-                Сonnected += portIn.CallFromAts;
-                var answer = OnСonnected(e);
-                Console.WriteLine(answer ? "Speaking" : "No hang");
-                if (answer)
+                var portIn = Ports[e.InNumberPhone];//.FirstOrDefault(x=>x.Value==e.InNumberPhone).Key;
+                e.OutNumberPhone = outCaling;
+                var callData = new CallData()
                 {
-                    ((Port) sender).PortState = PortState.Busy;
-                    _activeCalls.Add(callData);
-                   
+                    OutPhone = e.OutNumberPhone,
+                    InPhone = e.InNumberPhone,
+                    DateTimeStart = DateTime.Now
+                };
+
+                if (portIn.PortState != PortState.Сonnected)
+                {
+                    Console.WriteLine("{0} buzzy...", e.InNumberPhone);
+                    callData.DateTimeEnd = callData.DateTimeStart;
+                    ((Port)sender).PortState = PortState.Сonnected;
+                    RegistryCall(callData);
+
                 }
                 else
                 {
-                    ((Port) sender).PortState = PortState.Сonnected;
-                    callData.DateTimeEnd = callData.DateTimeStart;
-                    RegistryCall(callData);
+                    // Сonnected = null;
+                    Сonnected += portIn.CallFromAts;
+                    var answer = OnСonnected(e);
+                    Console.WriteLine(answer ? "Speaking" : "No hang");
+                    if (answer)
+                    {
+                        ((Port)sender).PortState = PortState.Busy;
+                        _activeCalls.Add(callData);
+
+                    }
+                    else
+                    {
+                        ((Port)sender).PortState = PortState.Сonnected;
+                        callData.DateTimeEnd = callData.DateTimeStart;
+                        RegistryCall(callData);
+                    }
+                    Сonnected -= portIn.CallFromAts;
                 }
-                Сonnected -= portIn.CallFromAts;
+            }
+            else
+            {
+                Console.WriteLine("The phone number {0} is not in service Ats", e.InNumberPhone);
+                Ports[outCaling].PortState = PortState.Сonnected;
             }
             
 
@@ -80,10 +95,10 @@ namespace MiniATS.ATS
 
         public void CallFinishPort(object sender, CallingArg e)
         {
-            var numberPhoneFinish = Ports[(Port)sender];
+            var numberPhoneFinish = Ports.FirstOrDefault(x => x.Value == (Port)sender).Key;//Ports[(Port)sender];
             var item = _activeCalls.Find(x => x.OutPhone == numberPhoneFinish || x.InPhone == numberPhoneFinish);
-            Ports.FirstOrDefault(x => x.Value == item.InPhone).Key.PortState = PortState.Сonnected;
-            Ports.FirstOrDefault(x => x.Value == item.OutPhone).Key.PortState = PortState.Сonnected;
+            Ports.FirstOrDefault(x => x.Key == item.InPhone).Value.PortState = PortState.Сonnected;
+            Ports.FirstOrDefault(x => x.Key == item.OutPhone).Value.PortState = PortState.Сonnected;
             item.DateTimeEnd = DateTime.Now.AddMinutes(5);
             _activeCalls.Remove(item);
 

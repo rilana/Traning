@@ -36,8 +36,16 @@ namespace MiniATS.ATS
         public event EventHandler<CallingArg> PortCall;
         protected virtual void OnPortCall(CallingArg e)
         {
-            if (PortCall != null)
-                PortCall(this, e);
+            var handler = PortCall;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
+            else
+            {
+                PortState = PortState.Сonnected;
+                Console.WriteLine("Ats does not answer! Сheck the balance!");
+            }
         }
 
         public event Func<CallingArg, bool> ToTerminal;
@@ -50,7 +58,6 @@ namespace MiniATS.ATS
                temp = handler(arg);
             }
             return temp;
-
         }
 
 

@@ -1,17 +1,151 @@
-﻿using System;
+﻿using MiniATS.ATS;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiniATS.Billing
 {
-    class BillingSystem
+    public class BillingSystem
     {
-        //public void Billing(object sender, CallData e)
-        //{
-        //    //TODO
-        //    Console.WriteLine("Billing...");
-        //}
+        static List<BillingData> _billingDates = new List<BillingData>();
+        List<Contract> _contracts;
+        public BillingSystem(List<Contract> contracts)
+        {
+           _contracts = contracts;
+        }
+        //Calculate your one call
+        public void Billing(object sender, CallData e)
+        {
+            var ibillingdata = new BillingData(e);
+            var contractOut = _contracts.Find(x => x.NumberPhone == e.OutPhone);
+            // pay minute net free minute
+            var tempDuration = ibillingdata.Duration;
+            var freeMinute = GetFreeMinute(contractOut, e.DateTimeStart);
+            tempDuration = tempDuration <= freeMinute ? TimeSpan.Zero : tempDuration - freeMinute;
+            var minuteDuration = tempDuration.Seconds > 0 ? tempDuration.Minutes + 1 : tempDuration.Minutes;
+
+            ibillingdata.Cost = minuteDuration * contractOut.TarifPlane.MinuteCost;
+            ibillingdata.IdTariff = contractOut.TarifPlane.IdTarif;
+
+            Console.WriteLine("Billing...");
+            _billingDates.Add(ibillingdata);
+        }
+         
+        private TimeSpan GetFreeMinute(Contract contract, DateTime dateStart)
+        {
+            TimeSpan durationMont = _billingDates.Where(x => x.OutPhone == contract.NumberPhone
+                                   && x.DateTimeStart.Month == dateStart.Month && x.DateTimeStart <= dateStart
+                                   && x.DateTimeStart >= contract.DateTimeContract)
+                                   .Select(x => x.Duration)
+                                   .Aggregate(new TimeSpan(0), (p, v) => p.Add(v));
+
+            return durationMont >= contract.TarifPlane.FreeMinute ? TimeSpan.Zero : contract.TarifPlane.FreeMinute - durationMont;
+
+        }
+        // conclusion of subscriber details
+        public void ToTranscript(object sender, FilterSpecification e)
+        {
+
+            var abonent = (sender as Abonent);
+            var tempcontract = _contracts.Find(x => x.Abonent == abonent);
+            var temp = _billingDates.Where(x => (x.OutPhone == tempcontract.NumberPhone || x.InPhone == tempcontract.NumberPhone)
+                                        && x.DateTimeStart >= e.Start && x.DateTimeStart <= e.End).OrderBy(x => x.DateTimeStart);
+            foreach (var item in temp)
+            {
+                string tempOutOIn = item.OutPhone == tempcontract.NumberPhone
+                                ? string.Format("->{0}   {1}", item.InPhone, item.Cost)
+                                : string.Format("<-{0}   0", item.OutPhone);
+                Console.WriteLine("{0}  {1}   {2}   {3}", item.DateTimeStart.ToShortDateString(),
+                    item.DateTimeStart.ToShortTimeString(),
+                    item.Duration, tempOutOIn);
+            }
+
+            Console.WriteLine("Sum total - {0}, duration outcals - {1}, incalls - {2}",
+                                            GetSumTotalMoney(tempcontract, e),
+                                            GetSumTotalTimeOut(tempcontract, e),
+                                             GetSumTotalTimeIn(tempcontract, e));
+        }
+        // return totat money for a specified period
+        public int GetSumTotalMoney(Contract contract, FilterSpecification e)
+        {
+            return _billingDates.Where(x => x.OutPhone == contract.NumberPhone
+                && x.DateTimeStart >= e.Start
+                && x.DateTimeStart <= e.End).Sum(x => x.Cost);
+        }
+
+        public TimeSpan GetSumTotalTimeOut(Contract contract, FilterSpecification e)
+        {
+            return _billingDates.Where(x => x.OutPhone == contract.NumberPhone
+                                      && x.DateTimeStart >= e.Start
+                                      && x.DateTimeStart <= e.End)
+                                .Select(x => x.Duration)
+                                .Aggregate(new TimeSpan(0), (p, v) => p.Add(v));
+        }
+        // incoming calls for a specified period
+        public TimeSpan GetSumTotalTimeIn(Contract contract, FilterSpecification e)
+        {
+            return _billingDates.Where(x => x.InPhone == contract.NumberPhone
+                                      && x.DateTimeStart >= e.Start
+                                      && x.DateTimeStart <= e.End)
+                                .Select(x => x.Duration)
+                                .Aggregate(new TimeSpan(0), (p, v) => p.Add(v));
+        }
+        //The calculation of the month for all subscribers
+        public void ToCalculation(int year, int month)
+        {
+            var query = (from ab in _contracts
+                         join bill in _billingDates on ab.NumberPhone equals bill.OutPhone
+                         where bill.DateTimeStart.Year == year && bill.DateTimeStart.Month == month
+                         select new { abonent = ab, cost = bill.Cost } into x
+                         group x by x.abonent into g
+                         select new { abonent = g.Key.Abonent, sum = g.Sum(x => x.cost) + g.Key.TarifPlane.MonthCost }).ToList();
+            foreach (var item in query)
+            {
+                item.abonent.Balance -= item.sum;
+            }
+            //TODO block users with a negative balance
+        }
+        #region fill data
+        public static void FillCallToList()
+        {
+            using (var sr = new StreamReader("BillingData.csv"))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    var temp = line.Split(';');
+                    _billingDates.Add(
+                         new BillingData()
+                         {
+                             OutPhone = Convert.ToInt32(temp[0]),
+                             InPhone = Convert.ToInt32(temp[1]),
+                             DateTimeStart = Convert.ToDateTime(temp[2]),
+                             DateTimeEnd = Convert.ToDateTime(temp[3]),
+                             Cost = Convert.ToInt32(temp[4]),
+                             IdTariff = Convert.ToInt32(temp[5])
+                         }
+                         );
+                }
+            }
+        }
+
+        public static void FillCallToFile()
+        {
+            using (var sw = new StreamWriter("BillingData.csv"))
+            {
+                foreach (var temp in _billingDates)
+                {
+                    sw.WriteLine("{0};{1};{2};{3};{4};{5}",
+                        temp.OutPhone,
+                        temp.InPhone,
+                        temp.DateTimeStart,
+                        temp.DateTimeEnd,
+                        temp.Cost,
+                        temp.IdTariff);
+                }
+            }
+        }
+        #endregion
     }
 }

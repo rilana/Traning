@@ -51,7 +51,7 @@ namespace MiniATS.ATS
            var rr=new Random();
            var zz = rr.Next(2);
            if (zz==1) Port.PortState=PortState.Busy;
-           return zz == 1;
+           return true;//zz == 1;
         }
 
         
