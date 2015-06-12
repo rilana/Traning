@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using MiniATS.ATS;
-using System.IO;
 
 namespace MiniATS.Billing
 {
     public class Company
     {
         List<Contract> _contracts=new List<Contract>();
+        readonly List<Contract> _historyContracts = new List<Contract>();
         readonly List<TarifPlane> _tarifPlanes=new List<TarifPlane>();
         private Ats Ats;
         public BillingSystem BilingSystem;
@@ -16,6 +16,7 @@ namespace MiniATS.Billing
         {
             Ats = ats;
             AddTarifPlane("Simple", 50000, 200, new TimeSpan(0,20,0));
+            AddTarifPlane("NoSimple", 150000, 0, new TimeSpan(0, 20, 0));
             BilingSystem = new BillingSystem(_contracts);
             SubscriptionAts();
         }
@@ -23,25 +24,30 @@ namespace MiniATS.Billing
         public void SubscriptionAts()
         {
             Ats.RegistryCalls += BilingSystem.Billing;
+            BilingSystem.ToDisabledAbonent+= Ats.SwitchOffPort;
+
         }
 
         public void AddTarifPlane(string nameTarif, int mountCost, int minuteCost, TimeSpan freeMinute)
         {
+            var id = _tarifPlanes.Count() == 0 ? 1 : _tarifPlanes.Max(x=>x.IdTarif) + 1; 
             _tarifPlanes.Add(
-                new TarifPlane(1,nameTarif, mountCost, minuteCost, freeMinute)
+                new TarifPlane(id, nameTarif, mountCost, minuteCost, freeMinute)
                 );
         }
 
-        public void CreateContract(Abonent abonent, DateTime dateTimeContract)
+        public void CreateContract(Subscriber subscriber, DateTime dateTimeContract)
         {
           var numberContract =_contracts.Count==0?1:_contracts.Max(x => x.NumberContract) + 1;
           var numberPhone = _contracts.Count == 0 ? 111 :_contracts.Max(x => x.NumberPhone) + 1;
          // var idabonent = _contracts. == 0 ? 111 : _contracts.Max(x => x.NumberPhone) + 1;
-          abonent.Terminal=new Terminal(Ats.GeneratyPort(numberPhone));
-          abonent.Specification +=BilingSystem.ToTranscript;
+          subscriber.Terminal = new Terminal(Ats.GeneratyPort(numberPhone));
+          subscriber.Specification += BilingSystem.ToTranscript;
+          subscriber.ChangeBalance += UnlockSubscriber;
+          subscriber.ToTerminate +=ToterminateContract;
           var contract = new Contract()
             {
-                Abonent = abonent,
+                Subscriber = subscriber,
                 DateTimeContract = dateTimeContract,
                 NumberContract = numberContract,
                 NumberPhone = numberPhone,
@@ -49,11 +55,22 @@ namespace MiniATS.Billing
             };
           _contracts.Add(contract);
         }
-        public void Disconect()
+        public void ToterminateContract(object sender)
         {
-            //block users with a negative balance
-            Ats.AddDsabledPort(111);
+            var item=_contracts.Find(x => x.Subscriber == (Subscriber)sender);
+            Ats.SwitchOffPort(item.NumberPhone);
+            _historyContracts.Add(item);
+            item.Subscriber.Terminal = null;
+            _contracts.Remove(item);
+
+
         }
+       
+        public void UnlockSubscriber(object sender)
+        {
+            Ats.SwitchOnPort(_contracts.Find(x => x.Subscriber == (Subscriber)sender).NumberPhone);
+        }
+
 
       
     

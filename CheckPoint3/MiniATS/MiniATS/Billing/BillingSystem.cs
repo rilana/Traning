@@ -47,8 +47,8 @@ namespace MiniATS.Billing
         public void ToTranscript(object sender, FilterSpecification e)
         {
 
-            var abonent = (sender as Abonent);
-            var tempcontract = _contracts.Find(x => x.Abonent == abonent);
+            var abonent = (sender as Subscriber);
+            var tempcontract = _contracts.Find(x => x.Subscriber == abonent);
             var temp = _billingDates.Where(x => (x.OutPhone == tempcontract.NumberPhone || x.InPhone == tempcontract.NumberPhone)
                                         && x.DateTimeStart >= e.Start && x.DateTimeStart <= e.End).OrderBy(x => x.DateTimeStart);
             foreach (var item in temp)
@@ -99,13 +99,37 @@ namespace MiniATS.Billing
                          where bill.DateTimeStart.Year == year && bill.DateTimeStart.Month == month
                          select new { abonent = ab, cost = bill.Cost } into x
                          group x by x.abonent into g
-                         select new { abonent = g.Key.Abonent, sum = g.Sum(x => x.cost) + g.Key.TarifPlane.MonthCost }).ToList();
+                         select new 
+                         {
+                             abonent = g.Key.Subscriber, 
+                             numberPhone=g.Key.NumberPhone,
+                             sum = g.Sum(x => x.cost) + g.Key.TarifPlane.MonthCost
+                         }).ToList();
             foreach (var item in query)
             {
-                item.abonent.Balance -= item.sum;
+                item.abonent.ReFill(-1* item.sum);
+                if (item.abonent.Balance < 0) OnDisabledAbonent(item.numberPhone);
             }
-            //TODO block users with a negative balance
+       }
+        public bool ChangeTarifSubscriber(object sender, int idTarif,DateTime date)
+        {
+            var item = _contracts.Find(x => x.Subscriber == (Subscriber)sender);
+            var zz=_billingDates.Where(x => x.DateTimeStart.Year == date.Year && x.DateTimeStart.Month == date.Month).Select(x => x.IdTariff).Distinct().Count();
+            return false;
+            
         }
+        public event Action<int> ToDisabledAbonent;
+        protected virtual void OnDisabledAbonent(int arg)
+        {
+            var handler = ToDisabledAbonent;
+            if (handler != null)
+            {
+               handler(arg);
+            }
+           
+        }
+
+
         #region fill data
         public static void FillCallToList()
         {

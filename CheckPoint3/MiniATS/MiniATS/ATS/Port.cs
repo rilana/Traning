@@ -44,7 +44,7 @@ namespace MiniATS.ATS
             else
             {
                 PortState = PortState.Сonnected;
-                Console.WriteLine("Ats does not answer! Сheck the balance!");
+                Console.WriteLine("Ats does not answer!");
             }
         }
 

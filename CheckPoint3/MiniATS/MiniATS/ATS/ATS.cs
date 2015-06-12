@@ -8,7 +8,7 @@ namespace MiniATS.ATS
     public class Ats
     {
         public Dictionary<int,Port> Ports=new Dictionary<int,Port>();
-        public Dictionary<int, Port> disabledPorts = new Dictionary<int, Port>();
+        private Dictionary<int, Port> _disabledPorts = new Dictionary<int, Port>();
         private List<CallData> _activeCalls=new List<CallData>(); 
         static public List<CallData> AllCalls =new List<CallData>(); 
       
@@ -18,16 +18,24 @@ namespace MiniATS.ATS
             port.PortFinishCall += CallFinishPort;
             Ports.Add(number,port);
         }
-        public void AddDsabledPort(int number)
+        public void SwitchOffPort(int numberPhone)
         {
-            Ports[number].PortCall-=CallGetPort;
-            Ports[number].PortFinishCall -=CallFinishPort;
-            disabledPorts.Add(number, Ports[number]);
-            Ports.Remove(number);
+            Ports[numberPhone].PortCall -= CallGetPort;
+            Ports[numberPhone].PortFinishCall -= CallFinishPort;
+            _disabledPorts.Add(numberPhone, Ports[numberPhone]);
+            Ports.Remove(numberPhone);
         }
+        public void SwitchOnPort(int numberPhone)
+        {
+            _disabledPorts[numberPhone].PortCall += CallGetPort;
+            _disabledPorts[numberPhone].PortFinishCall += CallFinishPort;
+            Ports.Add(numberPhone, _disabledPorts[numberPhone]);
+            _disabledPorts.Remove(numberPhone);
+        }
+
         public Port GeneratyPort(int numberPhone)
         {
-            var concat=Ports.Values.Concat(disabledPorts.Values);
+            var concat=Ports.Values.Concat(_disabledPorts.Values);
             var nport = new Port() { IdPort = concat.Count() == 0 ? 1 : concat.Max(x => x.IdPort) + 1 };
             AddNew( nport,numberPhone);
             return nport;

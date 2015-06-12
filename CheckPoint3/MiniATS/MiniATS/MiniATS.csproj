@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Billing\BillingData.cs" />
-    <Compile Include="Billing\Abonent.cs" />
+    <Compile Include="Billing\Subscriber.cs" />
     <Compile Include="ATS\ATS.cs" />
     <Compile Include="ATS\CallData.cs" />
     <Compile Include="ATS\CallingArg.cs" />

@@ -4,7 +4,7 @@ namespace MiniATS.Billing
 {
     public class Contract
     {
-        public Abonent Abonent { get; set; }
+        public Subscriber Subscriber { get; set; }
         public DateTime DateTimeContract { get; set; }
         public int NumberPhone { get; set; }
         public int NumberContract { get; set; }
