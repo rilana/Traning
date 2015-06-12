@@ -9,14 +9,14 @@ namespace MiniATS.Billing
     {
         List<Contract> _contracts=new List<Contract>();
         readonly List<Contract> _historyContracts = new List<Contract>();
-        readonly List<TarifPlane> _tarifPlanes=new List<TarifPlane>();
+        public readonly List<TariffPlane> _tarifPlanes=new List<TariffPlane>();
         private Ats Ats;
         public BillingSystem BilingSystem;
         public  Company(Ats ats)
         {
             Ats = ats;
-            AddTarifPlane("Simple", 50000, 200, new TimeSpan(0,20,0));
-            AddTarifPlane("NoSimple", 150000, 0, new TimeSpan(0, 20, 0));
+            AddTariffPlane("Simple", 50000, 200, new TimeSpan(0,20,0));
+            AddTariffPlane("NoSimple", 150000, 0, new TimeSpan(0, 20, 0));
             BilingSystem = new BillingSystem(_contracts);
             SubscriptionAts();
         }
@@ -28,11 +28,11 @@ namespace MiniATS.Billing
 
         }
 
-        public void AddTarifPlane(string nameTarif, int mountCost, int minuteCost, TimeSpan freeMinute)
+        public void AddTariffPlane(string nameTarif, int mountCost, int minuteCost, TimeSpan freeMinute)
         {
-            var id = _tarifPlanes.Count() == 0 ? 1 : _tarifPlanes.Max(x=>x.IdTarif) + 1; 
+            var id = _tarifPlanes.Count() == 0 ? 1 : _tarifPlanes.Max(x=>x.IdTariff) + 1; 
             _tarifPlanes.Add(
-                new TarifPlane(id, nameTarif, mountCost, minuteCost, freeMinute)
+                new TariffPlane(id, nameTarif, mountCost, minuteCost, freeMinute)
                 );
         }
 
@@ -45,6 +45,7 @@ namespace MiniATS.Billing
           subscriber.Specification += BilingSystem.ToTranscript;
           subscriber.ChangeBalance += UnlockSubscriber;
           subscriber.ToTerminate +=ToterminateContract;
+          subscriber.ChangeTarif += BilingSystem.ChangeTarifSubscriber;  
           var contract = new Contract()
             {
                 Subscriber = subscriber,

@@ -26,7 +26,7 @@ namespace MiniATS.Billing
             var minuteDuration = tempDuration.Seconds > 0 ? tempDuration.Minutes + 1 : tempDuration.Minutes;
 
             ibillingdata.Cost = minuteDuration * contractOut.TarifPlane.MinuteCost;
-            ibillingdata.IdTariff = contractOut.TarifPlane.IdTarif;
+            ibillingdata.IdTariff = contractOut.TarifPlane.IdTariff;
 
             Console.WriteLine("Billing...");
             _billingDates.Add(ibillingdata);
@@ -34,12 +34,11 @@ namespace MiniATS.Billing
          
         private TimeSpan GetFreeMinute(Contract contract, DateTime dateStart)
         {
-            TimeSpan durationMont = _billingDates.Where(x => x.OutPhone == contract.NumberPhone
+            var durationMont = _billingDates.Where(x => x.OutPhone == contract.NumberPhone
                                    && x.DateTimeStart.Month == dateStart.Month && x.DateTimeStart <= dateStart
-                                   && x.DateTimeStart >= contract.DateTimeContract)
+                                   && x.IdTariff==contract.TarifPlane.IdTariff)
                                    .Select(x => x.Duration)
                                    .Aggregate(new TimeSpan(0), (p, v) => p.Add(v));
-
             return durationMont >= contract.TarifPlane.FreeMinute ? TimeSpan.Zero : contract.TarifPlane.FreeMinute - durationMont;
 
         }
@@ -111,10 +110,20 @@ namespace MiniATS.Billing
                 if (item.abonent.Balance < 0) OnDisabledAbonent(item.numberPhone);
             }
        }
-        public bool ChangeTarifSubscriber(object sender, int idTarif,DateTime date)
+        public bool ChangeTarifSubscriber(object sender, TariffPlane tarif,DateTime date)
         {
             var item = _contracts.Find(x => x.Subscriber == (Subscriber)sender);
-            var zz=_billingDates.Where(x => x.DateTimeStart.Year == date.Year && x.DateTimeStart.Month == date.Month).Select(x => x.IdTariff).Distinct().Count();
+            var countTarif=_billingDates.Where(x => x.DateTimeStart.Year == date.Year &&
+                        x.DateTimeStart.Month == date.Month&&
+                        x.OutPhone==item.NumberPhone).
+                        Select(x => x.IdTariff).
+                        Distinct().
+                        Count();
+            if (countTarif < 2)
+            {
+                item.TarifPlane = tarif;
+                return true;
+            }
             return false;
             
         }

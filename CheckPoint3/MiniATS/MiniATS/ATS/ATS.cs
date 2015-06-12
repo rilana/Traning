@@ -51,6 +51,7 @@ namespace MiniATS.ATS
         public void CallGetPort(object sender, CallingArg e)
         {
             var outCaling = Ports.FirstOrDefault(x => x.Value == (Port)sender).Key;
+            Console.WriteLine("{0} -> {1}", outCaling,e.InNumberPhone);
             if (Ports.ContainsKey(e.InNumberPhone))
             {
                 var portIn = Ports[e.InNumberPhone];//.FirstOrDefault(x=>x.Value==e.InNumberPhone).Key;

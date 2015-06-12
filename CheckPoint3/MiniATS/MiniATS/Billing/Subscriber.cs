@@ -26,10 +26,13 @@ namespace MiniATS.Billing
                
             }
         }
-        public bool ToChangeTarif(int IdTarif,DateTime date)
+        public void ToChangeTariff(TariffPlane tarif, DateTime date)
         {
-            return OnChangeTarif(IdTarif, date);
+            Console.WriteLine(OnChangeTarif(tarif, date)
+                ? "You have successfully changed the tariff"
+                : "You can not change the tariff (you have changed the rate this month)");
         }
+
         public void ReFill(int addMoney)
         {
             Balance += addMoney;
@@ -50,11 +53,11 @@ namespace MiniATS.Billing
             if (ToTerminate != null)
                 ToTerminate(this);
         }
-        public event Func<object,int,DateTime,bool> ChangeTarif;
-        protected virtual bool OnChangeTarif(int arg, DateTime date)
+        public event Func<object, TariffPlane, DateTime, bool> ChangeTarif;
+        protected virtual bool OnChangeTarif(TariffPlane tarifPlane, DateTime date)
         {
             if (ChangeTarif != null)
-               return ChangeTarif(this,arg,date);
+               return ChangeTarif(this,tarifPlane,date);
             return false;
         }
         public event Action<object> ChangeBalance;

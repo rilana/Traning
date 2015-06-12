@@ -25,6 +25,7 @@ namespace MiniATS
             a1.ReFill(70000);
            // company.Disconect();
 
+            a1.ToChangeTariff(company._tarifPlanes[1],DateTime.Now);
             a1.Terminal.StartCall(112);
             Thread.Sleep(2000);
             a3.Terminal.StartCall(112);

@@ -8,7 +8,7 @@ namespace MiniATS.Billing
         public DateTime DateTimeContract { get; set; }
         public int NumberPhone { get; set; }
         public int NumberContract { get; set; }
-        public TarifPlane TarifPlane { get; set; }
+        public TariffPlane TarifPlane { get; set; }
 
     }
 }
