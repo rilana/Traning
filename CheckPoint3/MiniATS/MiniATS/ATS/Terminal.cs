@@ -26,22 +26,26 @@ namespace MiniATS.ATS
 
         public void StartCall(int telephoneNumber)
         {
-            if (Port.PortState == PortState.Сonnected)
+            switch (Port.PortState)
             {
-                var arg = new CallingArg()
-                {
-                    OutCalling = Port,
-                    InNumberPhone = telephoneNumber
-                };
+                case PortState.Сonnected:
+                    var arg = new CallingArg()
+                    {
+                        OutCalling = Port,
+                        InNumberPhone = telephoneNumber
+                    };
                
-                Calling += Port.CallFromTerminal;
-                Port.PortState = PortState.Busy;
-                OnCalling(arg);
-                Calling -= Port.CallFromTerminal;
-            }
-            else
-            {
-                Console.WriteLine("No signal");
+                    Calling += Port.CallFromTerminal;
+                    Port.PortState = PortState.Busy;
+                    OnCalling(arg);
+                    Calling -= Port.CallFromTerminal;
+                    break;
+                case PortState.Busy:
+                    Console.WriteLine("Previous conversation is not over");
+                    break;
+                default:
+                    Console.WriteLine("No signal");
+                    break;
             }
         }
 
@@ -60,7 +64,7 @@ namespace MiniATS.ATS
         {
             if (Port.PortState == PortState.Busy)
             {
-                //Calling -= Port.CallFromTerminal;
+               
                 FinishCalling += Port.FinishTerminal;
                 OnFinish();
                 FinishCalling-=Port.FinishTerminal;

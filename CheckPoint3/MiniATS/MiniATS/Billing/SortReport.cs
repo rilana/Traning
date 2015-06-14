@@ -5,6 +5,8 @@ namespace MiniATS.Billing
     {
         Data,
         Price,
-        Duration
+        Duration,
+        SubscriberIn,
+        SubscriberOut,
     }
 }
