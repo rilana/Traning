@@ -8,8 +8,8 @@ namespace MiniATS.ATS
     public class Ats
     {
         public Dictionary<int,Port> Ports=new Dictionary<int,Port>();
-        private Dictionary<int, Port> _disabledPorts = new Dictionary<int, Port>();
-        private List<CallData> _activeCalls=new List<CallData>(); 
+        private readonly Dictionary<int, Port> _disabledPorts = new Dictionary<int, Port>();
+        private readonly List<CallData> _activeCalls=new List<CallData>(); 
         static public List<CallData> AllCalls =new List<CallData>(); 
       
         public void AddNew(Port port, int number)
@@ -97,7 +97,7 @@ namespace MiniATS.ATS
 
         }
 
-        public void CallFinishPort(object sender, CallingArg e)
+        public void CallFinishPort(object sender)
         {
             var numberPhoneFinish = Ports.FirstOrDefault(x => x.Value == (Port)sender).Key;//Ports[(Port)sender];
             var item = _activeCalls.Find(x => x.OutPhone == numberPhoneFinish || x.InPhone == numberPhoneFinish);

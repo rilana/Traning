@@ -15,10 +15,10 @@ namespace MiniATS.ATS
             OnPortCall(e);
         }
         //+/-
-        public void FinishTerminal(object sender, CallingArg e)
+        public void FinishTerminal(object sender)
         {
             
-            OnPortFinishCall(e);
+            OnPortFinishCall();
         }
         //+/-
         public bool CallFromAts(CallingArg e)
@@ -26,11 +26,11 @@ namespace MiniATS.ATS
             return OnTerminal(e);
         }
 
-        public event EventHandler<CallingArg> PortFinishCall;
-        protected virtual void OnPortFinishCall(CallingArg e)
+        public event Action<object> PortFinishCall;
+        protected virtual void OnPortFinishCall()
         {
             if (PortFinishCall != null)
-                PortFinishCall(this, e);
+                PortFinishCall(this);
         }
 
         public event EventHandler<CallingArg> PortCall;
@@ -52,7 +52,7 @@ namespace MiniATS.ATS
         protected virtual bool OnTerminal(CallingArg arg)
         {
             var handler = ToTerminal;
-            bool temp=false;
+            var temp=false;
             if (handler != null)
             {
                temp = handler(arg);

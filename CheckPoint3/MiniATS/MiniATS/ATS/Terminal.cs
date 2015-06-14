@@ -62,19 +62,19 @@ namespace MiniATS.ATS
             {
                 //Calling -= Port.CallFromTerminal;
                 FinishCalling += Port.FinishTerminal;
-                OnFinish(null);
+                OnFinish();
                 FinishCalling-=Port.FinishTerminal;
             }
 
         }
 
-        public event EventHandler<CallingArg> FinishCalling;
-        protected virtual void OnFinish(CallingArg e)
+        public event Action<object> FinishCalling;
+        protected virtual void OnFinish()
         {
             var handler = FinishCalling;
             if (handler != null)
             {
-                handler(this, e);
+                handler(this);
             }
         }
 

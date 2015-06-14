@@ -18,11 +18,12 @@ namespace MiniATS
            var a3 = company.Contracts[2].Subscriber;
 
             a2.GetSpecification(new DateTime(2015, 6, 1), DateTime.Now,SortReport.Duration);
-            company.BilingSystem.ToCalculation(2015, 6);
+           // company.BilingSystem.ToCalculation(2015, 6);
            //a2.ToTerminateContract();
            //a2.GetSpecification(new DateTime(2015, 6, 1), DateTime.Now, SortReport.Duration);
 
             a1.ToChangeTariff(company._tarifPlanes[1],DateTime.Now);
+
             a1.Terminal.StartCall(112);
             Thread.Sleep(2000);
             a3.Terminal.StartCall(112);
@@ -31,8 +32,6 @@ namespace MiniATS
             a2.Terminal.StartCall(111);
             Thread.Sleep(2000);
             a2.Terminal.FinishCall();
-
-          
 
             a3.Terminal.OnOffPort();
             a1.Terminal.StartCall(113);
@@ -45,7 +44,7 @@ namespace MiniATS
 
 
             BillingSystem.FillCallToFile();
-            ATS.Ats.FillCallToFile();
+            Ats.FillCallToFile();
             Console.WriteLine("Finish");
             Console.ReadLine();
 
