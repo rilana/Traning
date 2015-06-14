@@ -51,43 +51,33 @@ namespace MiniATS.ATS
         public void CallGetPort(object sender, CallingArg e)
         {
             var outCaling = Ports.FirstOrDefault(x => x.Value == (Port)sender).Key;
-            Console.WriteLine("{0} -> {1}", outCaling,e.InNumberPhone);
+            var callData = new CallData()
+            {
+                OutPhone = outCaling,
+                InPhone = e.InNumberPhone,
+                DateTimeStart = DateTime.Now
+            };
+            e.OutNumberPhone = outCaling;
+            Console.WriteLine("{0} -> {1}", outCaling, e.InNumberPhone);
+            var connect = false;
             if (Ports.ContainsKey(e.InNumberPhone))
             {
-                var portIn = Ports[e.InNumberPhone];//.FirstOrDefault(x=>x.Value==e.InNumberPhone).Key;
-                e.OutNumberPhone = outCaling;
-                var callData = new CallData()
-                {
-                    OutPhone = e.OutNumberPhone,
-                    InPhone = e.InNumberPhone,
-                    DateTimeStart = DateTime.Now
-                };
-
+                var portIn = Ports[e.InNumberPhone];
                 if (portIn.PortState != PortState.Сonnected)
                 {
                     Console.WriteLine("{0} buzzy...", e.InNumberPhone);
-                    callData.DateTimeEnd = callData.DateTimeStart;
-                    ((Port)sender).PortState = PortState.Сonnected;
-                    RegistryCall(callData);
-
                 }
                 else
                 {
-                    // Сonnected = null;
                     Сonnected += portIn.CallFromAts;
                     var answer = OnСonnected(e);
                     Console.WriteLine(answer ? "Speaking" : "No hang");
                     if (answer)
                     {
-                        ((Port)sender).PortState = PortState.Busy;
+                        ((Port) sender).PortState = PortState.Busy;
                         _activeCalls.Add(callData);
+                        connect = true;
 
-                    }
-                    else
-                    {
-                        ((Port)sender).PortState = PortState.Сonnected;
-                        callData.DateTimeEnd = callData.DateTimeStart;
-                        RegistryCall(callData);
                     }
                     Сonnected -= portIn.CallFromAts;
                 }
@@ -95,9 +85,14 @@ namespace MiniATS.ATS
             else
             {
                 Console.WriteLine("The phone number {0} is not in service Ats", e.InNumberPhone);
-                Ports[outCaling].PortState = PortState.Сonnected;
             }
-            
+            if (!connect)
+            {
+                ((Port)sender).PortState = PortState.Сonnected;
+                callData.DateTimeEnd = callData.DateTimeStart;
+                RegistryCall(callData);
+            }
+
 
 
         }

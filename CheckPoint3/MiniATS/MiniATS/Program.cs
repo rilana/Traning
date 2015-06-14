@@ -9,7 +9,7 @@ namespace MiniATS
     {
         static void Main(string[] args)
         {
-            ATS.Ats.FillCallToList();
+           Ats.FillCallToList();
            BillingSystem.FillCallToList();
 
            var company=FillData.CreaterCompany();
@@ -18,10 +18,9 @@ namespace MiniATS
            var a3 = company.Contracts[2].Subscriber;
 
             a2.GetSpecification(new DateTime(2015, 6, 1), DateTime.Now,SortReport.Duration);
-            //company.BilingSystem.ToCalculation(2015, 6);
-            a1.ReFill(70000);
-           a2.ToTerminateContract();
-           a2.GetSpecification(new DateTime(2015, 6, 1), DateTime.Now, SortReport.Duration);
+            company.BilingSystem.ToCalculation(2015, 6);
+           //a2.ToTerminateContract();
+           //a2.GetSpecification(new DateTime(2015, 6, 1), DateTime.Now, SortReport.Duration);
 
             a1.ToChangeTariff(company._tarifPlanes[1],DateTime.Now);
             a1.Terminal.StartCall(112);

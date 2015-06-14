@@ -41,7 +41,7 @@ namespace MiniATS.Billing
                 );
         }
 
-        public void CreateContract(Subscriber subscriber, DateTime dateTimeContract)
+        public void CreateContract(Subscriber subscriber, DateTime dateTimeContract,TariffPlane tariffPlane)
         {
           var numberContract =_contracts.Count==0?1:_contracts.Max(x => x.NumberContract) + 1;
           var numberPhone = _contracts.Count == 0 ? 111 :_contracts.Max(x => x.NumberPhone) + 1;
@@ -57,7 +57,7 @@ namespace MiniATS.Billing
                 DateTimeContract = dateTimeContract,
                 NumberContract = numberContract,
                 NumberPhone = numberPhone,
-                TarifPlane = _tarifPlanes[0]
+                TarifPlane = tariffPlane
             };
           _contracts.Add(contract);
         }
