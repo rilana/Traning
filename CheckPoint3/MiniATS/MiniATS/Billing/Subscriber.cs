@@ -8,21 +8,21 @@ namespace MiniATS.Billing
     {
         public string NameSubscriber { get; set; }
         public Terminal Terminal { get; set; }
-        int balance;
+        int _balance;
         public int Balance
         {
             get
             {
-                return balance;
+                return _balance;
             } 
             private set
             {
-                 if ((balance<0)&&(value>0))
+                 if ((_balance<0)&&(value>0))
                  
                  {
                      OnChangeBalance();
                  }
-                balance = value;
+                _balance = value;
                
             }
         }
@@ -41,9 +41,9 @@ namespace MiniATS.Billing
         {
             OnToTerminate();
         }
-        public void GetSpecification(DateTime dateStart,DateTime dateEnd)
+        public void GetSpecification(DateTime dateStart,DateTime dateEnd, SortReport sortReport)
         {
-            OnSpecification(new FilterSpecification() { Start = dateStart, End = dateEnd });
+            OnSpecification(new FilterSpecification() { Start = dateStart, End = dateEnd,SortReport = sortReport});
             
         }
 
@@ -56,10 +56,9 @@ namespace MiniATS.Billing
         public event Func<object, TariffPlane, DateTime, bool> ChangeTarif;
         protected virtual bool OnChangeTarif(TariffPlane tarifPlane, DateTime date)
         {
-            if (ChangeTarif != null)
-               return ChangeTarif(this,tarifPlane,date);
-            return false;
+            return ChangeTarif != null && ChangeTarif(this,tarifPlane,date);
         }
+
         public event Action<object> ChangeBalance;
         protected virtual void OnChangeBalance()
         {

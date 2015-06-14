@@ -35,8 +35,8 @@ namespace MiniATS.ATS
 
         public Port GeneratyPort(int numberPhone)
         {
-            var concat=Ports.Values.Concat(_disabledPorts.Values);
-            var nport = new Port() { IdPort = concat.Count() == 0 ? 1 : concat.Max(x => x.IdPort) + 1 };
+            var concat=Ports.Values.Concat(_disabledPorts.Values).ToList();
+            var nport = new Port() { IdPort = concat.Any() ? concat.Max(x => x.IdPort) + 1:1 };
             AddNew( nport,numberPhone);
             return nport;
         }

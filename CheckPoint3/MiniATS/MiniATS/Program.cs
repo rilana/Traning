@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using MiniATS.Billing;
+using MiniATS.ATS;
 
 namespace MiniATS
 {
@@ -8,22 +9,19 @@ namespace MiniATS
     {
         static void Main(string[] args)
         {
-            var ats = new ATS.Ats();
             ATS.Ats.FillCallToList();
-            var company=new Company(ats);
-            BillingSystem.FillCallToList();
+           BillingSystem.FillCallToList();
 
-            var a1 = new Subscriber() { NameSubscriber = "Ivan" };
-            var a2 = new Subscriber() { NameSubscriber = "Nastya" };
-            var a3 = new Subscriber() { NameSubscriber = "Petr" };
-            company.CreateContract(a1,new DateTime(2015,01,12));
-            company.CreateContract(a2, new DateTime(2015, 01, 12));
-            company.CreateContract(a3, new DateTime(2015, 01, 10));
+           var company=FillData.CreaterCompany();
+           var a1 = company.Contracts[0].Subscriber;
+           var a2 = company.Contracts[1].Subscriber;
+           var a3 = company.Contracts[2].Subscriber;
 
-            a1.GetSpecification(new DateTime(2015, 6, 1), DateTime.Now);
+            a2.GetSpecification(new DateTime(2015, 6, 1), DateTime.Now,SortReport.Duration);
             //company.BilingSystem.ToCalculation(2015, 6);
             a1.ReFill(70000);
-           // company.Disconect();
+           a2.ToTerminateContract();
+           a2.GetSpecification(new DateTime(2015, 6, 1), DateTime.Now, SortReport.Duration);
 
             a1.ToChangeTariff(company._tarifPlanes[1],DateTime.Now);
             a1.Terminal.StartCall(112);

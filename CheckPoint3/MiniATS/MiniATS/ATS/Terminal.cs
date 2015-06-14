@@ -50,9 +50,9 @@ namespace MiniATS.ATS
            Console.WriteLine("Ring.... "+Port.IdPort);
            var rr=new Random();
            var zz = rr.Next(2);
-           //if (zz==1) 
+           if (zz==1) 
                Port.PortState=PortState.Busy;
-           return true;//zz == 1;
+           return zz == 1;
         }
 
         

@@ -6,5 +6,6 @@ namespace MiniATS.Billing
     {
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
+        public SortReport SortReport { get; set; }
     }
 }

@@ -48,11 +48,25 @@ namespace MiniATS.Billing
 
             var abonent = (sender as Subscriber);
             var tempcontract = _contracts.Find(x => x.Subscriber == abonent);
-            var temp = _billingDates.Where(x => (x.OutPhone == tempcontract.NumberPhone || x.InPhone == tempcontract.NumberPhone)
-                                        && x.DateTimeStart >= e.Start && x.DateTimeStart <= e.End).OrderBy(x => x.DateTimeStart);
+            var temp =_billingDates.Where(
+                    x => (x.OutPhone == tempcontract.NumberPhone || x.InPhone == tempcontract.NumberPhone)
+                         && x.DateTimeStart >= e.Start && x.DateTimeStart <= e.End);
+            switch (e.SortReport)
+            {
+                case SortReport.Data:
+                    temp = temp.OrderBy(x => x.DateTimeStart);
+                    break;
+                case SortReport.Price:
+                    temp = temp.OrderBy(x => x.Cost);
+                    break;
+                default:
+                    temp = temp.OrderBy(x => x.Duration);
+                    break;
+            }
+
             foreach (var item in temp)
             {
-                string tempOutOIn = item.OutPhone == tempcontract.NumberPhone
+                var tempOutOIn = item.OutPhone == tempcontract.NumberPhone
                                 ? string.Format("->{0}   {1}", item.InPhone, item.Cost)
                                 : string.Format("<-{0}   0", item.OutPhone);
                 Console.WriteLine("{0}  {1}   {2}   {3}", item.DateTimeStart.ToShortDateString(),

@@ -52,10 +52,12 @@
     <Compile Include="Billing\Company.cs" />
     <Compile Include="Billing\Contract.cs" />
     <Compile Include="Billing\FilterSpecification.cs" />
+    <Compile Include="FillData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ATS\Terminal.cs" />
     <Compile Include="Billing\TariffPlane.cs" />
+    <Compile Include="Billing\SortReport.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
