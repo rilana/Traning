@@ -17,8 +17,8 @@ namespace MiniATS
            var a2 = company.Contracts[1].Subscriber;
            var a3 = company.Contracts[2].Subscriber;
 
-            a1.GetSpecification(new DateTime(2015, 6, 1), DateTime.Now,SortReport.SubscriberIn);
-           // company.BilingSystem.ToCalculation(2015, 6);
+            a1.GetSpecification(new DateTime(2015, 6, 1), DateTime.Now,SortReport.Data);
+            //company.BilingSystem.ToCalculation(2015, 6);
            //a2.ToTerminateContract();
            //a2.GetSpecification(new DateTime(2015, 6, 1), DateTime.Now, SortReport.Duration);
 

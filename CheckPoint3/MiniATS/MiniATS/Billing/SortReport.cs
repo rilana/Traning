@@ -7,6 +7,6 @@ namespace MiniATS.Billing
         Price,
         Duration,
         SubscriberIn,
-        SubscriberOut,
+        SubscriberOut
     }
 }

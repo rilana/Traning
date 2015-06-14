@@ -35,11 +35,15 @@ namespace MiniATS.Billing
         private TimeSpan GetFreeMinute(Contract contract, DateTime dateStart)
         {
             var durationMont = _billingDates.Where(x => x.OutPhone == contract.NumberPhone
-                                   && x.DateTimeStart.Month == dateStart.Month && x.DateTimeStart <= dateStart
+                                   && x.DateTimeStart.Year == dateStart.Year
+                                   && x.DateTimeStart.Month == dateStart.Month 
+                                   && x.DateTimeStart <= dateStart
                                    && x.IdTariff==contract.TarifPlane.IdTariff)
                                    .Select(x => x.Duration)
                                    .Aggregate(new TimeSpan(0), (p, v) => p.Add(v));
-            return durationMont >= contract.TarifPlane.FreeMinute ? TimeSpan.Zero : contract.TarifPlane.FreeMinute - durationMont;
+            return durationMont >= contract.TarifPlane.FreeMinute ?
+                                                    TimeSpan.Zero :
+                                                    contract.TarifPlane.FreeMinute - durationMont;
 
         }
         // conclusion of subscriber details

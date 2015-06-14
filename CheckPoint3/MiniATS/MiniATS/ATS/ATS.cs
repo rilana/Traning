@@ -99,7 +99,7 @@ namespace MiniATS.ATS
 
         public void CallFinishPort(object sender)
         {
-            var numberPhoneFinish = Ports.FirstOrDefault(x => x.Value == (Port)sender).Key;//Ports[(Port)sender];
+            var numberPhoneFinish = Ports.FirstOrDefault(x => x.Value == (Port)sender).Key;
             var item = _activeCalls.Find(x => x.OutPhone == numberPhoneFinish || x.InPhone == numberPhoneFinish);
             Ports.FirstOrDefault(x => x.Key == item.InPhone).Value.PortState = PortState.Сonnected;
             Ports.FirstOrDefault(x => x.Key == item.OutPhone).Value.PortState = PortState.Сonnected;

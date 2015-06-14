@@ -17,7 +17,6 @@ namespace MiniATS.ATS
         //+/-
         public void FinishTerminal(object sender)
         {
-            
             OnPortFinishCall();
         }
         //+/-

@@ -1,52 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="MiniATS.Port">
-    <Position X="7" Y="1" Width="1.5" />
+  <Class Name="MiniATS.ATS.Ats" Collapsed="true">
+    <Position X="6.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BgAAAgAAAAAAgAAAQAAEoAwAAAAAAAAAAAAAAAAACEA=</HashCode>
-      <FileName>Port.cs</FileName>
+      <HashCode>AAgCABEAAGAAAAAABAAFAAAAAgQAAgIAggAAABAAAEA=</HashCode>
+      <FileName>ATS\ATS.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MiniATS.Terminal">
-    <Position X="6.5" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AEAAAAAQAAAAAAgAAgACAAAACAAAAAQAAAAECAAAIAA=</HashCode>
-      <FileName>Terminal.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MiniATS.ATS">
-    <Position X="3.75" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAIAAAIAAAAAAAAABAABAAAAAgAAAhIAAAAAAgAAAAI=</HashCode>
-      <FileName>ATS.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MiniATS.CallingArg">
-    <Position X="1.25" Y="0.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAhgABAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>CallingArg.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MiniATS.CallData">
-    <Position X="6" Y="1" Width="1.5" />
+  <Class Name="MiniATS.ATS.CallData" Collapsed="true">
+    <Position X="8" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAQAAAAACAAAAAAAAg=</HashCode>
-      <FileName>CallData.cs</FileName>
+      <FileName>ATS\CallData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Struct Name="MiniATS.TelephoneNumber">
-    <Position X="1.25" Y="2.75" Width="1.5" />
+  <Class Name="MiniATS.ATS.CallingArg" Collapsed="true">
+    <Position X="5.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>TelephoneNumber.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAhgABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ATS\CallingArg.cs</FileName>
     </TypeIdentifier>
-  </Struct>
-  <Enum Name="MiniATS.PortState">
-    <Position X="4.5" Y="3.75" Width="1.5" />
+  </Class>
+  <Class Name="MiniATS.ATS.Port" Collapsed="true">
+    <Position X="7" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAgAAAQAAAoAwAAAAYAAAAAAAAAAAACEA=</HashCode>
+      <FileName>ATS\Port.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MiniATS.ATS.Terminal" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAQAAAAAAhAAAACAAAACAAAAAAAAAAECAAAIAA=</HashCode>
+      <FileName>ATS\Terminal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="MiniATS.ATS.PortState" Collapsed="true">
+    <Position X="2" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAABAAAAAAAAACBAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>PortState.cs</FileName>
+      <FileName>ATS\PortState.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />
