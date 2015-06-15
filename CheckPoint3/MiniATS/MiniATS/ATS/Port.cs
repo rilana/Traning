@@ -4,10 +4,11 @@ namespace MiniATS.ATS
 {
     public class Port 
     {
-
+        public event Action<object> PortFinishCall;
+        public event EventHandler<CallingArg> PortCall;
+        public event Func<CallingArg, bool> ToTerminal;
         //Terminal terminal=new Terminal();
         public int IdPort { get; set; }
-
         public PortState PortState { get; set; }
         //+/-
         public void CallFromTerminal(object sender, CallingArg e)
@@ -25,14 +26,12 @@ namespace MiniATS.ATS
             return OnTerminal(e);
         }
 
-        public event Action<object> PortFinishCall;
         protected virtual void OnPortFinishCall()
         {
             if (PortFinishCall != null)
                 PortFinishCall(this);
         }
-
-        public event EventHandler<CallingArg> PortCall;
+      
         protected virtual void OnPortCall(CallingArg e)
         {
             var handler = PortCall;
@@ -46,8 +45,7 @@ namespace MiniATS.ATS
                 Console.WriteLine("Ats does not answer!");
             }
         }
-
-        public event Func<CallingArg, bool> ToTerminal;
+        
         protected virtual bool OnTerminal(CallingArg arg)
         {
             var handler = ToTerminal;
@@ -58,8 +56,5 @@ namespace MiniATS.ATS
             }
             return temp;
         }
-
-
-     
     }
 }

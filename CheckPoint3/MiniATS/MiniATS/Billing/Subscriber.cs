@@ -6,9 +6,15 @@ namespace MiniATS.Billing
 {
     public class Subscriber
     {
+        public event Action<object> ChangeBalance;
+        public event EventHandler<FilterSpecification> Specification;
+        public event Func<object, TariffPlane, DateTime, bool> ChangeTarif;
+        public event Action<object> ToTerminate;
+
         public string NameSubscriber { get; set; }
         public Terminal Terminal { get; set; }
-        int _balance;
+        private int _balance;
+
         public int Balance
         {
             get
@@ -23,7 +29,6 @@ namespace MiniATS.Billing
                      OnChangeBalance();
                  }
                 _balance = value;
-               
             }
         }
         public void ToChangeTariff(TariffPlane tarif, DateTime date)
@@ -37,35 +42,35 @@ namespace MiniATS.Billing
         {
             Balance += addMoney;
         }
+
         public void ToTerminateContract()
         {
             OnToTerminate();
         }
+
         public void GetSpecification(DateTime dateStart,DateTime dateEnd, SortReport sortReport)
         {
             OnSpecification(new FilterSpecification() { Start = dateStart, End = dateEnd,SortReport = sortReport});
-            
         }
-
-        public event Action<object> ToTerminate;
+        
         protected virtual void OnToTerminate()
         {
             if (ToTerminate != null)
                 ToTerminate(this);
         }
-        public event Func<object, TariffPlane, DateTime, bool> ChangeTarif;
+       
         protected virtual bool OnChangeTarif(TariffPlane tarifPlane, DateTime date)
         {
             return ChangeTarif != null && ChangeTarif(this,tarifPlane,date);
         }
 
-        public event Action<object> ChangeBalance;
+      
         protected virtual void OnChangeBalance()
         {
             if (ChangeBalance != null)
                 ChangeBalance(this);
         }
-        public event EventHandler<FilterSpecification> Specification;
+       
         protected virtual void OnSpecification(FilterSpecification e)
         {
             if (Specification != null)

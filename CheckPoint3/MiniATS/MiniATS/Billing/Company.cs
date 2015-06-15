@@ -10,7 +10,7 @@ namespace MiniATS.Billing
         private List<Contract> _contracts=new List<Contract>();
         readonly List<Contract> _historyContracts = new List<Contract>();
         public readonly List<TariffPlane> _tarifPlanes=new List<TariffPlane>();
-        private Ats _ats;
+        public Ats _ats;
         public BillingSystem BilingSystem;
 
         public List<Contract> Contracts

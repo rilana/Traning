@@ -9,9 +9,6 @@ namespace MiniATS
     {
         static void Main(string[] args)
         {
-           Ats.FillCallToList();
-           BillingSystem.FillCallToList();
-
            var company=FillData.CreaterCompany();
            var a1 = company.Contracts[0].Subscriber;
            var a2 = company.Contracts[1].Subscriber;
@@ -41,19 +38,9 @@ namespace MiniATS
             a1.Terminal.StartCall(112);
             Thread.Sleep(2000);
             a1.Terminal.FinishCall();
-
-
-            BillingSystem.FillCallToFile();
-            Ats.FillCallToFile();
+            FillData.FillCallToFile(company.BilingSystem._billingDates);
             Console.WriteLine("Finish");
             Console.ReadLine();
-
-            
-          
-
-         
-
-            
         }
     }
 }

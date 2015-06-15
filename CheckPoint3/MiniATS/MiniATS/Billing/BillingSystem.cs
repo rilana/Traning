@@ -8,8 +8,11 @@ namespace MiniATS.Billing
 {
     public class BillingSystem
     {
-        static List<BillingData> _billingDates = new List<BillingData>();
-        List<Contract> _contracts;
+        public event Action<int> ToDisabledAbonent;
+
+        public List<BillingData> _billingDates = new List<BillingData>();
+        private List<Contract> _contracts;
+
         public BillingSystem(List<Contract> contracts)
         {
            _contracts = contracts;
@@ -49,7 +52,6 @@ namespace MiniATS.Billing
         // conclusion of subscriber details
         public void ToTranscript(object sender, FilterSpecification e)
         {
-
             var abonent = (sender as Subscriber);
             var tempcontract = _contracts.Find(x => x.Subscriber == abonent);
             var temp = from bill in _billingDates.Where(x => (x.OutPhone == tempcontract.NumberPhone
@@ -67,8 +69,6 @@ namespace MiniATS.Billing
                             bill.Duration
 
                         };
-            
-            
             switch (e.SortReport)
             {
                 case SortReport.Data:
@@ -87,7 +87,6 @@ namespace MiniATS.Billing
                     temp = temp.OrderBy(x => x.Duration);
                     break;
             }
-
             foreach (var item in temp)
             {
                 var tempOutOIn = item.subscriberOut == abonent
@@ -97,7 +96,6 @@ namespace MiniATS.Billing
                     item.DateTimeStart.ToShortTimeString(),
                     item.Duration, tempOutOIn);
             }
-
             Console.WriteLine("Sum total - {0}, duration outcals - {1}, incalls - {2}",
                                             GetSumTotalMoney(tempcontract, e),
                                             GetSumTotalTimeOut(tempcontract, e),
@@ -148,6 +146,7 @@ namespace MiniATS.Billing
                 if (item.abonent.Balance < 0) OnDisabledAbonent(item.numberPhone);
             }
        }
+
         public bool ChangeTarifSubscriber(object sender, TariffPlane tarif,DateTime date)
         {
             var item = _contracts.Find(x => x.Subscriber == (Subscriber)sender);
@@ -163,9 +162,9 @@ namespace MiniATS.Billing
                 return true;
             }
             return false;
-            
         }
-        public event Action<int> ToDisabledAbonent;
+
+       
         protected virtual void OnDisabledAbonent(int arg)
         {
             var handler = ToDisabledAbonent;
@@ -173,50 +172,6 @@ namespace MiniATS.Billing
             {
                handler(arg);
             }
-           
         }
-
-
-        #region fill data
-        public static void FillCallToList()
-        {
-            using (var sr = new StreamReader("BillingData.csv"))
-            {
-                string line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    var temp = line.Split(';');
-                    _billingDates.Add(
-                         new BillingData()
-                         {
-                             OutPhone = Convert.ToInt32(temp[0]),
-                             InPhone = Convert.ToInt32(temp[1]),
-                             DateTimeStart = Convert.ToDateTime(temp[2]),
-                             DateTimeEnd = Convert.ToDateTime(temp[3]),
-                             Cost = Convert.ToInt32(temp[4]),
-                             IdTariff = Convert.ToInt32(temp[5])
-                         }
-                         );
-                }
-            }
-        }
-
-        public static void FillCallToFile()
-        {
-            using (var sw = new StreamWriter("BillingData.csv"))
-            {
-                foreach (var temp in _billingDates)
-                {
-                    sw.WriteLine("{0};{1};{2};{3};{4};{5}",
-                        temp.OutPhone,
-                        temp.InPhone,
-                        temp.DateTimeStart,
-                        temp.DateTimeEnd,
-                        temp.Cost,
-                        temp.IdTariff);
-                }
-            }
-        }
-        #endregion
     }
 }

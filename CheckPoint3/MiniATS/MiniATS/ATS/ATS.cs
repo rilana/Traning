@@ -7,10 +7,34 @@ namespace MiniATS.ATS
 {
     public class Ats
     {
-        public Dictionary<int,Port> Ports=new Dictionary<int,Port>();
+        public event EventHandler<CallData> RegistryCalls;
+        public event Func<CallingArg, bool> Сonnected;
+
+        public Dictionary<int, Port> Ports = new Dictionary<int, Port>();
         private readonly Dictionary<int, Port> _disabledPorts = new Dictionary<int, Port>();
-        private readonly List<CallData> _activeCalls=new List<CallData>(); 
-        static public List<CallData> AllCalls =new List<CallData>(); 
+        private readonly List<CallData> _activeCalls = new List<CallData>();
+        public List<CallData> AllCalls = new List<CallData>(); 
+
+        protected virtual void OnRegistryCalls(CallData e)
+        {
+            var handler = RegistryCalls;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
+        }
+
+        protected virtual bool OnСonnected(CallingArg arg)
+        {
+            var handler = Сonnected;
+            var temp = false;
+            if (handler != null)
+            {
+                temp = handler(arg);
+
+            }
+            return temp;
+        }
       
         public void AddNew(Port port, int number)
         {
@@ -18,6 +42,7 @@ namespace MiniATS.ATS
             port.PortFinishCall += CallFinishPort;
             Ports.Add(number,port);
         }
+
         public void SwitchOffPort(int numberPhone)
         {
             Ports[numberPhone].PortCall -= CallGetPort;
@@ -25,6 +50,7 @@ namespace MiniATS.ATS
             _disabledPorts.Add(numberPhone, Ports[numberPhone]);
             Ports.Remove(numberPhone);
         }
+
         public void SwitchOnPort(int numberPhone)
         {
             _disabledPorts[numberPhone].PortCall += CallGetPort;
@@ -45,7 +71,6 @@ namespace MiniATS.ATS
         {
             AllCalls.Add(e);
             OnRegistryCalls(e);
-
         }
 
         public void CallGetPort(object sender, CallingArg e)
@@ -69,17 +94,14 @@ namespace MiniATS.ATS
                 }
                 else
                 {
-                    Сonnected += portIn.CallFromAts;
-                    var answer = OnСonnected(e);
+                    var answer = portIn.CallFromAts(e);
                     Console.WriteLine(answer ? "Speaking" : "No hang");
                     if (answer)
                     {
                         ((Port) sender).PortState = PortState.Busy;
                         _activeCalls.Add(callData);
                         connect = true;
-
                     }
-                    Сonnected -= portIn.CallFromAts;
                 }
             }
             else
@@ -92,9 +114,6 @@ namespace MiniATS.ATS
                 callData.DateTimeEnd = callData.DateTimeStart;
                 RegistryCall(callData);
             }
-
-
-
         }
 
         public void CallFinishPort(object sender)
@@ -105,71 +124,7 @@ namespace MiniATS.ATS
             Ports.FirstOrDefault(x => x.Key == item.OutPhone).Value.PortState = PortState.Сonnected;
             item.DateTimeEnd = DateTime.Now.AddMinutes(5);
             _activeCalls.Remove(item);
-
             RegistryCall(item);
         }
-
-
-
-
-        public event EventHandler<CallData> RegistryCalls;
-        protected virtual void OnRegistryCalls(CallData e)
-        {
-            var handler = RegistryCalls; 
-            if (handler != null)
-            {
-                handler(this, e);
-            }
-
-        }
-
-        public event Func<CallingArg, bool> Сonnected;
-        protected virtual bool OnСonnected(CallingArg arg)
-        {
-            var handler = Сonnected;
-            var temp = false;
-            if (handler != null)
-            {
-                temp=handler(arg);
-
-            }
-            return temp;
-
-        }
-        #region fill data
-        public static void FillCallToList()
-        {
-            
-            using (var sr = new StreamReader("CallData.csv"))
-            {
-                string line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    var temp = line.Split(';');
-                     AllCalls.Add(
-                         new CallData()
-                         {
-                             OutPhone =Convert.ToInt32(temp[0]),
-                             InPhone = Convert.ToInt32(temp[1]),
-                             DateTimeStart = Convert.ToDateTime(temp[2]),
-                             DateTimeEnd = Convert.ToDateTime(temp[3])
-                         }
-                         );
-                }
-            }
-        }
-        public static void FillCallToFile()
-        {
-            using (var sw = new StreamWriter("CallData.csv"))
-            {
-                foreach (var temp in AllCalls)
-                {
-                    sw.WriteLine("{0};{1};{2};{3}", temp.OutPhone, temp.InPhone, temp.DateTimeStart, temp.DateTimeEnd);
-                }
-            }
-
-
-        }
-        #endregion
-    }
+      }
 }
