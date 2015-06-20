@@ -1,0 +1,12 @@
+C:\Наташа\c# express\example\WatcherModel\FillFolderInDatabase\bin\Debug\FillFolderInDatabase.dll
+C:\Наташа\c# express\example\WatcherModel\FillFolderInDatabase\bin\Debug\FillFolderInDatabase.pdb
+C:\Наташа\c# express\example\WatcherModel\FillFolderInDatabase\obj\Debug\FillFolderInDatabase.csprojResolveAssemblyReference.cache
+C:\Наташа\c# express\example\WatcherModel\FillFolderInDatabase\obj\Debug\FillFolderInDatabase.dll
+C:\Наташа\c# express\example\WatcherModel\FillFolderInDatabase\obj\Debug\FillFolderInDatabase.pdb
+C:\Наташа\c# express\example\WatcherModel\FillFolderInDatabase\bin\Debug\FillFolderInDatabase.dll.config
+C:\Наташа\c# express\example\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.dll
+C:\Наташа\c# express\example\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.SqlServer.dll
+C:\Наташа\c# express\example\WatcherModel\FillFolderInDatabase\bin\Debug\WatcherModel.pdb
+C:\Наташа\c# express\example\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.xml
+C:\Наташа\c# express\example\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.SqlServer.xml
+C:\Наташа\c# express\example\WatcherModel\FillFolderInDatabase\bin\Debug\WatcherModel.dll

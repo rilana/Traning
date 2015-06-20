@@ -1,0 +1,10 @@
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\bin\Debug\WatcherModel.pdb
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\obj\Debug\WatcherModel.csprojResolveAssemblyReference.cache
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\obj\Debug\WatcherModel.pdb
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\bin\Debug\EntityFramework.dll
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\bin\Debug\EntityFramework.xml
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\bin\Debug\WatcherModel.dll.config
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\bin\Debug\WatcherModel.dll
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\obj\Debug\WatcherModel.dll
