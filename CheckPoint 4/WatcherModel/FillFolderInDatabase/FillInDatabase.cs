@@ -27,12 +27,14 @@ namespace FillFolderInDatabase
        
         public void AddOrders(List<Order> orders)
         {
+            Console.WriteLine("filling to base "+orders[0].Manager);
              foreach (var item in orders)
               {
                   WatcherModel.Order orderBd = MappingOrderToBD(item);
                   _context.OrderSet.Add(orderBd);
               }
               _context.SaveChanges();
+              Console.WriteLine("stop filling to base " + orders[0].Manager);
         }
 
         public Manager AddNewManager(string name)

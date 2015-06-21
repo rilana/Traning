@@ -8,8 +8,10 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             var watcherFolder=new WatcherFolder(@"C:\Наташа");
+            Console.WriteLine("Run");
             watcherFolder.Run();
             Console.ReadKey();
+            
         }
     }
 }

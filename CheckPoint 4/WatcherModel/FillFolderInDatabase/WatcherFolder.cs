@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace FillFolderInDatabase
 {
@@ -23,11 +25,23 @@ namespace FillFolderInDatabase
 
         private void OnAdd(object sender, FileSystemEventArgs e)
         {
-            var parser=new Parser(e.FullPath);
-            var fillInDatabase=new FillInDatabase();
-            fillInDatabase.AddOrders(parser.Orders);
-
+            AddAsync(e.FullPath);
+           // Add(e.FullPath);
+            Console.WriteLine("finish onAdd");
         }
+
+        private async void AddAsync(string path)
+        {
+            await Task.Factory.StartNew(Add, path);
+        }
+
+        private void Add(object path)
+        {
+            var parser = new Parser((string)path);
+            var fillInDatabase = new FillInDatabase();
+            fillInDatabase.AddOrders(parser.Orders);
+        }
+
         private void OnDelete(object sender, FileSystemEventArgs e)
         {
 
