@@ -26,11 +26,11 @@ namespace FillFolderInDatabase
             }
         }
 
-        public List<Order> Orders
+        public List<OrderFromFile> Orders
         {
             get
             {
-                var orders = new List<Order>();
+                var orders = new List<OrderFromFile>();
                 using (var sr = new StreamReader(_path,Encoding.Default))
                 {
                     string line;
@@ -40,7 +40,7 @@ namespace FillFolderInDatabase
                         if (val.Count() == 4)
                         {
                             orders.Add(
-                                new Order()
+                                new OrderFromFile()
                                 {
                                     Date = Convert.ToDateTime(val[0]),
                                     Client = val[1],

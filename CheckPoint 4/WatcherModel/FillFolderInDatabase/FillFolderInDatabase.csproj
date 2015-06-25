@@ -49,7 +49,7 @@
   <ItemGroup>
     <Compile Include="FillInDatabase.cs" />
     <Compile Include="IOperationToDatabase.cs" />
-    <Compile Include="Order.cs" />
+    <Compile Include="OrderFromFile.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="WatcherFolder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -12,3 +12,17 @@ C:\Наташа\c# express\example\WatcherModel\ConsoleApp\obj\Debug\ConsoleApp.
 C:\Наташа\c# express\example\WatcherModel\ConsoleApp\bin\Debug\WatcherModel.dll
 C:\Наташа\c# express\example\WatcherModel\ConsoleApp\bin\Debug\EntityFramework.SqlServer.dll
 C:\Наташа\c# express\example\WatcherModel\ConsoleApp\bin\Debug\EntityFramework.SqlServer.xml
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\ConsoleApp\bin\Debug\ConsoleApp.exe.config
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\ConsoleApp\obj\Debug\ConsoleApp.exe
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\ConsoleApp\obj\Debug\ConsoleApp.pdb
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\ConsoleApp\bin\Debug\ConsoleApp.exe
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\ConsoleApp\bin\Debug\ConsoleApp.pdb
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\ConsoleApp\bin\Debug\EntityFramework.dll
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\ConsoleApp\bin\Debug\EntityFramework.SqlServer.dll
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\ConsoleApp\bin\Debug\FillFolderInDatabase.dll
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\ConsoleApp\bin\Debug\WatcherModel.dll
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\ConsoleApp\bin\Debug\FillFolderInDatabase.pdb
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\ConsoleApp\bin\Debug\EntityFramework.xml
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\ConsoleApp\bin\Debug\EntityFramework.SqlServer.xml
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\ConsoleApp\bin\Debug\WatcherModel.pdb
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\ConsoleApp\obj\Debug\ConsoleApp.csprojResolveAssemblyReference.cache

@@ -1,7 +1,7 @@
 ﻿using System;
 namespace FillFolderInDatabase
 {
-    class Order
+    class OrderFromFile
     {
         public string Manager { get; set; }
         public string Client { get; set; }
