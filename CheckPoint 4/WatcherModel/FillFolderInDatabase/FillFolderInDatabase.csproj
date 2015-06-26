@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FillInDatabase.cs" />
+    <Compile Include="OperationToDatabase.cs" />
     <Compile Include="IOperationToDatabase.cs" />
     <Compile Include="OrderFromFile.cs" />
     <Compile Include="Parser.cs" />

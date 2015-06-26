@@ -6,12 +6,14 @@
     <edmx:Diagrams>
       <Diagram DiagramId="381ca7da37744137afaa10f9329b1552" Name="Diagram1" >
         <EntityTypeShape EntityType="Model.Manager" Width="1.5" PointX="5.875" PointY="4" />
-        <EntityTypeShape EntityType="Model.Goods" Width="1.5" PointX="9.75" PointY="2.375" />
+        <EntityTypeShape EntityType="Model.Goods" Width="1.5" PointX="13.5" PointY="6" />
         <EntityTypeShape EntityType="Model.Client" Width="1.5" PointX="13.375" PointY="4" />
-        <EntityTypeShape EntityType="Model.Order" Width="1.5" PointX="9.625" PointY="4.5" />
+        <EntityTypeShape EntityType="Model.Order" Width="1.5" PointX="9.75" PointY="4" />
         <AssociationConnector Association="Model.ManagerOrder" />
         <AssociationConnector Association="Model.GoodsOrder" />
         <AssociationConnector Association="Model.ClientOrder" />
+        <EntityTypeShape EntityType="Model.NameFile" Width="1.5" PointX="5.75" PointY="6.25" />
+        <AssociationConnector Association="Model.NameFileOrder" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -10,19 +10,17 @@ namespace FillFolderInDatabase
     class Parser
     {
         private string _secondNameManager;
-        //???????
-        //private DateTime _date;
+        private string _nameFile;
         private string _path;
         public Parser(string path)
         {
             _path = path;
-            var fileNameWithoutExtension = Path.GetFileNameWithoutExtension(path);
-            if (fileNameWithoutExtension != null)
+            _nameFile= Path.GetFileNameWithoutExtension(path);
+            if (_nameFile != null)
             {
-                var values =fileNameWithoutExtension.Split('_');
+                var values =_nameFile.Split('_');
                 _secondNameManager = values[0];
-                //??????????
-                //_date = Convert.ToDateTime(values[1]);
+                
             }
         }
 
@@ -46,12 +44,38 @@ namespace FillFolderInDatabase
                                     Client = val[1],
                                     Good = val[2],
                                     Cost = Convert.ToInt32(val[3]),
-                                    Manager = _secondNameManager
+                                    Manager = _secondNameManager,
+                                    NameFile=_nameFile,
                                 });
                         }
                     }
                 }
                 return orders;
+            }
+        }
+        public void FillOrderToBase()
+        {
+            using (var sr = new StreamReader(_path, Encoding.Default))
+            {
+                string line;
+                IOperationToDatabase fillToBase=new OperationToDatabase();
+                while ((line = sr.ReadLine()) != null)
+                {
+                    var val = line.Split(',');
+                    if (val.Count() == 4)
+                    {
+                          var orderFile=new OrderFromFile()
+                            {
+                                Date = Convert.ToDateTime(val[0]),
+                                Client = val[1],
+                                Good = val[2],
+                                Cost = Convert.ToInt32(val[3]),
+                                Manager = _secondNameManager,
+                                NameFile = _nameFile,
+                            };
+                          fillToBase.AddOrder(orderFile);
+                    }
+                }
             }
         }
     }

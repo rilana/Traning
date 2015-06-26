@@ -36,6 +36,15 @@
           <ScalarProperty Name="IdGoods" ColumnName="IdGoods" />
           <ScalarProperty Name="Cost" ColumnName="Cost" />
           <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="IdFile" ColumnName="IdFile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NameFileSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.NameFile)">
+        <MappingFragment StoreEntitySet="NameFileSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

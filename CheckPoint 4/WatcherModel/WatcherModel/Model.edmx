@@ -10,6 +10,7 @@
     <EntitySet Name="GoodsSet" EntityType="Model.Store.GoodsSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ClientSet" EntityType="Model.Store.ClientSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="OrderSet" EntityType="Model.Store.OrderSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NameFileSet" EntityType="Model.Store.NameFileSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="ManagerOrder" Association="Model.Store.ManagerOrder">
       <End Role="Manager" EntitySet="ManagerSet" />
       <End Role="Order" EntitySet="OrderSet" />
@@ -20,6 +21,10 @@
     </AssociationSet>
     <AssociationSet Name="ClientOrder" Association="Model.Store.ClientOrder">
       <End Role="Client" EntitySet="ClientSet" />
+      <End Role="Order" EntitySet="OrderSet" />
+    </AssociationSet>
+    <AssociationSet Name="NameFileOrder" Association="Model.Store.NameFileOrder">
+      <End Role="NameFile" EntitySet="NameFileSet" />
       <End Role="Order" EntitySet="OrderSet" />
     </AssociationSet>
   </EntityContainer>
@@ -56,6 +61,14 @@
     <Property Name="IdGoods" Type="int" Nullable="false" />
     <Property Name="Cost" Type="int" Nullable="false" />
     <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="IdFile" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NameFileSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="ManagerOrder">
     <End Role="Manager" Type="Model.Store.ManagerSet" Multiplicity="1" />
@@ -93,6 +106,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="NameFileOrder">
+    <End Role="NameFile" Type="Model.Store.NameFileSet" Multiplicity="1" />
+    <End Role="Order" Type="Model.Store.OrderSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NameFile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="IdFile" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -112,6 +137,11 @@
           </AssociationSet>
           <AssociationSet Name="ClientOrder" Association="Model.ClientOrder">
             <End Role="Client" EntitySet="ClientSet" />
+            <End Role="Order" EntitySet="OrderSet" />
+          </AssociationSet>
+          <EntitySet Name="NameFileSet" EntityType="Model.NameFile" />
+          <AssociationSet Name="NameFileOrder" Association="Model.NameFileOrder">
+            <End Role="NameFile" EntitySet="NameFileSet" />
             <End Role="Order" EntitySet="OrderSet" />
           </AssociationSet>
         </EntityContainer>
@@ -154,6 +184,8 @@
           <NavigationProperty Name="Goods" Relationship="Model.GoodsOrder" FromRole="Order" ToRole="Goods" />
           <NavigationProperty Name="Client" Relationship="Model.ClientOrder" FromRole="Order" ToRole="Client" />
           <Property Name="Date" Type="DateTime" Nullable="false" />
+          <Property Name="IdFile" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="NameFile" Relationship="Model.NameFileOrder" FromRole="Order" ToRole="NameFile" />
         </EntityType>
         <Association Name="ManagerOrder">
           <End Type="Model.Manager" Role="Manager" Multiplicity="1" />
@@ -188,6 +220,26 @@
             </Principal>
             <Dependent Role="Order">
               <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="NameFile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="Model.NameFileOrder" FromRole="NameFile" ToRole="Order" />
+        </EntityType>
+        <Association Name="NameFileOrder">
+          <End Type="Model.NameFile" Role="NameFile" Multiplicity="1" />
+          <End Type="Model.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NameFile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="IdFile" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -232,6 +284,15 @@
           <ScalarProperty Name="IdGoods" ColumnName="IdGoods" />
           <ScalarProperty Name="Cost" ColumnName="Cost" />
           <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="IdFile" ColumnName="IdFile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NameFileSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.NameFile)">
+        <MappingFragment StoreEntitySet="NameFileSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

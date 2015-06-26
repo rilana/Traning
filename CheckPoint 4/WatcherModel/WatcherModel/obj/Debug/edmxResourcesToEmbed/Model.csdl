@@ -17,6 +17,11 @@
       <End Role="Client" EntitySet="ClientSet" />
       <End Role="Order" EntitySet="OrderSet" />
     </AssociationSet>
+    <EntitySet Name="NameFileSet" EntityType="Model.NameFile" />
+    <AssociationSet Name="NameFileOrder" Association="Model.NameFileOrder">
+      <End Role="NameFile" EntitySet="NameFileSet" />
+      <End Role="Order" EntitySet="OrderSet" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Manager">
     <Key>
@@ -57,6 +62,8 @@
     <NavigationProperty Name="Goods" Relationship="Model.GoodsOrder" FromRole="Order" ToRole="Goods" />
     <NavigationProperty Name="Client" Relationship="Model.ClientOrder" FromRole="Order" ToRole="Client" />
     <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="IdFile" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="NameFile" Relationship="Model.NameFileOrder" FromRole="Order" ToRole="NameFile" />
   </EntityType>
   <Association Name="ManagerOrder">
     <End Type="Model.Manager" Role="Manager" Multiplicity="1" />
@@ -91,6 +98,26 @@
       </Principal>
       <Dependent Role="Order">
         <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="NameFile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Model.NameFileOrder" FromRole="NameFile" ToRole="Order" />
+  </EntityType>
+  <Association Name="NameFileOrder">
+    <End Type="Model.NameFile" Role="NameFile" Multiplicity="1" />
+    <End Type="Model.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NameFile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="IdFile" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

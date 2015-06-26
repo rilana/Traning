@@ -12,19 +12,16 @@ namespace WatcherModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class NameFile
     {
-        public int Id { get; set; }
-        public int IdManager { get; set; }
-        public int IdClient { get; set; }
-        public int IdGoods { get; set; }
-        public int Cost { get; set; }
-        public System.DateTime Date { get; set; }
-        public int IdFile { get; set; }
+        public NameFile()
+        {
+            this.Order = new HashSet<Order>();
+        }
     
-        public virtual Manager Manager { get; set; }
-        public virtual Goods Goods { get; set; }
-        public virtual Client Client { get; set; }
-        public virtual NameFile NameFile { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+    
+        public virtual ICollection<Order> Order { get; set; }
     }
 }

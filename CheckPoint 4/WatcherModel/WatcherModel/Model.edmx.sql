@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/25/2015 13:54:54
--- Generated from EDMX file: D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\WatcherModel\Model.edmx
+-- Date Created: 06/26/2015 19:17:16
+-- Generated from EDMX file: C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\Model.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -26,6 +26,9 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ClientOrder]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[OrderSet] DROP CONSTRAINT [FK_ClientOrder];
 GO
+IF OBJECT_ID(N'[dbo].[FK_NameFileOrder]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[OrderSet] DROP CONSTRAINT [FK_NameFileOrder];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -42,6 +45,9 @@ IF OBJECT_ID(N'[dbo].[ClientSet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[OrderSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[OrderSet];
+GO
+IF OBJECT_ID(N'[dbo].[NameFileSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[NameFileSet];
 GO
 
 -- --------------------------------------------------
@@ -78,7 +84,15 @@ CREATE TABLE [dbo].[OrderSet] (
     [IdClient] int  NOT NULL,
     [IdGoods] int  NOT NULL,
     [Cost] int  NOT NULL,
-    [Date] datetime  NOT NULL
+    [Date] datetime  NOT NULL,
+    [IdFile] int  NOT NULL
+);
+GO
+
+-- Creating table 'NameFileSet'
+CREATE TABLE [dbo].[NameFileSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -107,6 +121,12 @@ GO
 -- Creating primary key on [Id] in table 'OrderSet'
 ALTER TABLE [dbo].[OrderSet]
 ADD CONSTRAINT [PK_OrderSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'NameFileSet'
+ALTER TABLE [dbo].[NameFileSet]
+ADD CONSTRAINT [PK_NameFileSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -157,6 +177,21 @@ GO
 CREATE INDEX [IX_FK_ClientOrder]
 ON [dbo].[OrderSet]
     ([IdClient]);
+GO
+
+-- Creating foreign key on [IdFile] in table 'OrderSet'
+ALTER TABLE [dbo].[OrderSet]
+ADD CONSTRAINT [FK_NameFileOrder]
+    FOREIGN KEY ([IdFile])
+    REFERENCES [dbo].[NameFileSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_NameFileOrder'
+CREATE INDEX [IX_FK_NameFileOrder]
+ON [dbo].[OrderSet]
+    ([IdFile]);
 GO
 
 -- --------------------------------------------------

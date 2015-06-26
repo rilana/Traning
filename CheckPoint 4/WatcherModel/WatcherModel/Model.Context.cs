@@ -29,5 +29,6 @@ namespace WatcherModel
         public virtual DbSet<Goods> GoodsSet { get; set; }
         public virtual DbSet<Client> ClientSet { get; set; }
         public virtual DbSet<Order> OrderSet { get; set; }
+        public virtual DbSet<NameFile> NameFileSet { get; set; }
     }
 }

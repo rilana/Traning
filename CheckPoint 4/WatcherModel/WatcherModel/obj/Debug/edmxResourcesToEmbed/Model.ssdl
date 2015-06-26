@@ -5,6 +5,7 @@
     <EntitySet Name="GoodsSet" EntityType="Model.Store.GoodsSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ClientSet" EntityType="Model.Store.ClientSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="OrderSet" EntityType="Model.Store.OrderSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NameFileSet" EntityType="Model.Store.NameFileSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="ManagerOrder" Association="Model.Store.ManagerOrder">
       <End Role="Manager" EntitySet="ManagerSet" />
       <End Role="Order" EntitySet="OrderSet" />
@@ -15,6 +16,10 @@
     </AssociationSet>
     <AssociationSet Name="ClientOrder" Association="Model.Store.ClientOrder">
       <End Role="Client" EntitySet="ClientSet" />
+      <End Role="Order" EntitySet="OrderSet" />
+    </AssociationSet>
+    <AssociationSet Name="NameFileOrder" Association="Model.Store.NameFileOrder">
+      <End Role="NameFile" EntitySet="NameFileSet" />
       <End Role="Order" EntitySet="OrderSet" />
     </AssociationSet>
   </EntityContainer>
@@ -51,6 +56,14 @@
     <Property Name="IdGoods" Type="int" Nullable="false" />
     <Property Name="Cost" Type="int" Nullable="false" />
     <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="IdFile" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NameFileSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="ManagerOrder">
     <End Role="Manager" Type="Model.Store.ManagerSet" Multiplicity="1" />
@@ -85,6 +98,18 @@
       </Principal>
       <Dependent Role="Order">
         <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NameFileOrder">
+    <End Role="NameFile" Type="Model.Store.NameFileSet" Multiplicity="1" />
+    <End Role="Order" Type="Model.Store.OrderSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NameFile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="IdFile" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

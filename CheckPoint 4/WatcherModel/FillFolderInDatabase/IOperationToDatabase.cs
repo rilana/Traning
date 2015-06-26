@@ -9,10 +9,11 @@ namespace FillFolderInDatabase
 {
     interface IOperationToDatabase
     {
-        void AddOrders(List<OrderFromFile> order);
+        void AddOrder(OrderFromFile order);
         Manager GetManager(string name);
         Client GetClient(string name);
         Goods GetGoods(string name);
-        void DeleteOrders(string name, DateTime date);
+        NameFile GetNameFile(string name);
+        void DeleteOrders(string nameFile);
     }
 }

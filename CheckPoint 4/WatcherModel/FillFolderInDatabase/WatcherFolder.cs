@@ -13,11 +13,8 @@ namespace FillFolderInDatabase
         {
             _watcher=new FileSystemWatcher(pathFolder);
             _watcher.Filter = "*.csv";
-            //_watcher.Changed += OnReplace;
             _watcher.Created += OnAdd;
-            _watcher.Deleted +=OnDelete;
-            //_watcher.NotifyFilter = NotifyFilters.FileName;//| NotifyFilters.Size;
-            //_watcher.Renamed += new RenamedEventHandler(OnRenamed);
+            _watcher.Deleted +=OnDelete;           
         }
 
         public void Run()
@@ -30,30 +27,22 @@ namespace FillFolderInDatabase
             _watcher.Deleted -= OnDelete;
             _watcher.EnableRaisingEvents = false;
         }
-        //private void OnReplace(object sender, FileSystemEventArgs e)
-        //{
-        //    Console.WriteLine("File: " + e.FullPath + " " + e.ChangeType);
-        //    AddAsync(e.FullPath);
-        //    // Add(e.FullPath);
-        //    Console.WriteLine("finish onAdd");
-        //}
-
+       
         private void OnAdd(object sender, FileSystemEventArgs e)
         {
             AddAsync(e.FullPath);
-            Console.WriteLine("finish onAdd");
         }
 
         private async void AddAsync(string path)
         {
             await Task.Factory.StartNew(Add, path);
+            Console.WriteLine("finish onAdd");
         }
-        private object locker = new object();
+       
         private void Add(object path)
         {
             var parser = new Parser((string)path);
-            var fillInDatabase = new FillInDatabase(locker);
-            fillInDatabase.AddOrders(parser.Orders);
+            parser.FillOrderToBase();
         }
 
         private void OnDelete(object sender, FileSystemEventArgs e)
@@ -62,15 +51,13 @@ namespace FillFolderInDatabase
         }
         private async void DeleteAsync(string path)
         {
-            Console.WriteLine("Delete");
             await Task.Factory.StartNew(Delete, path);
+            Console.WriteLine("finish onDelete");
         }
         private void Delete(object path)
         {
-            var val = Path.GetFileNameWithoutExtension((string)path).Split('_');
-            var date = DateTime.ParseExact(val[1], "ddMMyyyy", CultureInfo.InvariantCulture);
-            var fillInDatabase = new FillInDatabase(locker);
-            fillInDatabase.DeleteOrders(val[0], date);
+            var fillInDatabase = new OperationToDatabase();
+            fillInDatabase.DeleteOrders(Path.GetFileNameWithoutExtension((string)path));
         }
     }
 }
