@@ -34,3 +34,15 @@ C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabas
 C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\WatcherModel.pdb
 C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.xml
 C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.SqlServer.xml
+C:\Natasha\WatcherModel\FillFolderInDatabase\bin\Debug\FillFolderInDatabase.dll.config
+C:\Natasha\WatcherModel\FillFolderInDatabase\bin\Debug\FillFolderInDatabase.dll
+C:\Natasha\WatcherModel\FillFolderInDatabase\bin\Debug\FillFolderInDatabase.pdb
+C:\Natasha\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.dll
+C:\Natasha\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.SqlServer.dll
+C:\Natasha\WatcherModel\FillFolderInDatabase\bin\Debug\WatcherModel.dll
+C:\Natasha\WatcherModel\FillFolderInDatabase\bin\Debug\WatcherModel.pdb
+C:\Natasha\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.xml
+C:\Natasha\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.SqlServer.xml
+C:\Natasha\WatcherModel\FillFolderInDatabase\obj\Debug\FillFolderInDatabase.csprojResolveAssemblyReference.cache
+C:\Natasha\WatcherModel\FillFolderInDatabase\obj\Debug\FillFolderInDatabase.dll
+C:\Natasha\WatcherModel\FillFolderInDatabase\obj\Debug\FillFolderInDatabase.pdb

@@ -28,3 +28,13 @@ C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\De
 C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.dll
 C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.xml
 C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Natasha\WatcherModel\WatcherModel\bin\Debug\WatcherModel.dll.config
+C:\Natasha\WatcherModel\WatcherModel\bin\Debug\WatcherModel.dll
+C:\Natasha\WatcherModel\WatcherModel\bin\Debug\WatcherModel.pdb
+C:\Natasha\WatcherModel\WatcherModel\bin\Debug\EntityFramework.dll
+C:\Natasha\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Natasha\WatcherModel\WatcherModel\bin\Debug\EntityFramework.xml
+C:\Natasha\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Natasha\WatcherModel\WatcherModel\obj\Debug\WatcherModel.csprojResolveAssemblyReference.cache
+C:\Natasha\WatcherModel\WatcherModel\obj\Debug\WatcherModel.dll
+C:\Natasha\WatcherModel\WatcherModel\obj\Debug\WatcherModel.pdb

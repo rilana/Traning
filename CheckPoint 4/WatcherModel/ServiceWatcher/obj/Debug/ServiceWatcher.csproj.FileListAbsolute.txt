@@ -1,0 +1,32 @@
+C:\Наташа\c# express\example\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe.config
+C:\Наташа\c# express\example\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+C:\Наташа\c# express\example\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.pdb
+C:\Наташа\c# express\example\WatcherModel\ServiceWatcher\obj\Debug\ServiceWatcher.csprojResolveAssemblyReference.cache
+C:\Наташа\c# express\example\WatcherModel\ServiceWatcher\obj\Debug\ServiceWatcher.exe
+C:\Наташа\c# express\example\WatcherModel\ServiceWatcher\obj\Debug\ServiceWatcher.pdb
+C:\Наташа\c# express\example\WatcherModel\ServiceWatcher\obj\Debug\ServiceWatcher.ProjectInstaller.resources
+C:\Наташа\c# express\example\WatcherModel\ServiceWatcher\obj\Debug\ServiceWatcher.csproj.GenerateResource.Cache
+C:\Наташа\c# express\example\WatcherModel\ServiceWatcher\bin\Debug\EntityFramework.dll
+C:\Наташа\c# express\example\WatcherModel\ServiceWatcher\bin\Debug\EntityFramework.SqlServer.dll
+C:\Наташа\c# express\example\WatcherModel\ServiceWatcher\bin\Debug\FillFolderInDatabase.dll
+C:\Наташа\c# express\example\WatcherModel\ServiceWatcher\bin\Debug\WatcherModel.dll
+C:\Наташа\c# express\example\WatcherModel\ServiceWatcher\bin\Debug\FillFolderInDatabase.pdb
+C:\Наташа\c# express\example\WatcherModel\ServiceWatcher\bin\Debug\EntityFramework.xml
+C:\Наташа\c# express\example\WatcherModel\ServiceWatcher\bin\Debug\EntityFramework.SqlServer.xml
+C:\Наташа\c# express\example\WatcherModel\ServiceWatcher\bin\Debug\WatcherModel.pdb
+C:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe.config
+C:\Natasha\WatcherModel\ServiceWatcher\obj\Debug\ServiceWatcher.exe
+C:\Natasha\WatcherModel\ServiceWatcher\obj\Debug\ServiceWatcher.pdb
+C:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+C:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.pdb
+C:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\EntityFramework.dll
+C:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\EntityFramework.SqlServer.dll
+C:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\FillFolderInDatabase.dll
+C:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\WatcherModel.dll
+C:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\FillFolderInDatabase.pdb
+C:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\EntityFramework.xml
+C:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\EntityFramework.SqlServer.xml
+C:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\WatcherModel.pdb
+C:\Natasha\WatcherModel\ServiceWatcher\obj\Debug\ServiceWatcher.csprojResolveAssemblyReference.cache
+C:\Natasha\WatcherModel\ServiceWatcher\obj\Debug\ServiceWatcher.ProjectInstaller.resources
+C:\Natasha\WatcherModel\ServiceWatcher\obj\Debug\ServiceWatcher.csproj.GenerateResource.Cache

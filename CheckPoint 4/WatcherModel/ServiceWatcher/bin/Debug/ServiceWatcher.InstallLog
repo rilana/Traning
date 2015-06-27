@@ -1,0 +1,128 @@
+﻿Выполняется установка сборки 'c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Устанавливается служба Service1...
+Служба Service1 успешно установлена.
+Создается исходный EventLog Service1 в журнале Application...
+Выполняется фиксация сборки 'c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Выполняется удаление сборки 'c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Выполняется удаление источника EventLog Service1.
+Выполняется удаление службы Service1 из системы...
+Служба Service1 успешно удалена из системы.
+Выполняется установка сборки 'c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Устанавливается служба Service1...
+Служба Service1 успешно установлена.
+Создается исходный EventLog Service1 в журнале Application...
+Выполняется фиксация сборки 'c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Выполняется удаление сборки 'c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Выполняется удаление источника EventLog Service1.
+Выполняется удаление службы Service1 из системы...
+Служба Service1 успешно удалена из системы.
+Попытка останова службы Service1.
+Выполняется установка сборки 'c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Устанавливается служба Service1...
+Служба Service1 успешно установлена.
+Создается исходный EventLog Service1 в журнале Application...
+Выполняется фиксация сборки 'c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Выполняется удаление сборки 'c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Выполняется удаление источника EventLog Service1.
+Выполняется удаление службы Service1 из системы...
+Служба Service1 успешно удалена из системы.
+Выполняется установка сборки 'c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Устанавливается служба Service1...
+Служба Service1 успешно установлена.
+Создается исходный EventLog Service1 в журнале Application...
+Выполняется фиксация сборки 'c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Выполняется удаление сборки 'c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Выполняется удаление источника EventLog Service1.
+Выполняется удаление службы Service1 из системы...
+Служба Service1 успешно удалена из системы.
+Попытка останова службы Service1.
+Выполняется установка сборки 'c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Устанавливается служба Service1...
+Служба Service1 успешно установлена.
+Создается исходный EventLog Service1 в журнале Application...
+Выполняется фиксация сборки 'c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Выполняется удаление сборки 'c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Выполняется удаление источника EventLog Service1.
+Выполняется удаление службы Service1 из системы...
+Служба Service1 успешно удалена из системы.
+Выполняется установка сборки 'c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Устанавливается служба Service1...
+Служба Service1 успешно установлена.
+Создается исходный EventLog Service1 в журнале Application...
+Выполняется фиксация сборки 'c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Выполняется удаление сборки 'c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = c:\Natasha\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Выполняется удаление источника EventLog Service1.
+Выполняется удаление службы Service1 из системы...
+Служба Service1 успешно удалена из системы.

@@ -3,56 +3,50 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WatcherModel.Repository
 {
     public class Repository<T> : IRepository<T>
         where T : class
     {
-        protected DbContext context;
+        protected DbContext Context;
 
-        public Repository(ModelContainer dataContext)
+        public Repository(DbContext dataContext)
         {
             if (dataContext == null)
             {
-                throw new ArgumentNullException("context");
+                throw new ArgumentNullException("dataContext");
             }
-            context = dataContext;
+            Context = dataContext;
         }
 
         public virtual void Insert(T entity)
         {
-            context.Set<T>().Add(entity);
+            Context.Set<T>().Add(entity);
         }
 
         public virtual void Delete(T entity)
         {
-            context.Set<T>().Remove(entity);
+            Context.Set<T>().Remove(entity);
         }
 
         public virtual IEnumerable<T> SearchFor(Expression<Func<T, bool>> predicate)
         {
-            return context.Set<T>().Where(predicate);
+            return Context.Set<T>().Where(predicate);
         }
 
         public virtual IEnumerable<T> GetAll()
         {
-            return context.Set<T>();
+            return Context.Set<T>();
         }
 
         public virtual T GetById(int id)
         {
-            return context.Set<T>().Find(id);
+            return Context.Set<T>().Find(id);
         }
         public virtual void Update(T entity)
         {
-            context.Entry(entity).State = EntityState.Modified;
-        }
-        public virtual void SaveChanges()
-        {
-            context.SaveChanges();
+            Context.Entry(entity).State = EntityState.Modified;
         }
     }
 }

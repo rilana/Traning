@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FillFolderInDatabase", "Fil
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{0EE076CE-7947-40D9-B043-AB4F9ED9A70F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceWatcher", "ServiceWatcher\ServiceWatcher.csproj", "{9E5C8E35-87D4-4196-BC2C-7B843645DDE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0EE076CE-7947-40D9-B043-AB4F9ED9A70F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EE076CE-7947-40D9-B043-AB4F9ED9A70F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EE076CE-7947-40D9-B043-AB4F9ED9A70F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E5C8E35-87D4-4196-BC2C-7B843645DDE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E5C8E35-87D4-4196-BC2C-7B843645DDE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E5C8E35-87D4-4196-BC2C-7B843645DDE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E5C8E35-87D4-4196-BC2C-7B843645DDE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

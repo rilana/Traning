@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace FillFolderInDatabase
 {
@@ -24,6 +23,7 @@ namespace FillFolderInDatabase
             }
         }
 
+        public static readonly object Locker = new object();
         public List<OrderFromFile> Orders
         {
             get
@@ -73,7 +73,10 @@ namespace FillFolderInDatabase
                                 Manager = _secondNameManager,
                                 NameFile = _nameFile,
                             };
-                          fillToBase.AddOrder(orderFile);
+                        lock (Locker)
+                        {
+                            fillToBase.AddOrder(orderFile);        
+                        }
                     }
                 }
             }
