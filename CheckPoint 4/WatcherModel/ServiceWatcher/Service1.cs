@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using FillFolderInDatabase;
+﻿using FillFolderInDatabase;
 using System.ServiceProcess;
 using System.Threading;
 

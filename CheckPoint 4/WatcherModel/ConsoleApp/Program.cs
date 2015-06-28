@@ -11,7 +11,7 @@ namespace ConsoleApp
             Console.WriteLine("Run");
             watcherFolder.Run();
             Console.ReadKey();
-            
+            watcherFolder.Stop();
         }
     }
 }

@@ -28,7 +28,8 @@ namespace FillFolderInDatabase
             _unitOfWork.ReposOrder.Insert(orderBd);
             _unitOfWork.Save();
         }
-       
+
+       #region return or creates a new
         public Manager GetManager(string name)
         {
             var manager =_unitOfWork.ReposManager.GetAll().FirstOrDefault(x => x.SecondName == name);
@@ -74,7 +75,8 @@ namespace FillFolderInDatabase
             }
             return goods;
         }
-
+        #endregion
+       
         public void DeleteOrders(string nameFile)
         {
             var nameFileDelete = _unitOfWork.ReposNameFile.GetAll().FirstOrDefault(x => x.Name == nameFile);

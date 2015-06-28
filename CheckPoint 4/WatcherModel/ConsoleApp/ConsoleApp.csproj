@@ -60,9 +60,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FillFolderInDatabase\FillFolderInDatabase.csproj">
+    <ProjectReference Include="..\FillFolderInDatabase\BLL.csproj">
       <Project>{784bbd77-347f-4934-8423-869e422b82d5}</Project>
-      <Name>FillFolderInDatabase</Name>
+      <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

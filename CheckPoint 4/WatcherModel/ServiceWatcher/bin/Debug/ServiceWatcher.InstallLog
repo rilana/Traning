@@ -126,3 +126,30 @@
 Выполняется удаление источника EventLog Service1.
 Выполняется удаление службы Service1 из системы...
 Служба Service1 успешно удалена из системы.
+Выполняется установка сборки 'C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Устанавливается служба Service1...
+Служба Service1 успешно установлена.
+Создается исходный EventLog Service1 в журнале Application...
+Выполняется фиксация сборки 'C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Выполняется установка сборки 'C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Устанавливается служба Service1...
+Выполняется удаление сборки 'C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.InstallLog
+   assemblypath = C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+Выполняется удаление источника EventLog Service1.
+Выполняется удаление службы Service1 из системы...
+Служба Service1 успешно удалена из системы.
