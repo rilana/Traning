@@ -50,7 +50,7 @@
     <Compile Include="OperationToDatabase.cs" />
     <Compile Include="IOperationToDatabase.cs" />
     <Compile Include="OrderFromFile.cs" />
-    <Compile Include="Parser.cs" />
+    <Compile Include="ProcessFilling.cs" />
     <Compile Include="WatcherFolder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

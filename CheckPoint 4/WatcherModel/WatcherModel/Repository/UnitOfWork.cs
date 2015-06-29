@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Linq;
 
 namespace WatcherModel.Repository
 {
@@ -67,6 +68,53 @@ namespace WatcherModel.Repository
             }
         }
 
+        #region return or creates a new
+        public Manager GetManager(string name)
+        {
+            var manager = ReposManager.GetAll().FirstOrDefault(x => x.SecondName == name);
+            if (manager == null)
+            {
+                manager = new Manager { SecondName = name, FirstName = name };
+                ReposManager.Insert(manager);
+            }
+            return manager;
+        }
+
+        public Client GetClient(string name)
+        {
+            var client =ReposClient.GetAll().FirstOrDefault(x => x.SecondName == name);
+            if (client == null)
+            {
+                client = new Client();
+                client.SecondName = name;
+                client.FirstName = name;
+                ReposClient.Insert(client);
+            }
+            return client;
+        }
+
+        public NameFile GetNameFile(string name)
+        {
+            var nameFile = ReposNameFile.GetAll().FirstOrDefault(x => x.Name == name);
+            if (nameFile == null)
+            {
+                nameFile = new NameFile() { Name = name };
+                ReposNameFile.Insert(nameFile);
+            }
+            return nameFile;
+        }
+
+        public Goods GetGoods(string name)
+        {
+            var goods = ReposGoods.GetAll().FirstOrDefault(x => x.NameGoods == name);
+            if (goods == null)
+            {
+                goods = new Goods { NameGoods = name };
+                ReposGoods.Insert(goods);
+            }
+            return goods;
+        }
+        #endregion
         public void Save()
         {
             Context.SaveChanges();

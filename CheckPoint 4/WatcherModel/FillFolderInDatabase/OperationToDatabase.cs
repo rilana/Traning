@@ -20,62 +20,16 @@ namespace FillFolderInDatabase
             {
                 Date = order.Date,
                 Cost = order.Cost,
-                Client = GetClient(order.Client),
-                Manager = GetManager(order.Manager),
-                Goods = GetGoods(order.Good),
-                NameFile = GetNameFile(order.NameFile)
+                Client =_unitOfWork.GetClient(order.Client),
+                Manager =_unitOfWork.GetManager(order.Manager),
+                Goods =_unitOfWork.GetGoods(order.Good),
+                NameFile =_unitOfWork.GetNameFile(order.NameFile)
             };
             _unitOfWork.ReposOrder.Insert(orderBd);
             _unitOfWork.Save();
         }
 
-       #region return or creates a new
-        public Manager GetManager(string name)
-        {
-            var manager =_unitOfWork.ReposManager.GetAll().FirstOrDefault(x => x.SecondName == name);
-            if (manager == null)
-            {
-                manager = new Manager {SecondName = name, FirstName = name};
-                _unitOfWork.ReposManager.Insert(manager);
-            }
-            return manager;
-        }
-
-        public Client GetClient(string name)
-        {
-            var client =_unitOfWork.ReposClient.GetAll().FirstOrDefault(x => x.SecondName == name);
-            if (client== null)
-            {
-                client=new Client();
-                client.SecondName = name;
-                client.FirstName= name;
-                _unitOfWork.ReposClient.Insert(client);
-            }
-            return client;
-        }
-
-        public NameFile GetNameFile(string name)
-        {
-            var nameFile = _unitOfWork.ReposNameFile.GetAll().FirstOrDefault(x => x.Name == name); 
-            if (nameFile == null)
-            {
-                nameFile = new NameFile() { Name = name };
-                _unitOfWork.ReposNameFile.Insert(nameFile);
-            }
-            return nameFile;
-        }
-
-        public Goods GetGoods(string name)
-        {
-            var goods = _unitOfWork.ReposGoods.GetAll().FirstOrDefault(x => x.NameGoods == name);
-            if (goods== null)
-            {
-                goods = new Goods {NameGoods = name};
-                _unitOfWork.ReposGoods.Insert(goods);
-            }
-            return goods;
-        }
-        #endregion
+      
        
         public void DeleteOrders(string nameFile)
         {

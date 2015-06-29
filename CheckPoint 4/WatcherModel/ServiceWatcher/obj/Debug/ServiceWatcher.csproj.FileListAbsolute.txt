@@ -46,3 +46,19 @@ C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\obj\
 C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\obj\Debug\ServiceWatcher.csproj.GenerateResource.Cache
 C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\obj\Debug\ServiceWatcher.exe
 C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\obj\Debug\ServiceWatcher.pdb
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe.config
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.exe
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\ServiceWatcher.pdb
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\EntityFramework.dll
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\EntityFramework.SqlServer.dll
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\FillFolderInDatabase.dll
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\WatcherModel.dll
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\FillFolderInDatabase.pdb
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\EntityFramework.xml
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\EntityFramework.SqlServer.xml
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\bin\Debug\WatcherModel.pdb
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\obj\Debug\ServiceWatcher.csprojResolveAssemblyReference.cache
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\obj\Debug\ServiceWatcher.ProjectInstaller.resources
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\obj\Debug\ServiceWatcher.csproj.GenerateResource.Cache
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\obj\Debug\ServiceWatcher.exe
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\ServiceWatcher\obj\Debug\ServiceWatcher.pdb

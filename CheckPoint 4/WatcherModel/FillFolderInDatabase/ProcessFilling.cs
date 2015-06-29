@@ -6,12 +6,12 @@ using System.Text;
 
 namespace FillFolderInDatabase
 {
-    class Parser
+    class ProcessFilling
     {
         private string _secondNameManager;
         private string _nameFile;
         private string _path;
-        public Parser(string path)
+        public ProcessFilling(string path)
         {
             _path = path;
             _nameFile= Path.GetFileNameWithoutExtension(path);

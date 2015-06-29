@@ -38,7 +38,7 @@ namespace FillFolderInDatabase
        
         private void Add(object path)
         {
-            var parser = new Parser((string)path);
+            var parser = new ProcessFilling((string)path);
             parser.FillOrderToBase();
         }
 
