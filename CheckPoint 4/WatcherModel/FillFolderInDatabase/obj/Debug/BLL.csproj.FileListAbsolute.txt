@@ -1,0 +1,12 @@
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\FillFolderInDatabase.dll.config
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\FillFolderInDatabase.dll
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\FillFolderInDatabase.pdb
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.dll
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.SqlServer.dll
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\WatcherModel.dll
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\WatcherModel.pdb
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.xml
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.SqlServer.xml
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\obj\Debug\FillFolderInDatabase.dll
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\obj\Debug\FillFolderInDatabase.pdb

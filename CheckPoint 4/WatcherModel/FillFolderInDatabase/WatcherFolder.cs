@@ -22,8 +22,6 @@ namespace FillFolderInDatabase
         }
         public void Stop()
         {
-            _watcher.Created -= OnAdd;
-            _watcher.Deleted -= OnDelete;
             _watcher.EnableRaisingEvents = false;
         }
        
