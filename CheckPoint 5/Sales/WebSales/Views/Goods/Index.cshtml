@@ -1,0 +1,20 @@
+﻿@model IEnumerable<WatcherModel.Goods>
+
+@{
+    ViewBag.Title = "Goods";
+}
+
+<h2>Goods</h2>
+
+<p>
+    @if (User.IsInRole("admin"))
+    {@Html.ActionLink("Create New", "Create")}
+</p>
+<div>
+    @using (Ajax.BeginForm("SearchGoods", new AjaxOptions { UpdateTargetId = "searchresults" }))
+    {
+        <input type="text" name="name" />
+        <input type="submit" value="Поиск" />
+    }
+    @Html.Partial("SearchGoods")
+</div>

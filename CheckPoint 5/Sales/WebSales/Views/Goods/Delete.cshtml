@@ -1,4 +1,4 @@
-﻿@model  WatcherModel.Client
+﻿@model WatcherModel.Goods
 
 @{
     ViewBag.Title = "Delete";
@@ -8,22 +8,15 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
+    <h4>GoodsSet</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
+            @Html.DisplayNameFor(model => model.NameGoods)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SecondName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SecondName)
+            @Html.DisplayFor(model => model.NameGoods)
         </dd>
 
     </dl>

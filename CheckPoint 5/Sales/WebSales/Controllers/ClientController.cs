@@ -13,7 +13,7 @@ namespace WebSales.Controllers
     public class ClientController : Controller
     {
         // GET: Client
-        UnitOfWork _unit = new UnitOfWork(new ModelContainer());
+        private UnitOfWork _unit = new UnitOfWork(new ModelContainer());
        
         public ActionResult Index()
         {
@@ -124,10 +124,18 @@ namespace WebSales.Controllers
        [Authorize(Roles = "admin")]
        public ActionResult DeleteConfirmed(int id)
        {
-           var clientSet = _unit.ReposClient.GetById((int)id);
-           _unit.ReposClient.Delete(clientSet);
-           _unit.Save();
-           return RedirectToAction("Index");
+           try
+           {
+               var clientSet = _unit.ReposClient.GetById((int)id);
+               _unit.ReposClient.Delete(clientSet);
+               _unit.Save();
+               return RedirectToAction("Index");
+           }
+           catch
+           {
+               ViewBag.Error = "No deleted!";
+               return View();
+           }
        }
 
        protected override void Dispose(bool disposing)

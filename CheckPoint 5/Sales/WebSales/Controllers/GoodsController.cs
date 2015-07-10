@@ -10,15 +10,15 @@ using WatcherModel.Repository;
 namespace WebSales.Controllers
 {
     [Authorize]
-    public class ManagerController : Controller
-    {
-        // GET: Manager
+    public class GoodsController : Controller
+    {        
+         // GET: Goods
         private UnitOfWork _unit = new UnitOfWork(new ModelContainer());
-        private IRepository<Manager> repo;
+        private IRepository<Goods> repo;
 
-        public ManagerController()
+        public GoodsController()
         {
-            repo=_unit.ReposManager;
+            repo=_unit.ReposGoods;
         }
 
         public ActionResult Index()
@@ -27,16 +27,16 @@ namespace WebSales.Controllers
         }
 
         [HttpPost]
-        public ActionResult SearchManager(string name)
+        public ActionResult SearchGoods(string name)
         {
-            var manager= repo.SearchFor(a => a.FirstName.Contains(name)).ToList();
-            if (manager.Count <= 0)
+            var goods = repo.SearchFor(a => a.NameGoods.Contains(name)).ToList();
+            if (goods.Count <= 0)
             {
                 return HttpNotFound();
             }
-            return PartialView(manager);
+            return PartialView(goods);
         }
-        // GET: Manager/Details/5
+        // GET: Goods/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -45,38 +45,38 @@ namespace WebSales.Controllers
             }
             else
             {
-                var managerSet = repo.GetById((int)id);
-                if (managerSet == null)
+                var goodsSet = repo.GetById((int)id);
+                if (goodsSet == null)
                 {
                     return HttpNotFound();
                 }
-                return View(managerSet);
+                return View(goodsSet);
             }
         }
 
-        // GET: Manager/Create
+        // GET: Goods/Create
         [Authorize(Roles = "admin")]
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Manager/Create
+        // POST: Goods/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "admin")]
-        public ActionResult Create([Bind(Include = "Id,FirstName,SecondName")] Manager managerSet)
+        public ActionResult Create([Bind(Include = "Id,FirstName,SecondName")] Goods goodsSet)
         {
             if (ModelState.IsValid)
             {
-                repo.Insert(managerSet);
+                repo.Insert(goodsSet);
                 _unit.Save();
                 return RedirectToAction("Index");
             }
-            return View(managerSet);
+            return View(goodsSet);
         }
 
-        // GET: Manager/Edit/5
+        // GET: Goods/Edit/5
         [Authorize(Roles = "admin")]
         public ActionResult Edit(int? id)
         {
@@ -84,30 +84,30 @@ namespace WebSales.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var managerSet = repo.GetById((int)id);
-            if (managerSet == null)
+            var goodsSet = repo.GetById((int)id);
+            if (goodsSet == null)
             {
                 return HttpNotFound();
             }
-            return View(managerSet);
+            return View(goodsSet);
         }
 
-        // POST: Manager/Edit/5
+        // POST: Goods/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "admin")]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,SecondName")] Manager managerSet)
+        public ActionResult Edit([Bind(Include = "Id,NameGoods")] Goods goodsSet)
         {
             if (ModelState.IsValid)
             {
-                repo.Update(managerSet);
+                repo.Update(goodsSet);
                 _unit.Save();
                 return RedirectToAction("Index");
             }
-            return View(managerSet);
+            return View(goodsSet);
         }
 
-        // GET: Manager/Delete/5
+        // GET: Goods/Delete/5
         [Authorize(Roles = "admin")]
         public ActionResult Delete(int? id)
         {
@@ -115,15 +115,15 @@ namespace WebSales.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var managerSet = repo.GetById((int)id);
-            if (managerSet == null)
+            var goodsSet = repo.GetById((int)id);
+            if (goodsSet == null)
             {
                 return HttpNotFound();
             }
-            return View(managerSet);
+            return View(goodsSet);
         }
 
-        // POST: Manager/Delete/5
+        // POST: Goods/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "admin")]
@@ -131,8 +131,8 @@ namespace WebSales.Controllers
         {
             try
             {
-                var managerSet = repo.GetById((int)id);
-                repo.Delete(managerSet);
+                var goodsSet = repo.GetById((int)id);
+                repo.Delete(goodsSet);
                 _unit.Save();
                 return RedirectToAction("Index");
             }
@@ -150,6 +150,6 @@ namespace WebSales.Controllers
                 _unit.Dispose();
             }
             base.Dispose(disposing);
-        }
+        }   
     }
 }
