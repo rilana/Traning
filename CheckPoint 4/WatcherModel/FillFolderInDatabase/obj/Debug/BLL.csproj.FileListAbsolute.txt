@@ -22,3 +22,15 @@ C:\Natasha\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\Watc
 C:\Natasha\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.xml
 C:\Natasha\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.SqlServer.xml
 C:\Natasha\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\obj\Debug\FillFolderInDatabase.pdb
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\FillFolderInDatabase.dll.config
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\FillFolderInDatabase.dll
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\FillFolderInDatabase.pdb
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.dll
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.SqlServer.dll
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\WatcherModel.dll
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\WatcherModel.pdb
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.xml
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\bin\Debug\EntityFramework.SqlServer.xml
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\obj\Debug\FillFolderInDatabase.dll
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\FillFolderInDatabase\obj\Debug\FillFolderInDatabase.pdb

@@ -1,0 +1,20 @@
+﻿@model IEnumerable<WatcherModel.Client>
+
+@{
+    ViewBag.Title = "Client";
+}
+
+<h2>Clients</h2>
+
+<p>
+    @if (User.IsInRole("admin"))
+    {@Html.ActionLink("Create New", "Create")}
+</p>
+<div>
+    @using (Ajax.BeginForm("SearchClient", new AjaxOptions { UpdateTargetId = "searchresults" }))
+    {
+        <input type="text" name="name" />
+        <input type="submit" value="Поиск" />
+    }
+    @Html.Partial("SearchClient")
+</div>

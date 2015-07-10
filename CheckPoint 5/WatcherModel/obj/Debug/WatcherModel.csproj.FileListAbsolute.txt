@@ -1,0 +1,78 @@
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\bin\Debug\WatcherModel.pdb
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\obj\Debug\WatcherModel.csprojResolveAssemblyReference.cache
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\obj\Debug\WatcherModel.pdb
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\bin\Debug\EntityFramework.dll
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\bin\Debug\EntityFramework.xml
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\bin\Debug\WatcherModel.dll.config
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\bin\Debug\WatcherModel.dll
+C:\Наташа\c# express\example\WatcherModel\WatcherModel\obj\Debug\WatcherModel.dll
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\WatcherModel.dll.config
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\WatcherModel.dll
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\WatcherModel.pdb
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.dll
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.xml
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\WatcherModel\obj\Debug\WatcherModel.csprojResolveAssemblyReference.cache
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\WatcherModel\obj\Debug\WatcherModel.dll
+D:\Наташа\c# express\example\Traning\CheckPoint 4\WatcherModel\WatcherModel\obj\Debug\WatcherModel.pdb
+C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\obj\Debug\WatcherModel.csprojResolveAssemblyReference.cache
+C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\obj\Debug\WatcherModel.dll
+C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\obj\Debug\WatcherModel.pdb
+C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\WatcherModel.dll.config
+C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\WatcherModel.dll
+C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\WatcherModel.pdb
+C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.dll
+C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.xml
+C:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Natasha\WatcherModel\WatcherModel\bin\Debug\WatcherModel.dll.config
+C:\Natasha\WatcherModel\WatcherModel\bin\Debug\WatcherModel.dll
+C:\Natasha\WatcherModel\WatcherModel\bin\Debug\WatcherModel.pdb
+C:\Natasha\WatcherModel\WatcherModel\bin\Debug\EntityFramework.dll
+C:\Natasha\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Natasha\WatcherModel\WatcherModel\bin\Debug\EntityFramework.xml
+C:\Natasha\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Natasha\WatcherModel\WatcherModel\obj\Debug\WatcherModel.csprojResolveAssemblyReference.cache
+C:\Natasha\WatcherModel\WatcherModel\obj\Debug\WatcherModel.dll
+C:\Natasha\WatcherModel\WatcherModel\obj\Debug\WatcherModel.pdb
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\WatcherModel.dll.config
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\WatcherModel.dll
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\WatcherModel.pdb
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.dll
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.xml
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\obj\Debug\WatcherModel.csprojResolveAssemblyReference.cache
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\obj\Debug\WatcherModel.dll
+D:\Наташа\c# express\Traning\CheckPoint 4\WatcherModel\WatcherModel\obj\Debug\WatcherModel.pdb
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\WatcherModel.dll.config
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\WatcherModel.dll
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\WatcherModel.pdb
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.dll
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.xml
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\WatcherModel\obj\Debug\WatcherModel.csprojResolveAssemblyReference.cache
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\WatcherModel\obj\Debug\WatcherModel.dll
+C:\Natasha\Traning\CheckPoint 4\WatcherModel\WatcherModel\obj\Debug\WatcherModel.pdb
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\WatcherModel.dll.config
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\WatcherModel.dll
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\WatcherModel.pdb
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.dll
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.xml
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\WatcherModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\WatcherModel\obj\Debug\WatcherModel.csprojResolveAssemblyReference.cache
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\WatcherModel\obj\Debug\WatcherModel.dll
+C:\Natasha2\Traning\CheckPoint 4\WatcherModel\WatcherModel\obj\Debug\WatcherModel.pdb
+C:\Natasha2\Traning\CheckPoint 5\WatcherModel\bin\Debug\WatcherModel.dll.config
+C:\Natasha2\Traning\CheckPoint 5\WatcherModel\bin\Debug\WatcherModel.dll
+C:\Natasha2\Traning\CheckPoint 5\WatcherModel\bin\Debug\WatcherModel.pdb
+C:\Natasha2\Traning\CheckPoint 5\WatcherModel\bin\Debug\EntityFramework.xml
+C:\Natasha2\Traning\CheckPoint 5\WatcherModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Natasha2\Traning\CheckPoint 5\WatcherModel\obj\Debug\WatcherModel.csprojResolveAssemblyReference.cache
+C:\Natasha2\Traning\CheckPoint 5\WatcherModel\obj\Debug\WatcherModel.dll
+C:\Natasha2\Traning\CheckPoint 5\WatcherModel\obj\Debug\WatcherModel.pdb
