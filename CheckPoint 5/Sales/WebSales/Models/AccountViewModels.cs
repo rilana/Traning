@@ -75,6 +75,10 @@ namespace WebSales.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
+        [Required]
+        [Display(Name = "User roles")]
+        public string UserRoles { get; set; }
+
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]

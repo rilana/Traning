@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using WebSales.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace WebSales.Controllers
 {
@@ -17,15 +18,17 @@ namespace WebSales.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationRoleManager _rolesManager;
 
         public AccountController()
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, ApplicationRoleManager rolesManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            RolesManager = rolesManager;
         }
 
         public ApplicationSignInManager SignInManager
@@ -49,6 +52,19 @@ namespace WebSales.Controllers
             private set
             {
                 _userManager = value;
+            }
+        }
+
+        public ApplicationRoleManager RolesManager
+        {
+            get
+            {
+                return _rolesManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
+               
+            }
+            private set
+            {
+                _rolesManager = value;
             }
         }
 
@@ -136,16 +152,20 @@ namespace WebSales.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        [Authorize(Roles = "admin")]
+        //[AllowAnonymous]
         public ActionResult Register()
         {
+         //   var zz = RolesManager.Roles.ToList();
+          ViewBag.UserRoles = new SelectList(RolesManager.Roles.ToList(),"Name","Name");
             return View();
         }
 
         //
         // POST: /Account/Register
         [HttpPost]
-        [AllowAnonymous]
+        [Authorize(Roles = "admin")]
+      //  [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
@@ -155,15 +175,15 @@ namespace WebSales.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                    await UserManager.AddToRoleAsync(user.Id, "user");
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    await UserManager.AddToRoleAsync(user.Id,model.UserRoles);
+                  //  await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -192,6 +212,7 @@ namespace WebSales.Controllers
         [AllowAnonymous]
         public ActionResult ForgotPassword()
         {
+            
             return View();
         }
 
