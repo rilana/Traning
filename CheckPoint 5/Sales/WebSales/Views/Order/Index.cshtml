@@ -1,0 +1,79 @@
+﻿@model WebSales.Models.FilterDataModels
+@using WebSales.Helpers
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (@Html.BeginForm(new { page = 1 }))
+{ 
+  <p>
+  Find by name: @Html.TextBox("SearchString")
+  </p>
+  <div class="form-inline">
+    <label class="control-label">Goods: </label>
+    @Html.DropDownList("FilterGoods", (SelectList)ViewBag.FilterGoods, "All")
+    <label class="control-label">Client: </label>
+    @Html.DropDownList("FilterClient", (SelectList)ViewBag.FilterClient, "All")
+    <label class="control-label">Manager: </label>
+    @Html.DropDownList("FilterManager", (SelectList)ViewBag.FilterManager, "All")
+    <label class="control-label">NameFile: </label>
+    @Html.DropDownList("FilterNameFile", (SelectList)ViewBag.FilterNameFile, "All")
+</div>
+  <div class="form-inline">
+    <label class="control-label">From: </label>
+    @Html.EditorFor(model => model.DateStart, new { htmlAttributes = new { @class = "form-control" } })
+    <label class="control-label">To: </label>
+     @Html.EditorFor(model => model.DateFinish, new { htmlAttributes = new { @class = "form-control" } })
+    <input type="submit" value="Submit" />
+  </div>
+ }
+<div class="btn-group">
+    @Html.PageLinks(Model.PageInfo, x => Url.Action("Index", new { page = x }))
+</div>
+<table class="table">
+    <tr>
+        <td>Goods</td>
+        <td>Client</td>
+        <td>Manager</td>
+        <td>Cost</td>
+        <td>Date</td>
+        <td>NameFile</td>
+        <td/>
+    </tr>
+    @foreach (var item in Model.Orders)
+    {
+     <tr>
+        <td>
+          @Html.DisplayFor(modelItem => item.Goods.NameGoods)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Client.FirstName)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Manager.FirstName)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Cost)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.NameFile.Name)
+        </td>
+        <td>
+          @if (User.IsInRole("admin")) 
+          {@Html.ActionLink("Edit", "Edit", new { id = item.Id })} |
+          @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+          @if (User.IsInRole("admin"))
+          {@Html.ActionLink("Delete", "Delete", new { id = item.Id })}
+         </td>
+    </tr>
+}
+ </table>
+

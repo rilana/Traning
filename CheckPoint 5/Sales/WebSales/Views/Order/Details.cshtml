@@ -1,0 +1,66 @@
+﻿@model WatcherModel.Order
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Client.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Goods.NameGoods)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Goods.NameGoods)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Manager.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manager.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameFile.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameFile.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @if (User.IsInRole("admin"))
+    {@Html.ActionLink("Edit", "Edit", new { id = Model.Id })} |
+    @Html.ActionLink("Back to List", "Index")
+</p>

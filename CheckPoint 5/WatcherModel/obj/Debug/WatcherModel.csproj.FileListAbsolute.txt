@@ -71,8 +71,14 @@ C:\Natasha2\Traning\CheckPoint 4\WatcherModel\WatcherModel\obj\Debug\WatcherMode
 C:\Natasha2\Traning\CheckPoint 5\WatcherModel\bin\Debug\WatcherModel.dll.config
 C:\Natasha2\Traning\CheckPoint 5\WatcherModel\bin\Debug\WatcherModel.dll
 C:\Natasha2\Traning\CheckPoint 5\WatcherModel\bin\Debug\WatcherModel.pdb
-C:\Natasha2\Traning\CheckPoint 5\WatcherModel\bin\Debug\EntityFramework.xml
-C:\Natasha2\Traning\CheckPoint 5\WatcherModel\bin\Debug\EntityFramework.SqlServer.xml
-C:\Natasha2\Traning\CheckPoint 5\WatcherModel\obj\Debug\WatcherModel.csprojResolveAssemblyReference.cache
 C:\Natasha2\Traning\CheckPoint 5\WatcherModel\obj\Debug\WatcherModel.dll
 C:\Natasha2\Traning\CheckPoint 5\WatcherModel\obj\Debug\WatcherModel.pdb
+C:\Natasha2\neww\WatcherModel\bin\Debug\WatcherModel.dll.config
+C:\Natasha2\neww\WatcherModel\bin\Debug\WatcherModel.dll
+C:\Natasha2\neww\WatcherModel\bin\Debug\WatcherModel.pdb
+C:\Natasha2\neww\WatcherModel\bin\Debug\EntityFramework.xml
+C:\Natasha2\neww\WatcherModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Natasha2\neww\WatcherModel\obj\Debug\WatcherModel.csprojResolveAssemblyReference.cache
+C:\Natasha2\neww\WatcherModel\obj\Debug\WatcherModel.dll
+C:\Natasha2\neww\WatcherModel\obj\Debug\WatcherModel.pdb
+C:\Natasha2\Traning\CheckPoint 5\WatcherModel\obj\Debug\WatcherModel.csprojResolveAssemblyReference.cache

@@ -11,6 +11,7 @@ namespace WatcherModel
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Order
     {
@@ -19,6 +20,7 @@ namespace WatcherModel
         public int IdClient { get; set; }
         public int IdGoods { get; set; }
         public int Cost { get; set; }
+        [DataType(DataType.DateTime)]
         public System.DateTime Date { get; set; }
         public int IdFile { get; set; }
     
