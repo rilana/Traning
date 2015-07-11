@@ -21,9 +21,9 @@ namespace WebSales.Controllers
             repo=_unit.ReposOrder;
         }
 
-        public ActionResult Index(FilterDataModels filterPost, int page=1)
+        public ActionResult Index(OrderFilterModels filterPost, int page=1)
         {
-            FilterDataModels filters=new FilterDataModels();
+            var filters=new OrderFilterModels();
             filters.Orders = repo.SearchFor(x=>x.Date>=filterPost.DateStart&&x.Date<=filterPost.DateFinish);
 
             if (filterPost.FilterClient != null)

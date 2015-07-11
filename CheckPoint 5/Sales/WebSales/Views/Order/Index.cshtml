@@ -1,7 +1,7 @@
-﻿@model WebSales.Models.FilterDataModels
+﻿@model WebSales.Models.OrderFilterModels
 @using WebSales.Helpers
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Order";
 }
 
 <h2>Index</h2>
@@ -29,7 +29,7 @@
     @Html.EditorFor(model => model.DateStart, new { htmlAttributes = new { @class = "form-control" } })
     <label class="control-label">To: </label>
      @Html.EditorFor(model => model.DateFinish, new { htmlAttributes = new { @class = "form-control" } })
-    <input type="submit" value="Submit" />
+    <input type="submit" value="Filter" />
   </div>
  }
 <div class="btn-group">
