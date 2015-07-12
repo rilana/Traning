@@ -11,7 +11,6 @@ namespace WebSales.Models
     public class OrderFilterModels : FilterModels
     {
         public string searchString { get; set; }
-        public PageInfo PageInfo { get; set; }
         public IEnumerable<Order> Orders { get; set; }
     }
 }

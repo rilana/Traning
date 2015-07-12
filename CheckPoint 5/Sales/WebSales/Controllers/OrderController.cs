@@ -21,11 +21,11 @@ namespace WebSales.Controllers
             repo=_unit.ReposOrder;
         }
 
-        public ActionResult Index(OrderFilterModels filterPost, int page=1)
+        public ActionResult Index(OrderFilterModels filterPost)
         {
             var filters=new OrderFilterModels();
 
-            filters.Orders = repo.SearchFor(x=>x.Date>=filterPost.DateStart&&x.Date<=filterPost.DateFinish);
+            filters.Orders = repo.SearchFor(x=>x.Date>=filterPost.DateStart&&x.Date<=filterPost.DateFinish).OrderBy(x=>x.Date);
 
             if (filterPost.FilterClient != null)
             {
@@ -51,14 +51,10 @@ namespace WebSales.Controllers
                                        || s.Client.SecondName.Contains(filterPost.searchString));
             }
             //filter-block 
-            ViewBag.FilterClient = new SelectList(_unit.ReposClient.GetAll(), "Id", "SecondName");
-            ViewBag.FilterGoods = new SelectList(_unit.ReposGoods.GetAll(), "Id", "NameGoods");
-            ViewBag.FilterManager = new SelectList(_unit.ReposManager.GetAll(), "Id", "SecondName");
-            ViewBag.FilterNameFile = new SelectList(_unit.ReposNameFile.GetAll(), "Id", "Name");
-          
-            int pageSize = 7; // count object to page
-            filters.PageInfo = new PageInfo { PageNumber = page, PageSize = pageSize, TotalItems = filters.Orders.Count() };
-            filters.Orders=filters.Orders.OrderBy(x=>x.Date).Skip((page - 1) * pageSize).Take(pageSize);
+            ViewBag.FilterClient = new SelectList(_unit.ReposClient.GetAll().OrderBy(x=>x.SecondName), "Id", "SecondName");
+            ViewBag.FilterGoods = new SelectList(_unit.ReposGoods.GetAll().OrderBy(x => x.NameGoods), "Id", "NameGoods");
+            ViewBag.FilterManager = new SelectList(_unit.ReposManager.GetAll().OrderBy(x => x.SecondName), "Id", "SecondName");
+            ViewBag.FilterNameFile = new SelectList(_unit.ReposNameFile.GetAll().OrderBy(x => x.Name), "Id", "Name");
             return View(filters);
         }
 

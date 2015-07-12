@@ -1,5 +1,4 @@
 ﻿@model WebSales.Models.OrderFilterModels
-@using WebSales.Helpers
 @{
     ViewBag.Title = "Order";
 }
@@ -73,12 +72,10 @@
     </tr>
 }
     <tr>
-        <td>Total page</td><td/><td/>
+        <td>Total </td><td/><td/>
         <td>@Model.Orders.Sum(x => x.Cost)</td>
     </tr>
  </table>
-<div class="btn-group">
-    @Html.PageLinks(Model.PageInfo, x => Url.Action("Index", new { page = x }))
-</div>
+
 
 

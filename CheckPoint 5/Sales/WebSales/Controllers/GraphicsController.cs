@@ -16,7 +16,7 @@ namespace WebSales.Controllers
         // GET: Graphics
         public ActionResult Index()
         {
-            ViewBag.FilterManager = new SelectList(_unit.ReposManager.GetAll().OrderBy(x => x.FirstName), "Id", "FirstName");
+            ViewBag.FilterManager = new SelectList(_unit.ReposManager.GetAll().OrderBy(x => x.SecondName), "Id", "SecondName");
             return View(new FilterModels());
         }
                

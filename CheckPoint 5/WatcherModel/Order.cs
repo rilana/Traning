@@ -20,7 +20,7 @@ namespace WatcherModel
         public int IdClient { get; set; }
         public int IdGoods { get; set; }
         public int Cost { get; set; }
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         public System.DateTime Date { get; set; }
         public int IdFile { get; set; }
     

@@ -17,7 +17,7 @@ namespace WebSales.Controllers
         // GET: Reports
         public ActionResult Index()
         {
-            ViewBag.FilterManager = new SelectList(_unit.ReposManager.GetAll(), "Id", "FirstName");             
+            ViewBag.FilterManager = new SelectList(_unit.ReposManager.GetAll().OrderBy(x => x.SecondName), "Id", "SecondName");             
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace WebSales.Controllers
 
         public ActionResult Goods()
         {
-            ViewBag.FilterGoods = new SelectList(_unit.ReposGoods.GetAll(), "Id", "NameGoods");
+            ViewBag.FilterGoods = new SelectList(_unit.ReposGoods.GetAll().OrderBy(x => x.NameGoods), "Id", "NameGoods");
             return View();
         }
     }
