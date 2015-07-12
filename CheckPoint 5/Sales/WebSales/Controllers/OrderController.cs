@@ -24,6 +24,7 @@ namespace WebSales.Controllers
         public ActionResult Index(OrderFilterModels filterPost, int page=1)
         {
             var filters=new OrderFilterModels();
+
             filters.Orders = repo.SearchFor(x=>x.Date>=filterPost.DateStart&&x.Date<=filterPost.DateFinish);
 
             if (filterPost.FilterClient != null)
@@ -44,24 +45,24 @@ namespace WebSales.Controllers
             }
 
             if (!String.IsNullOrEmpty(filterPost.searchString))
-            {
-                filters.Orders = filters.Orders.Where(s => s.Manager.FirstName.Contains(filterPost.searchString)
+            {                
+                filters.Orders = filters.Orders.Where(s => s.Manager.SecondName.Contains(filterPost.searchString)
                                        || s.Goods.NameGoods.Contains(filterPost.searchString)
-                                       || s.Client.FirstName.Contains(filterPost.searchString));
+                                       || s.Client.SecondName.Contains(filterPost.searchString));
             }
-
-            ViewBag.FilterClient = new SelectList(_unit.ReposClient.GetAll(), "Id", "FirstName");
+            //filter-block 
+            ViewBag.FilterClient = new SelectList(_unit.ReposClient.GetAll(), "Id", "SecondName");
             ViewBag.FilterGoods = new SelectList(_unit.ReposGoods.GetAll(), "Id", "NameGoods");
-            ViewBag.FilterManager = new SelectList(_unit.ReposManager.GetAll(), "Id", "FirstName");
+            ViewBag.FilterManager = new SelectList(_unit.ReposManager.GetAll(), "Id", "SecondName");
             ViewBag.FilterNameFile = new SelectList(_unit.ReposNameFile.GetAll(), "Id", "Name");
           
-            int pageSize = 7; // количество объектов на страницу
+            int pageSize = 7; // count object to page
             filters.PageInfo = new PageInfo { PageNumber = page, PageSize = pageSize, TotalItems = filters.Orders.Count() };
             filters.Orders=filters.Orders.OrderBy(x=>x.Date).Skip((page - 1) * pageSize).Take(pageSize);
             return View(filters);
         }
 
-        // GET: order/Details/5
+         // GET: order/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)

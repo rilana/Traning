@@ -9,6 +9,7 @@ using WebSales.Models;
 
 namespace WebSales.Controllers
 {
+    [Authorize]
     public class ReportsController : Controller
     {
         private UnitOfWork _unit = new UnitOfWork(new ModelContainer());
