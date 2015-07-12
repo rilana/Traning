@@ -16,27 +16,23 @@ namespace WebSales.Models
 
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
 
-            // создаем две роли
+            // create 2 role
             var role1 = new IdentityRole { Name = "admin" };
             var role2 = new IdentityRole { Name = "user" };
 
-            // добавляем роли в бд
+            // add role
             roleManager.Create(role1);
             roleManager.Create(role2);
 
-            // создаем пользователей
+            //create users
             var admin = new ApplicationUser { Email = "admin@mail.ru", UserName = "admin@mail.ru" };
-            string password = "aAa3_aaa";
-            var result = userManager.Create(admin, password);
-
-            // если создание пользователя прошло успешно
+            string password = "123456";
+            var result = userManager.Create(admin, password);           
             if (result.Succeeded)
-            {
-                // добавляем для пользователя роль
+            {               
                 userManager.AddToRole(admin.Id, role1.Name);
                 userManager.AddToRole(admin.Id, role2.Name);
             }
-
             base.Seed(context);
         }
     }

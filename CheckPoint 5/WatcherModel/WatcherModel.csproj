@@ -89,6 +89,7 @@
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Repository\UnitOfWork.cs" />
+    <Compile Include="SalesDbInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

@@ -15,6 +15,10 @@ namespace WatcherModel
     
     public partial class ModelContainer : DbContext
     {
+        static ModelContainer()
+        {
+            Database.SetInitializer(new SalesDbInitializer());
+        }
         public ModelContainer()
             : base("name=ModelContainer")
         {
