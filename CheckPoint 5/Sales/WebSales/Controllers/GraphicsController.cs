@@ -9,6 +9,7 @@ using WebSales.Models;
 
 namespace WebSales.Controllers
 {
+    [Authorize]
     public class GraphicsController : Controller
     {
         private UnitOfWork _unit = new UnitOfWork(new ModelContainer());
@@ -42,7 +43,6 @@ namespace WebSales.Controllers
         public ActionResult Pie()
         {
             ViewBag.TotalCostOrSales = new SelectList(new[] { "Total cost", "Total sales" });
-            //ViewBag.SelectManager = new SelectList(db.ManagerSets.OrderBy(x => x.FirstName), "Id", "FirstName");
             return View(new FilterModels());
         }
 

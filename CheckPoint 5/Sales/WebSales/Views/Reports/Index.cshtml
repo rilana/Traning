@@ -1,0 +1,25 @@
+﻿@model WebSales.Models.OrderFilterModels
+@{
+    ViewBag.Title = "Reports";
+}
+
+<h2>Reports</h2>
+<ul class="nav nav-tabs">
+    <li class="active">@Html.ActionLink("Reports manager", "Index", "Reports")</li>
+    <li>@Html.ActionLink("Reports goods", "Goods", "Reports")</li>
+</ul>
+
+@using (Ajax.BeginForm(new AjaxOptions { Url = Url.Action("Report"), UpdateTargetId = "reportView" }))
+{
+    <div class="form-inline">
+        <label class="control-label">Select mаnager: </label>
+        @Html.DropDownList("FilterManager", (SelectList)ViewBag.FilterManager, "All")
+        <label class="control-label">From: </label>
+        @Html.EditorFor(model => model.DateStart, new { htmlAttributes = new { @class = "form-control" } })
+        <label class="control-label">To: </label>
+        @Html.EditorFor(model => model.DateFinish, new { htmlAttributes = new { @class = "form-control" } })
+        <input type="submit" value="Ok" />
+    </div>
+}
+@Html.Partial("Report")
+

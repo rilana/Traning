@@ -1,0 +1,44 @@
+﻿@model WebSales.Models.ReportManagerModels
+
+
+<div id="reportView">
+@if (Model != null)
+{
+     <hr />
+    <dl class="dl-horizontal">
+        @if (Model.NameManager != null) { 
+        <dt>
+            @Html.DisplayNameFor(model => model.NameManager)            
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameManager) 
+        </dd>
+        } else{
+        <dt>
+            @Html.DisplayNameFor(model => model.NameGoods)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameGoods)
+        </dd>
+        }
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalSales) 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalSales)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalCost)
+        </dd>
+    </dl>
+}
+</div>
