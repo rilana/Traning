@@ -37,27 +37,25 @@ namespace WebSales.Controllers
                           DateStr = g.Key,
                           CountGoods = g.Count()
                       }).ToList<ChartGoodsDate>().OrderBy(x => x.Date);
-
-            return Json(zz, JsonRequestBehavior.AllowGet);
+            return Json(zz);//, JsonRequestBehavior.AllowGet);
         }
         public ActionResult Pie()
         {
+            ViewBag.TotalCostOrSales = new SelectList(new[] { "Total cost", "Total sales" });
             //ViewBag.SelectManager = new SelectList(db.ManagerSets.OrderBy(x => x.FirstName), "Id", "FirstName");
-            return View();
+            return View(new FilterModels());
         }
-        [HttpPost]
-        public JsonResult JsonPie()
-        {
-         
-            var zz = (from tt in _unit.ReposOrder.GetAll()
-                      group tt by tt.Manager into g
-                      select new ChartDataPie
-                      {
-                          LastNameManager = g.Key.SecondName,
-                          TotalCost = g.Sum(x=>x.Cost)
-                      }).ToList<ChartDataPie>();
 
-            return Json(zz, JsonRequestBehavior.AllowGet);
+        public JsonResult JsonPie(string TotalCostOrSales, FilterModels filter)//[Bind(Include = "DateStart,DateFinish")] FilterModels filter,int TotalCostOrSales
+        {
+            var zz = (from tt in _unit.ReposOrder.GetAll()
+                      where tt.Date >= filter.DateStart && tt.Date <= filter.DateFinish
+                      group tt by tt.Manager into g
+                      select new ChartDataPie(TotalCostOrSales,g.Sum(x=>x.Cost),g.Count())
+                      {
+                          LastNameManager = g.Key.SecondName
+                      }).ToList<ChartDataPie>();
+           return Json(zz, JsonRequestBehavior.AllowGet);
         }
     }
 }

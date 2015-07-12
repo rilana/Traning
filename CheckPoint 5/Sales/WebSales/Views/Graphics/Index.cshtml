@@ -3,24 +3,17 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Graphic</h2>
+<h2>Graphics</h2>
 <ul class="nav nav-tabs">
-    <li class="active">@Html.ActionLink( "Golumn graphics", "Index", "Graphics")</li>
-    <li>@Html.ActionLink("Golumn pie", "Pie", "Graphics")</li>
+    <li class="active">@Html.ActionLink( "Chart column", "Index", "Graphics")</li>
+    <li>@Html.ActionLink("Chart pie", "Pie", "Graphics")</li>
 </ul>
 
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript">
-    google.load("visualization", "1", { packages: ["corechart"] });
-</script>
-
-<div id="chart_div" style="width: 450px; height: 350px;"></div>
 
 @using (Ajax.BeginForm(new AjaxOptions { OnSuccess = "OnSuccess", Url = Url.Action("JsonSearch") }))
 {
     <div class="form-inline">
-       <label class="control-label">Select menager: </label>
+       <label class="control-label">Select mаnager: </label>
         @Html.DropDownList("FilterManager", (SelectList)ViewBag.FilterManager, "All")
         <label class="control-label">From: </label>
         @Html.EditorFor(model => model.DateStart, new { htmlAttributes = new { @class = "form-control" } })
@@ -30,19 +23,32 @@
     </div>
 }
 
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
+    google.load("visualization", "1", { packages: ["corechart"] });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            contentType: 'application/json',
+            url: '@Url.Action("JsonSearch")',
+            data: '{}',
+            success: function (chartsdata) { OnSuccess(chartsdata) }
+        }));
+
     function OnSuccess(chartsdata) {
         var data = new google.visualization.DataTable();
-
         data.addColumn('string', 'Date');
         data.addColumn('number', 'Count goods');
-
         for (var i = 0; i < chartsdata.length; i++) {
             data.addRow([chartsdata[i].DateStr, chartsdata[i].CountGoods]);
         }
         // Instantiate and draw our chart, passing in some options
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-
         chart.draw(data,
           {
               title: "Statistics sectional managers",
@@ -52,4 +58,6 @@
           });
     }
 </script>
+<div id="chart_div" style="height: 350px;"></div>
+
 

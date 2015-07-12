@@ -3,11 +3,24 @@
     ViewBag.Title = "Pie";
 }
 
-<h2>Graphic</h2>
+<h2>Graphics</h2>
 <ul class="nav nav-tabs">
-    <li >@Html.ActionLink("Golumn graphics", "Index", "Graphics")</li>
-    <li class="active">@Html.ActionLink("Golumn pie", "Pie", "Graphics")</li>
+    <li >@Html.ActionLink("Chart column", "Index", "Graphics")</li>
+    <li class="active">@Html.ActionLink("Chart pie", "Pie", "Graphics")</li>
 </ul>
+
+@using (Ajax.BeginForm(new AjaxOptions { OnSuccess = "OnSuccess", Url = Url.Action("JsonPie") }))
+{
+    <div class="form-inline">
+        <label class="control-label">Statistics in the context of: </label>
+        @Html.DropDownList("TotalCostOrSales", (SelectList)ViewBag.TotalCostOrSales)
+        <label class="control-label">From: </label>
+        @Html.EditorFor(model => model.DateStart, new { htmlAttributes = new { @class = "form-control" } })
+        <label class="control-label">To: </label>
+        @Html.EditorFor(model => model.DateFinish, new { htmlAttributes = new { @class = "form-control" } })
+        <input type="submit" value="Paint" />
+    </div>
+}
 
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -15,37 +28,41 @@
     google.load("visualization", "1", { packages: ["corechart"] });
 </script>
 
-<div id="chart_div" style="width: 450px; height: 350px;"></div>
-
 
 <script type="text/javascript">
-    $(document).ready(function () {
-        $.ajax({
-            type: 'POST',
-            dataType: 'json',
-            contentType: 'application/json',
-            url: '@Url.Action("JsonPie")',
-            data: '{}',
-            success: function (chartsdata) {
-                alert("dataaa");
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Manager');
-            data.addColumn('number', 'Total Sum');
+    $(document).ready(
+       $.ajax({
+           type: 'POST',
+           dataType: 'json',
+           contentType: 'application/json',
+           url: '@Url.Action("JsonPie")',
+           data: '{}',
+           success: function (chartsdata) { OnSuccess(chartsdata) }
+       }));
 
-            for (var i = 0; i < chartsdata.length; i++) {
-                data.addRow([chartsdata[i].LastNameManager, chartsdata[i].TotalCost]);
-        }
-        // Instantiate and draw our chart, passing in some options
-            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+     function OnSuccess(chartsdata) {
+               
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Manager');
+                data.addColumn('number', 'Total Sum');
 
-        chart.draw(data,
-          {
-              title: "Statistics sectional managers",
-              position: "top",
-              fontsize: "14px",
-              chartArea: { width: '50%' },
-          });
-    }
+                for (var i = 0; i < chartsdata.length; i++) {
+                    data.addRow([chartsdata[i].LastNameManager, chartsdata[i].TotalCostOrSales]);
+                }
+                // Instantiate and draw our chart, passing in some options
+                var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+
+                chart.draw(data,
+                  {
+                      title: "Statistics sectional managers",
+                      position: "center",
+                      fontsize: "14px",
+                      chartArea: { width: '50%' },
+                  });
+            }
+      
 </script>
+<div id="chart_div" style=" height: 350px;"></div>
+
 
 
