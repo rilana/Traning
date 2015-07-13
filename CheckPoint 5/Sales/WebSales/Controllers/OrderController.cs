@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using WatcherModel;
 using WatcherModel.Repository;
@@ -23,9 +21,13 @@ namespace WebSales.Controllers
 
         public ActionResult Index(OrderFilterModels filterPost)
         {
-            var filters=new OrderFilterModels();
+            var filters = new OrderFilterModels
+            {
+                Orders =
+                    repo.SearchFor(x => x.Date >= filterPost.DateStart && x.Date <= filterPost.DateFinish)
+                        .OrderBy(x => x.Date)
+            };
 
-            filters.Orders = repo.SearchFor(x=>x.Date>=filterPost.DateStart&&x.Date<=filterPost.DateFinish).OrderBy(x=>x.Date);
 
             if (filterPost.FilterClient != null)
             {
@@ -44,11 +46,11 @@ namespace WebSales.Controllers
                 filters.Orders = filters.Orders.Where(e => e.IdFile == filterPost.FilterNameFile);
             }
 
-            if (!String.IsNullOrEmpty(filterPost.searchString))
+            if (!String.IsNullOrEmpty(filterPost.SearchString))
             {                
-                filters.Orders = filters.Orders.Where(s => s.Manager.SecondName.Contains(filterPost.searchString)
-                                       || s.Goods.NameGoods.Contains(filterPost.searchString)
-                                       || s.Client.SecondName.Contains(filterPost.searchString));
+                filters.Orders = filters.Orders.Where(s => s.Manager.SecondName.Contains(filterPost.SearchString)
+                                       || s.Goods.NameGoods.Contains(filterPost.SearchString)
+                                       || s.Client.SecondName.Contains(filterPost.SearchString));
             }
             //filter-block 
             ViewBag.FilterClient = new SelectList(_unit.ReposClient.GetAll().OrderBy(x=>x.SecondName), "Id", "SecondName");
@@ -168,7 +170,7 @@ namespace WebSales.Controllers
         [Authorize(Roles = "admin")]
         public ActionResult DeleteConfirmed(int id)
         {
-            var orderSet = repo.GetById((int)id);
+            var orderSet = repo.GetById(id);
             repo.Delete(orderSet);
             _unit.Save();
             return RedirectToAction("Index");

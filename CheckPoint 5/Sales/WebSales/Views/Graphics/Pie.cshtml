@@ -42,7 +42,7 @@
 
      function OnSuccess(chartsdata) {
                
-                var data = new google.visualization.DataTable();
+                var data = new window.google.visualization.DataTable();
                 data.addColumn('string', 'Manager');
                 data.addColumn('number', 'Total Sum');
 
@@ -50,14 +50,14 @@
                     data.addRow([chartsdata[i].LastNameManager, chartsdata[i].TotalCostOrSales]);
                 }
                 // Instantiate and draw our chart, passing in some options
-                var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                var chart = new window.google.visualization.PieChart(document.getElementById('chart_div'));
 
                 chart.draw(data,
                   {
                       title: "Statistics sectional managers",
                       position: "center",
                       fontsize: "14px",
-                      chartArea: { width: '50%' },
+                      chartArea: { width: '50%' }
                   });
             }
       

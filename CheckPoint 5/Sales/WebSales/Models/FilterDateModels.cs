@@ -1,30 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace WebSales.Models
 {
-    public class FilterDateModels
+    public abstract class FilterDateModels
     {
-        private DateTime dateStart = new DateTime(2015, 6, 1);//new DateTime(DateTime.Now.Year,DateTime.Now.Month,1);
-        private DateTime dateFinish = DateTime.Now;
+        private DateTime _dateStart = new DateTime(2015, 6, 1);//new DateTime(DateTime.Now.Year,DateTime.Now.Month,1);
+        private DateTime _dateFinish = DateTime.Now;
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public System.DateTime DateStart
+        public DateTime DateStart
         {
-            get { return dateStart; }
-            set { dateStart = value; }
+            get { return _dateStart; }
+            set { _dateStart = value; }
         }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public System.DateTime DateFinish
+        public DateTime DateFinish
         {
-            get { return dateFinish; }
-            set { dateFinish = value; }
+            get { return _dateFinish; }
+            set { _dateFinish = value; }
         }
 
     }

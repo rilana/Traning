@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using WatcherModel;
 using WatcherModel.Repository;
@@ -46,12 +43,12 @@ namespace WebSales.Controllers
             return View(new FilterModels());
         }
 
-        public JsonResult JsonPie(string TotalCostOrSales, FilterModels filter)//[Bind(Include = "DateStart,DateFinish")] FilterModels filter,int TotalCostOrSales
+        public JsonResult JsonPie(string totalCostOrSales, FilterModels filter)//[Bind(Include = "DateStart,DateFinish")] FilterModels filter,int TotalCostOrSales
         {
             var zz = (from tt in _unit.ReposOrder.GetAll()
                       where tt.Date >= filter.DateStart && tt.Date <= filter.DateFinish
                       group tt by tt.Manager into g
-                      select new ChartDataPie(TotalCostOrSales,g.Sum(x=>x.Cost),g.Count())
+                      select new ChartDataPie(totalCostOrSales,g.Sum(x=>x.Cost),g.Count())
                       {
                           LastNameManager = g.Key.SecondName
                       }).ToList<ChartDataPie>();

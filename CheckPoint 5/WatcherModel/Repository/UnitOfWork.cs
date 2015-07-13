@@ -121,18 +121,18 @@ namespace WatcherModel.Repository
             Context.SaveChanges();
         }
 
-        private bool disposed = false;
+        private bool _disposed;
 
         public virtual void Dispose(bool disposing)
         {
-            if (!this.disposed)
+            if (!this._disposed)
             {
                 if (disposing)
                 {
                     Context.Dispose();
                 }
             }
-            this.disposed = true;
+            this._disposed = true;
         }
 
         public void Dispose()

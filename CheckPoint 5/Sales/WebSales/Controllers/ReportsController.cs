@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using WatcherModel;
 using WatcherModel.Repository;
@@ -13,7 +10,7 @@ namespace WebSales.Controllers
     public class ReportsController : Controller
     {
         private UnitOfWork _unit = new UnitOfWork(new ModelContainer());
-        private IRepository<Order> repo;
+      
         // GET: Reports
         public ActionResult Index()
         {

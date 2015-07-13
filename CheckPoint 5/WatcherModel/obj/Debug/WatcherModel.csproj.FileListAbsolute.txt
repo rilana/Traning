@@ -82,3 +82,9 @@ C:\Natasha2\neww\WatcherModel\obj\Debug\WatcherModel.csprojResolveAssemblyRefere
 C:\Natasha2\neww\WatcherModel\obj\Debug\WatcherModel.dll
 C:\Natasha2\neww\WatcherModel\obj\Debug\WatcherModel.pdb
 C:\Natasha2\Traning\CheckPoint 5\WatcherModel\obj\Debug\WatcherModel.csprojResolveAssemblyReference.cache
+D:\Наташа\c# express\workk\Traning\CheckPoint 5\WatcherModel\bin\Debug\WatcherModel.dll.config
+D:\Наташа\c# express\workk\Traning\CheckPoint 5\WatcherModel\bin\Debug\WatcherModel.dll
+D:\Наташа\c# express\workk\Traning\CheckPoint 5\WatcherModel\bin\Debug\WatcherModel.pdb
+D:\Наташа\c# express\workk\Traning\CheckPoint 5\WatcherModel\obj\Debug\WatcherModel.csprojResolveAssemblyReference.cache
+D:\Наташа\c# express\workk\Traning\CheckPoint 5\WatcherModel\obj\Debug\WatcherModel.dll
+D:\Наташа\c# express\workk\Traning\CheckPoint 5\WatcherModel\obj\Debug\WatcherModel.pdb

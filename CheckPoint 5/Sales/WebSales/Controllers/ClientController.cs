@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using WatcherModel;
 using WatcherModel.Repository;
@@ -126,7 +123,7 @@ namespace WebSales.Controllers
        {
            try
            {
-               var clientSet = _unit.ReposClient.GetById((int)id);
+               var clientSet = _unit.ReposClient.GetById(id);
                _unit.ReposClient.Delete(clientSet);
                _unit.Save();
                return RedirectToAction("Index");
